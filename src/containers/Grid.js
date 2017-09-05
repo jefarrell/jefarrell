@@ -10,7 +10,7 @@ let Grid = ({ dispatch }) => {
 		<ul>	
 			{
 				Object.keys(data).map((keyname, keyindex)=> {
-					let title = data[keyname]["name"];
+					let title = data[keyname]["title"];
 					
 					return <Project key={keyindex} title={title} />
 				})

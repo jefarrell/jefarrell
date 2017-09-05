@@ -24720,7 +24720,7 @@
 
 	var _actions = __webpack_require__(228);
 
-	var _projectData = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../assets/projectData\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _projectData = __webpack_require__(229);
 
 	var _projectData2 = _interopRequireDefault(_projectData);
 
@@ -24738,7 +24738,7 @@
 			'ul',
 			null,
 			Object.keys(data).map(function (keyname, keyindex) {
-				var title = data[keyname]["name"];
+				var title = data[keyname]["title"];
 
 				return _react2.default.createElement(_Project2.default, { key: keyindex, title: title });
 			})
@@ -24766,7 +24766,88 @@
 	};
 
 /***/ }),
-/* 229 */,
+/* 229 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	exports.projectData = {
+		"imeshyou": {
+			"title": "#imeshyou",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+		"salarycalc": {
+			"title": "Salary Calculator",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+		"nationalparks": {
+			"title": "Photos in the National Parks",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+		"githubleague": {
+			"title": "The Github League",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+		"genertech": {
+			"title": "The Lab at GenerTech",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+		"belieber": {
+			"title": "#beliebers",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+		"taxidermy": {
+			"title": "Rambling Taxidermy",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+		"diffuse": {
+			"title": "Diffuse",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		},
+
+		"myco": {
+			"title": "Mass Mycotecture",
+			"paragraphs": ["head", "main", "foot"],
+			"photos": {
+				"thumbnail": null,
+				"gallery": []
+			}
+		}
+	};
+
+/***/ }),
 /* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
