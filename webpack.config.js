@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png)$/,
-        loader: 'file-loader?name=/assets/[name].[ext]'
+        loader: 'file-loader?name=/assets/thumbnails/[name].[ext]'
       }
     ]
   },
@@ -59,3 +59,15 @@ module.exports = {
   ] : []
 };
 
+
+// function importAll(r) {
+//   let images = {};
+//   r.keys().map((item,index) => {
+//     images[item.replace('./', '')] = r(item);
+//   });
+
+//   return images;
+// }
+
+
+// const images = importAll(require.context('./src/assets/thumbnails', false, /\/(png|jpe?g|svg)$/));

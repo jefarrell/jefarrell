@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import selection from './reducers';
 import App from './components/App';
 
+require('./styles/main.scss');
 let store = createStore(selection);
 
 render(
