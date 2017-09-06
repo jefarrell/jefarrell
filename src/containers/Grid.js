@@ -14,17 +14,21 @@ let ProjectGrid = ({ dispatch }) => {
 	// Require context image file
 	// Set as style, pass as props to child presentational component
 	const images = require.context('../../public/assets/thumbnails', true);
-	let imgsrc = images('./myco.png');
-	const styler = {
-		backgroundImage: "url(" + imgsrc + ")"
-	}
+
 
 	return (		
-		<div className="container-fluid">
-			<Row>
+		<div className="container-fluid" id="gridContainer">
 				{
 					Object.keys(data).map((keyname, keyindex)=> {
+
+						let code = data[keyname]["code"];
 						let title = data[keyname]["title"];
+						let imgsrc = images("./"+code+".png");
+
+						let styler = {
+							backgroundImage: "url(" + imgsrc + ")"
+						}
+
 						return <Project 
 									key={keyindex}
 									title={title} 
@@ -32,7 +36,7 @@ let ProjectGrid = ({ dispatch }) => {
 								/>
 					})
 				}	
-			</Row>		
+				
 		</div>	
 	) 	
 }

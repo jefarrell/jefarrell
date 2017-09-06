@@ -1,5 +1,44 @@
-.col-lg-4 {
-	height: 5em;
-	background-size: 5em;
+
+#gridContainer {
+	margin-left: 20em;
+	margin-right: 20em;
+}
+
+.projectParent {
+	position:relative;
+
+}
+
+.project {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	background-size: 100%;
 	background-repeat: no-repeat;
+
+}
+
+.dummy {
+	margin-top: 100%;
+}
+
+// keep for hover?
+.layer {
+   // background-color: rgba(25, 25, 25, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.projectTitle {
+	color: #000;
+	font-size: 3em;
+	display: table;
+	margin: 0 auto;
+	margin-top: 30%;
+	text-align: center;
 }

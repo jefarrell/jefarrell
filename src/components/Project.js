@@ -8,8 +8,14 @@ const Project = ({title, style}) => (
 
 
 
-	<Col lg={4} style={style}>
-		{title}
+	<Col lg={4} className="projectParent">
+		<div className="dummy"></div>
+		<div className="project" style={style}>
+			<div className="layer"></div>
+			<span className="projectTitle">
+				{title}
+			</span>
+		</div>
 	</Col>
 )
 
