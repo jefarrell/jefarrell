@@ -11,23 +11,13 @@ import Row from "react-bootstrap/lib/Row";
 let ProjectGrid = ({ dispatch }) => {
 	const data = projectData["projectData"];
 
-	// function importAll(r) {
-	//   let images = {};
-	//     return r.keys().map(r);
-	// }
-	// const images = importAll(require.context('../assets/thumbnails', false, /\/(png|jpe?g|svg)$/));
-	// console.log("images? ", images);
-
+	// Require context image file
+	// Set as style, pass as props to child presentational component
 	const images = require.context('../../public/assets/thumbnails', true);
 	let imgsrc = images('./myco.png');
-
-	console.log("hm ", imgsrc);
-
 	const styler = {
-		backgroundImage: "url("+imgsrc+")"
+		backgroundImage: "url(" + imgsrc + ")"
 	}
-
-
 
 	return (		
 		<div className="container-fluid">
@@ -35,7 +25,6 @@ let ProjectGrid = ({ dispatch }) => {
 				{
 					Object.keys(data).map((keyname, keyindex)=> {
 						let title = data[keyname]["title"];
-						let code = data[keyname]["code"];
 						return <Project 
 									key={keyindex}
 									title={title} 

@@ -24744,18 +24744,10 @@
 
 		var data = _projectData2.default["projectData"];
 
-		// function importAll(r) {
-		//   let images = {};
-		//     return r.keys().map(r);
-		// }
-		// const images = importAll(require.context('../assets/thumbnails', false, /\/(png|jpe?g|svg)$/));
-		// console.log("images? ", images);
-
+		// Require context image file
+		// Set as style, pass as props to child presentational component
 		var images = __webpack_require__(327);
 		var imgsrc = images('./myco.png');
-
-		console.log("hm ", imgsrc);
-
 		var styler = {
 			backgroundImage: "url(" + imgsrc + ")"
 		};
@@ -24768,7 +24760,6 @@
 				null,
 				Object.keys(data).map(function (keyname, keyindex) {
 					var title = data[keyname]["title"];
-					var code = data[keyname]["code"];
 					return _react2.default.createElement(_Project2.default, {
 						key: keyindex,
 						title: title,
