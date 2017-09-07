@@ -69,6 +69,10 @@
 	__webpack_require__(338);
 	var store = (0, _redux.createStore)(_reducers2.default);
 
+	store.subscribe(function () {
+		console.log("store state: ", store.getState());
+	});
+
 	(0, _reactDom.render)(_react2.default.createElement(
 		_reactRedux.Provider,
 		{ store: store },
@@ -24612,20 +24616,14 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	var selection = function selection() {
-		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-		var action = arguments[1];
-
+	var selection = function selection(state, action) {
 
 		switch (action.type) {
 			case 'PORTFOLIO_ITEM':
-				return [].concat(_toConsumableArray(state), [{
+				return {
 					id: action.id,
-					project: action.name
-				}]);
+					project: action.text
+				};
 			default:
 				return state;
 		}
@@ -24748,6 +24746,11 @@
 		// Set as style, pass as props to child presentational component
 		var images = __webpack_require__(328);
 
+		var handleClick = function handleClick(e) {
+			console.log("CLICKED ", e.target.id);
+			dispatch((0, _actions.showItem)(e.target.id));
+		};
+
 		return _react2.default.createElement(
 			'div',
 			{ className: 'container-fluid', id: 'gridContainer' },
@@ -24764,7 +24767,9 @@
 				return _react2.default.createElement(_Project2.default, {
 					key: keyindex,
 					title: title,
-					style: styler
+					code: code,
+					style: styler,
+					onClick: handleClick
 				});
 			})
 		);
@@ -24786,7 +24791,7 @@
 	var showItem = exports.showItem = function showItem(text) {
 		return {
 			type: 'PORTFOLIO_ITEM',
-			project: text
+			text: text
 		};
 	};
 
@@ -24907,15 +24912,17 @@
 
 	var Project = function Project(_ref) {
 		var title = _ref.title,
-		    style = _ref.style;
+		    style = _ref.style,
+		    code = _ref.code,
+		    onClick = _ref.onClick;
 		return _react2.default.createElement(
 			_Col2.default,
-			{ lg: 4, className: "projectParent" },
+			{ lg: 4, className: "projectParent", onClick: onClick },
 			_react2.default.createElement("div", { className: "dummy" }),
 			_react2.default.createElement(
 				"div",
 				{ className: "project", style: style },
-				_react2.default.createElement("div", { className: "layer" }),
+				_react2.default.createElement("div", { className: "layer", id: code }),
 				_react2.default.createElement(
 					"span",
 					{ className: "projectTitle" },
@@ -27746,7 +27753,7 @@
 
 
 	// module
-	exports.push([module.id, "#gridContainer {\n  margin-left: 20em;\n  margin-right: 20em; }\n\n.projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  color: #000;\n  font-size: 3em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n", ""]);
+	exports.push([module.id, "#gridContainer {\n  margin: 0 25em 20em 25em; }\n\n.projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  color: #000;\n  font-size: 2.5em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n", ""]);
 
 	// exports
 

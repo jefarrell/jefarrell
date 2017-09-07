@@ -14,9 +14,14 @@ let ProjectGrid = ({ dispatch }) => {
 	// Require context image file
 	// Set as style, pass as props to child presentational component
 	const images = require.context('../../public/assets/thumbnails', true);
+	
+	const handleClick = e => {
+		console.log("CLICKED ", e.target.id);
+		dispatch(showItem(e.target.id));
+	}
 
 
-	return (		
+	return (
 		<div className="container-fluid" id="gridContainer">
 				{
 					Object.keys(data).map((keyname, keyindex)=> {
@@ -31,8 +36,10 @@ let ProjectGrid = ({ dispatch }) => {
 
 						return <Project 
 									key={keyindex}
-									title={title} 
-									style={styler} 
+									title={title}
+									code={code}
+									style={styler}
+									onClick={handleClick}
 								/>
 					})
 				}	

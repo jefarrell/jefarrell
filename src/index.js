@@ -8,6 +8,10 @@ import App from './components/App';
 require('./styles/main.scss');
 let store = createStore(selection);
 
+store.subscribe(()=> {
+	console.log("store state: ", store.getState());	
+})
+
 render(
 	<Provider store={store}>
 		<App />

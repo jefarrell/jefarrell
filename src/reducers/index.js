@@ -1,14 +1,11 @@
-const selection = (state=[], action) => {
+const selection = (state, action) => {
 
 	switch(action.type) {
 		case 'PORTFOLIO_ITEM':
-			return [
-				...state,
-				{
+			return {
 					id: action.id,
-					project: action.name,
-				}
-			]
+					project: action.text,
+			}
 		default: 
 			return state
 	}
