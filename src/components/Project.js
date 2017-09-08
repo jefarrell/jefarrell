@@ -19,4 +19,5 @@ const Project = ({title, style, code, onClick}) => (
 	</Col>
 )
 
+
 export default Project;
