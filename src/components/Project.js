@@ -8,7 +8,7 @@ const Project = ({title, style, code, onClick}) => (
 
 
 
-	<Col lg={4} className="projectParent" onClick={onClick}>
+	<Col lg={4} md={6} sm={10} xs={12} className="projectParent" onClick={onClick}>
 		<div className="dummy"></div>
 		<div className="project" style={style}>
 			<div className="layer" id={code}></div>

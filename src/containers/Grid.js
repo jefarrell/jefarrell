@@ -6,7 +6,7 @@ import Project from '../components/Project';
 
 
 import Grid from "react-bootstrap/lib/Grid";
-import Row from "react-bootstrap/lib/Row";
+
 
 let ProjectGrid = ({ dispatch }) => {
 	const data = projectData["projectData"];
@@ -33,7 +33,7 @@ let ProjectGrid = ({ dispatch }) => {
 						let styler = {
 							backgroundImage: "url(" + imgsrc + ")"
 						}
-
+						
 						return <Project 
 									key={keyindex}
 									title={title}
@@ -41,6 +41,7 @@ let ProjectGrid = ({ dispatch }) => {
 									style={styler}
 									onClick={handleClick}
 								/>
+
 					})
 				}	
 				

@@ -1,6 +1,6 @@
 
 #gridContainer {
-	margin: 0 25em 20em 25em;
+	//margin: 0 25em 20em 25em;
 }
 
 .projectParent {
@@ -16,7 +16,6 @@
     right: 0;
 	background-size: 100%;
 	background-repeat: no-repeat;
-
 }
 
 .dummy {
@@ -40,4 +39,17 @@
 	margin: 0 auto;
 	margin-top: 30%;
 	text-align: center;
+}
+
+
+@media only screen 
+and (min-width: 800px) 
+and (max-width: 1000px) {
+
+.project {
+
+	display:block;
+}
+
+
 }
