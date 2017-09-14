@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import { showItem } from '../actions';
 import projectData from '../assets/projectData';
 import Project from '../components/Project';
+import ProjectModal from '../components/ProjectModal';
 
 
 import Grid from "react-bootstrap/lib/Grid";
 
 
-let ProjectGrid = ({ dispatch }) => {
+const ProjectGrid = ({ dispatch, target, modal }) => {
 	const data = projectData["projectData"];
+	let shower = false;
 
 	// Require context image file
 	// Set as style, pass as props to child presentational component
@@ -17,15 +19,19 @@ let ProjectGrid = ({ dispatch }) => {
 	
 	const handleClick = e => {
 		console.log("CLICKED ", e.target.id);
-		dispatch(showItem(e.target.id));
+		shower = true;
+		dispatch(showItem(e.target.id, true));
 	}
+	
 
-
+    console.log("hey! ", modal);
 	return (
 		<div className="container-fluid" id="gridContainer">
+		<ProjectModal show={modal} title={"hello"} />
 				{
-					Object.keys(data).map((keyname, keyindex)=> {
 
+					Object.keys(data).map((keyname, keyindex)=> {
+						//console.log("state:::: ", state)
 						let code = data[keyname]["code"];
 						let title = data[keyname]["title"];
 						let imgsrc = images("./"+code+".png");
@@ -34,22 +40,33 @@ let ProjectGrid = ({ dispatch }) => {
 							backgroundImage: "url(" + imgsrc + ")"
 						}
 						
-						return <Project 
+						return (
+							<Project 
 									key={keyindex}
 									title={title}
 									code={code}
 									style={styler}
 									onClick={handleClick}
 								/>
+						)
 
 					})
 				}	
-				
 		</div>	
 	) 	
 }
 
 
-ProjectGrid = connect()(ProjectGrid);
+const mapStateToProps = (state) => {
+	return { 
+		target: state.project,
+		modal: state.modal 
+	}
+}
 
-export default ProjectGrid;
+
+const ProjectContainer = connect(
+	mapStateToProps
+)(ProjectGrid);
+
+export default ProjectContainer;

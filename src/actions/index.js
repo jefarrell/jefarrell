@@ -1,6 +1,6 @@
-export const showItem = text => {
+export const showItem = (itemCode, status) => {
 	return {
-		type: 'PORTFOLIO_ITEM',
-		text
+		type: 'SHOW_MODAL',
+		itemCode, status
 	}
 }
