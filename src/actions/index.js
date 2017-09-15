@@ -1,7 +1,7 @@
-export const showItem = (itemCode, status) => {
+export const showItem = (itemCode,title, head, body, foot, photos) => {
 	return {
 		type: 'SHOW_MODAL',
-		itemCode, status
+		itemCode, title, head, body, foot, photos
 	}
 }
 

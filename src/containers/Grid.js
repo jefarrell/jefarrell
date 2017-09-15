@@ -5,45 +5,50 @@ import projectData from '../assets/projectData';
 import Project from '../components/Project';
 import ProjectModal from './ProjectModal';
 
-
 import Grid from "react-bootstrap/lib/Grid";
 
 
 const ProjectGrid = ({ dispatch, target, modal }) => {
-	const data = projectData["projectData"];
-
 	// Require context image file
 	// Set as style, pass as props to child presentational component
 	const images = require.context('../../public/assets/thumbnails', true);
-	
-	const handleClick = (e, arg) => {
-		dispatch(showItem(e.target.id, arg));
+	const data = projectData["projectData"];
+
+	const handleClick = (e) => {
+
+		let target = e.target.id;
+	 	let title = data[target]["title"];
+		let paragraphs = data[target]["paragraphs"];
+		let head = paragraphs["head"];
+		let body = paragraphs["main"];
+		let footer = paragraphs["foot"];
+		//let photos = data[target]["photos"];
+		dispatch(showItem(target, title, head, body, footer));
 	}
 	
 
 	return (
 		<div className="container-fluid" id="gridContainer">
-		<ProjectModal show={modal} title={target}/>
+		<ProjectModal show={modal} />
 				{
 
-					Object.keys(data).map((keyname, keyindex)=> {
+					Object.keys(data).map((keyname, keyindex) => {
 						let code = data[keyname]["code"];
 						let title = data[keyname]["title"];
-						let imgsrc = images("./"+code+".png");
+						let imgsrc = images("./" + code + ".png");
 
 						let styler = {
 							backgroundImage: "url(" + imgsrc + ")"
 						}
 						
-						
 						return (
 							<Project 
-									key={keyindex}
-									title={title}
-									code={code}
-									style={styler}
-									onClick={(e)=>handleClick(e,true)}
-								/>
+								key={keyindex}
+								title={title}
+								code={code}
+								style={styler}
+								onClick={handleClick}
+							/>
 						)
 
 					})
