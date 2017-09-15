@@ -68,7 +68,7 @@
 
 	__webpack_require__(228);
 	var store = (0, _redux.createStore)(_reducers2.default);
-	console.log("start: ", store.getState());
+
 	store.subscribe(function () {
 		console.log("store state: ", store.getState());
 	});
@@ -24625,7 +24625,6 @@
 			case 'SHOW_MODAL':
 				return {
 					project: action.itemCode,
-					status: action.status,
 					modal: true
 				};
 			case 'HIDE_MODAL':
@@ -24736,7 +24735,7 @@
 
 	var _Project2 = _interopRequireDefault(_Project);
 
-	var _ProjectModal = __webpack_require__(331);
+	var _ProjectModal = __webpack_require__(353);
 
 	var _ProjectModal2 = _interopRequireDefault(_ProjectModal);
 
@@ -24752,25 +24751,20 @@
 		    modal = _ref.modal;
 
 		var data = _projectData2.default["projectData"];
-		var shower = false;
 
 		// Require context image file
 		// Set as style, pass as props to child presentational component
 		var images = __webpack_require__(343);
 
-		var handleClick = function handleClick(e) {
-			console.log("CLICKED ", e.target.id);
-			shower = true;
-			dispatch((0, _actions.showItem)(e.target.id, true));
+		var handleClick = function handleClick(e, arg) {
+			dispatch((0, _actions.showItem)(e.target.id, arg));
 		};
 
-		console.log("hey! ", modal);
 		return _react2.default.createElement(
 			'div',
 			{ className: 'container-fluid', id: 'gridContainer' },
-			_react2.default.createElement(_ProjectModal2.default, { show: modal, title: "hello" }),
+			_react2.default.createElement(_ProjectModal2.default, { show: modal, title: target }),
 			Object.keys(data).map(function (keyname, keyindex) {
-				//console.log("state:::: ", state)
 				var code = data[keyname]["code"];
 				var title = data[keyname]["title"];
 				var imgsrc = images("./" + code + ".png");
@@ -24784,7 +24778,9 @@
 					title: title,
 					code: code,
 					style: styler,
-					onClick: handleClick
+					onClick: function onClick(e) {
+						return handleClick(e, true);
+					}
 				});
 			})
 		);
@@ -25161,6 +25157,12 @@
 		return {
 			type: 'SHOW_MODAL',
 			itemCode: itemCode, status: status
+		};
+	};
+
+	var hideItem = exports.hideItem = function hideItem() {
+		return {
+			type: 'HIDE_MODAL'
 		};
 	};
 
@@ -27917,49 +27919,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 331 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactModal = __webpack_require__(332);
-
-	var _reactModal2 = _interopRequireDefault(_reactModal);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ProjectModal = function ProjectModal(_ref) {
-		var show = _ref.show,
-		    title = _ref.title;
-
-
-		return _react2.default.createElement(
-			_reactModal2.default,
-			{
-				isOpen: show,
-				closeTimeoutMS: 15,
-				contentLabel: 'MOdal'
-			},
-			_react2.default.createElement(
-				'h1',
-				null,
-				title,
-				' '
-			)
-		);
-	};
-	// import ReactDOM from 'react-dom';
-	exports.default = ProjectModal;
-
-/***/ }),
+/* 331 */,
 /* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29144,6 +29104,67 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "/assets/thumbnails/taxidermy.png";
+
+/***/ }),
+/* 353 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(184);
+
+	var _actions = __webpack_require__(232);
+
+	var _reactModal = __webpack_require__(332);
+
+	var _reactModal2 = _interopRequireDefault(_reactModal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ProjectModal = function ProjectModal(_ref) {
+		var dispatch = _ref.dispatch,
+		    show = _ref.show,
+		    title = _ref.title;
+
+
+		var handleClick = function handleClick() {
+			console.log("clicked");
+			dispatch((0, _actions.hideItem)());
+		};
+
+		return _react2.default.createElement(
+			_reactModal2.default,
+			{
+				isOpen: show,
+				shouldCloseOnOverlayClick: true,
+				contentLabel: 'Modal',
+				onClick: handleClick
+			},
+			_react2.default.createElement(
+				'button',
+				{ onClick: handleClick },
+				'X'
+			),
+			_react2.default.createElement(
+				'h1',
+				null,
+				title,
+				' '
+			)
+		);
+	};
+
+	ProjectModal = (0, _reactRedux.connect)()(ProjectModal);
+
+	exports.default = ProjectModal;
 
 /***/ })
 /******/ ]);

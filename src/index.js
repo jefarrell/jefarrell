@@ -7,7 +7,8 @@ import App from './components/App';
 
 require('./styles/main.scss');
 let store = createStore(selection);
-console.log("start: ", store.getState());
+
+
 store.subscribe(()=> {
 	console.log("store state: ", store.getState());	
 })

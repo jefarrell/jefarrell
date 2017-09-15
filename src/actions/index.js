@@ -4,3 +4,9 @@ export const showItem = (itemCode, status) => {
 		itemCode, status
 	}
 }
+
+export const hideItem = () => {
+	return {
+		type: 'HIDE_MODAL'
+	}
+}
