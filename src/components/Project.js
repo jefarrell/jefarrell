@@ -1,6 +1,5 @@
 import React from 'react';
-import Grid from "react-bootstrap/lib/Grid";
-import Col from "react-bootstrap/lib/Col";
+import Col from 'react-bootstrap/lib/Col';
 
 
 

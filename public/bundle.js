@@ -66,7 +66,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(352);
+	__webpack_require__(356);
 	var store = (0, _redux.createStore)(_reducers2.default);
 
 	store.subscribe(function () {
@@ -24740,15 +24740,14 @@
 
 	var _Project2 = _interopRequireDefault(_Project);
 
-	var _ProjectModal = __webpack_require__(327);
+	var _ProjectModal = __webpack_require__(326);
 
 	var _ProjectModal2 = _interopRequireDefault(_ProjectModal);
 
-	var _Grid = __webpack_require__(231);
-
-	var _Grid2 = _interopRequireDefault(_Grid);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//import Grid from "react-bootstrap/lib/Grid";
+
 
 	var ProjectGrid = function ProjectGrid(_ref) {
 		var dispatch = _ref.dispatch,
@@ -24757,18 +24756,27 @@
 
 		// Require context image file
 		// Set as style, pass as props to child presentational component
-		var images = __webpack_require__(341);
-		var data = _projectData2.default["projectData"];
+		var images = __webpack_require__(345);
+		var dataContainer = _projectData2.default["projectData"];
 
 		var handleClick = function handleClick(e) {
 
 			var target = e.target.id;
-			var title = data[target]["title"];
-			var paragraphs = data[target]["paragraphs"];
-			var head = paragraphs["head"];
-			var body = paragraphs["main"];
-			var footer = paragraphs["foot"];
-			//let photos = data[target]["photos"];
+			var title = void 0,
+			    paragraphs = void 0,
+			    head = void 0,
+			    body = void 0,
+			    footer = void 0;
+			var data = dataContainer[target];
+
+			var _ref2 = [data["title"], data["paragraphs"], data["paragraphs"]["head"], data["paragraphs"]["main"], data["paragraphs"]["foot"]];
+			title = _ref2[0];
+			paragraphs = _ref2[1];
+			head = _ref2[2];
+			body = _ref2[3];
+			footer = _ref2[4];
+
+
 			dispatch((0, _actions.showItem)(target, title, head, body, footer));
 		};
 
@@ -24776,9 +24784,9 @@
 			'div',
 			{ className: 'container-fluid', id: 'gridContainer' },
 			_react2.default.createElement(_ProjectModal2.default, { show: modal }),
-			Object.keys(data).map(function (keyname, keyindex) {
-				var code = data[keyname]["code"];
-				var title = data[keyname]["title"];
+			Object.keys(dataContainer).map(function (keyname, keyindex) {
+				var code = dataContainer[keyname]["code"];
+				var title = dataContainer[keyname]["title"];
 				var imgsrc = images("./" + code + ".png");
 
 				var styler = {
@@ -24960,7 +24968,7 @@
 /* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -24970,11 +24978,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Grid = __webpack_require__(231);
-
-	var _Grid2 = _interopRequireDefault(_Grid);
-
-	var _Col = __webpack_require__(326);
+	var _Col = __webpack_require__(231);
 
 	var _Col2 = _interopRequireDefault(_Col);
 
@@ -24987,15 +24991,15 @@
 		    onClick = _ref.onClick;
 		return _react2.default.createElement(
 			_Col2.default,
-			{ lg: 4, md: 6, sm: 10, xs: 12, className: "projectParent", onClick: onClick },
-			_react2.default.createElement("div", { className: "dummy" }),
+			{ lg: 4, md: 6, sm: 10, xs: 12, className: 'projectParent', onClick: onClick },
+			_react2.default.createElement('div', { className: 'dummy' }),
 			_react2.default.createElement(
-				"div",
-				{ className: "project", style: style },
-				_react2.default.createElement("div", { className: "layer", id: code }),
+				'div',
+				{ className: 'project', style: style },
+				_react2.default.createElement('div', { className: 'layer', id: code }),
 				_react2.default.createElement(
-					"span",
-					{ className: "projectTitle" },
+					'span',
+					{ className: 'projectTitle' },
 					title
 				)
 			)
@@ -25050,61 +25054,237 @@
 
 	var _bootstrapUtils = __webpack_require__(320);
 
+	var _StyleConfig = __webpack_require__(325);
+
 	function _interopRequireDefault(obj) {
 	  return obj && obj.__esModule ? obj : { 'default': obj };
 	}
 
 	var propTypes = {
+	  componentClass: _elementType2['default'],
+
 	  /**
-	   * Turn any fixed-width grid layout into a full-width layout by this property.
+	   * The number of columns you wish to span
 	   *
-	   * Adds `container-fluid` class.
+	   * for Extra small devices Phones (<768px)
+	   *
+	   * class-prefix `col-xs-`
 	   */
-	  fluid: _propTypes2['default'].bool,
+	  xs: _propTypes2['default'].number,
 	  /**
-	   * You can use a custom element for this component
+	   * The number of columns you wish to span
+	   *
+	   * for Small devices Tablets (≥768px)
+	   *
+	   * class-prefix `col-sm-`
 	   */
-	  componentClass: _elementType2['default']
+	  sm: _propTypes2['default'].number,
+	  /**
+	   * The number of columns you wish to span
+	   *
+	   * for Medium devices Desktops (≥992px)
+	   *
+	   * class-prefix `col-md-`
+	   */
+	  md: _propTypes2['default'].number,
+	  /**
+	   * The number of columns you wish to span
+	   *
+	   * for Large devices Desktops (≥1200px)
+	   *
+	   * class-prefix `col-lg-`
+	   */
+	  lg: _propTypes2['default'].number,
+	  /**
+	   * Hide column
+	   *
+	   * on Extra small devices Phones
+	   *
+	   * adds class `hidden-xs`
+	   */
+	  xsHidden: _propTypes2['default'].bool,
+	  /**
+	   * Hide column
+	   *
+	   * on Small devices Tablets
+	   *
+	   * adds class `hidden-sm`
+	   */
+	  smHidden: _propTypes2['default'].bool,
+	  /**
+	   * Hide column
+	   *
+	   * on Medium devices Desktops
+	   *
+	   * adds class `hidden-md`
+	   */
+	  mdHidden: _propTypes2['default'].bool,
+	  /**
+	   * Hide column
+	   *
+	   * on Large devices Desktops
+	   *
+	   * adds class `hidden-lg`
+	   */
+	  lgHidden: _propTypes2['default'].bool,
+	  /**
+	   * Move columns to the right
+	   *
+	   * for Extra small devices Phones
+	   *
+	   * class-prefix `col-xs-offset-`
+	   */
+	  xsOffset: _propTypes2['default'].number,
+	  /**
+	   * Move columns to the right
+	   *
+	   * for Small devices Tablets
+	   *
+	   * class-prefix `col-sm-offset-`
+	   */
+	  smOffset: _propTypes2['default'].number,
+	  /**
+	   * Move columns to the right
+	   *
+	   * for Medium devices Desktops
+	   *
+	   * class-prefix `col-md-offset-`
+	   */
+	  mdOffset: _propTypes2['default'].number,
+	  /**
+	   * Move columns to the right
+	   *
+	   * for Large devices Desktops
+	   *
+	   * class-prefix `col-lg-offset-`
+	   */
+	  lgOffset: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the right
+	   *
+	   * for Extra small devices Phones
+	   *
+	   * class-prefix `col-xs-push-`
+	   */
+	  xsPush: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the right
+	   *
+	   * for Small devices Tablets
+	   *
+	   * class-prefix `col-sm-push-`
+	   */
+	  smPush: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the right
+	   *
+	   * for Medium devices Desktops
+	   *
+	   * class-prefix `col-md-push-`
+	   */
+	  mdPush: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the right
+	   *
+	   * for Large devices Desktops
+	   *
+	   * class-prefix `col-lg-push-`
+	   */
+	  lgPush: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the left
+	   *
+	   * for Extra small devices Phones
+	   *
+	   * class-prefix `col-xs-pull-`
+	   */
+	  xsPull: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the left
+	   *
+	   * for Small devices Tablets
+	   *
+	   * class-prefix `col-sm-pull-`
+	   */
+	  smPull: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the left
+	   *
+	   * for Medium devices Desktops
+	   *
+	   * class-prefix `col-md-pull-`
+	   */
+	  mdPull: _propTypes2['default'].number,
+	  /**
+	   * Change the order of grid columns to the left
+	   *
+	   * for Large devices Desktops
+	   *
+	   * class-prefix `col-lg-pull-`
+	   */
+	  lgPull: _propTypes2['default'].number
 	};
 
 	var defaultProps = {
-	  componentClass: 'div',
-	  fluid: false
+	  componentClass: 'div'
 	};
 
-	var Grid = function (_React$Component) {
-	  (0, _inherits3['default'])(Grid, _React$Component);
+	var Col = function (_React$Component) {
+	  (0, _inherits3['default'])(Col, _React$Component);
 
-	  function Grid() {
-	    (0, _classCallCheck3['default'])(this, Grid);
+	  function Col() {
+	    (0, _classCallCheck3['default'])(this, Col);
 	    return (0, _possibleConstructorReturn3['default'])(this, _React$Component.apply(this, arguments));
 	  }
 
-	  Grid.prototype.render = function render() {
+	  Col.prototype.render = function render() {
 	    var _props = this.props,
-	        fluid = _props.fluid,
 	        Component = _props.componentClass,
 	        className = _props.className,
-	        props = (0, _objectWithoutProperties3['default'])(_props, ['fluid', 'componentClass', 'className']);
+	        props = (0, _objectWithoutProperties3['default'])(_props, ['componentClass', 'className']);
 
 	    var _splitBsProps = (0, _bootstrapUtils.splitBsProps)(props),
 	        bsProps = _splitBsProps[0],
 	        elementProps = _splitBsProps[1];
 
-	    var classes = (0, _bootstrapUtils.prefix)(bsProps, fluid && 'fluid');
+	    var classes = [];
+
+	    _StyleConfig.DEVICE_SIZES.forEach(function (size) {
+	      function popProp(propSuffix, modifier) {
+	        var propName = '' + size + propSuffix;
+	        var propValue = elementProps[propName];
+
+	        if (propValue != null) {
+	          classes.push((0, _bootstrapUtils.prefix)(bsProps, '' + size + modifier + '-' + propValue));
+	        }
+
+	        delete elementProps[propName];
+	      }
+
+	      popProp('', '');
+	      popProp('Offset', '-offset');
+	      popProp('Push', '-push');
+	      popProp('Pull', '-pull');
+
+	      var hiddenPropName = size + 'Hidden';
+	      if (elementProps[hiddenPropName]) {
+	        classes.push('hidden-' + size);
+	      }
+	      delete elementProps[hiddenPropName];
+	    });
 
 	    return _react2['default'].createElement(Component, (0, _extends3['default'])({}, elementProps, {
 	      className: (0, _classnames2['default'])(className, classes)
 	    }));
 	  };
 
-	  return Grid;
+	  return Col;
 	}(_react2['default'].Component);
 
-	Grid.propTypes = propTypes;
-	Grid.defaultProps = defaultProps;
+	Col.propTypes = propTypes;
+	Col.defaultProps = defaultProps;
 
-	exports['default'] = (0, _bootstrapUtils.bsClass)('container', Grid);
+	exports['default'] = (0, _bootstrapUtils.bsClass)('col', Col);
 	module.exports = exports['default'];
 
 /***/ }),
@@ -27344,285 +27524,6 @@
 
 	'use strict';
 
-	exports.__esModule = true;
-
-	var _extends2 = __webpack_require__(232);
-
-	var _extends3 = _interopRequireDefault(_extends2);
-
-	var _objectWithoutProperties2 = __webpack_require__(270);
-
-	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-	var _classCallCheck2 = __webpack_require__(271);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _possibleConstructorReturn2 = __webpack_require__(272);
-
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-	var _inherits2 = __webpack_require__(308);
-
-	var _inherits3 = _interopRequireDefault(_inherits2);
-
-	var _classnames = __webpack_require__(316);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _propTypes = __webpack_require__(186);
-
-	var _propTypes2 = _interopRequireDefault(_propTypes);
-
-	var _elementType = __webpack_require__(318);
-
-	var _elementType2 = _interopRequireDefault(_elementType);
-
-	var _bootstrapUtils = __webpack_require__(320);
-
-	var _StyleConfig = __webpack_require__(325);
-
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { 'default': obj };
-	}
-
-	var propTypes = {
-	  componentClass: _elementType2['default'],
-
-	  /**
-	   * The number of columns you wish to span
-	   *
-	   * for Extra small devices Phones (<768px)
-	   *
-	   * class-prefix `col-xs-`
-	   */
-	  xs: _propTypes2['default'].number,
-	  /**
-	   * The number of columns you wish to span
-	   *
-	   * for Small devices Tablets (≥768px)
-	   *
-	   * class-prefix `col-sm-`
-	   */
-	  sm: _propTypes2['default'].number,
-	  /**
-	   * The number of columns you wish to span
-	   *
-	   * for Medium devices Desktops (≥992px)
-	   *
-	   * class-prefix `col-md-`
-	   */
-	  md: _propTypes2['default'].number,
-	  /**
-	   * The number of columns you wish to span
-	   *
-	   * for Large devices Desktops (≥1200px)
-	   *
-	   * class-prefix `col-lg-`
-	   */
-	  lg: _propTypes2['default'].number,
-	  /**
-	   * Hide column
-	   *
-	   * on Extra small devices Phones
-	   *
-	   * adds class `hidden-xs`
-	   */
-	  xsHidden: _propTypes2['default'].bool,
-	  /**
-	   * Hide column
-	   *
-	   * on Small devices Tablets
-	   *
-	   * adds class `hidden-sm`
-	   */
-	  smHidden: _propTypes2['default'].bool,
-	  /**
-	   * Hide column
-	   *
-	   * on Medium devices Desktops
-	   *
-	   * adds class `hidden-md`
-	   */
-	  mdHidden: _propTypes2['default'].bool,
-	  /**
-	   * Hide column
-	   *
-	   * on Large devices Desktops
-	   *
-	   * adds class `hidden-lg`
-	   */
-	  lgHidden: _propTypes2['default'].bool,
-	  /**
-	   * Move columns to the right
-	   *
-	   * for Extra small devices Phones
-	   *
-	   * class-prefix `col-xs-offset-`
-	   */
-	  xsOffset: _propTypes2['default'].number,
-	  /**
-	   * Move columns to the right
-	   *
-	   * for Small devices Tablets
-	   *
-	   * class-prefix `col-sm-offset-`
-	   */
-	  smOffset: _propTypes2['default'].number,
-	  /**
-	   * Move columns to the right
-	   *
-	   * for Medium devices Desktops
-	   *
-	   * class-prefix `col-md-offset-`
-	   */
-	  mdOffset: _propTypes2['default'].number,
-	  /**
-	   * Move columns to the right
-	   *
-	   * for Large devices Desktops
-	   *
-	   * class-prefix `col-lg-offset-`
-	   */
-	  lgOffset: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the right
-	   *
-	   * for Extra small devices Phones
-	   *
-	   * class-prefix `col-xs-push-`
-	   */
-	  xsPush: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the right
-	   *
-	   * for Small devices Tablets
-	   *
-	   * class-prefix `col-sm-push-`
-	   */
-	  smPush: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the right
-	   *
-	   * for Medium devices Desktops
-	   *
-	   * class-prefix `col-md-push-`
-	   */
-	  mdPush: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the right
-	   *
-	   * for Large devices Desktops
-	   *
-	   * class-prefix `col-lg-push-`
-	   */
-	  lgPush: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the left
-	   *
-	   * for Extra small devices Phones
-	   *
-	   * class-prefix `col-xs-pull-`
-	   */
-	  xsPull: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the left
-	   *
-	   * for Small devices Tablets
-	   *
-	   * class-prefix `col-sm-pull-`
-	   */
-	  smPull: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the left
-	   *
-	   * for Medium devices Desktops
-	   *
-	   * class-prefix `col-md-pull-`
-	   */
-	  mdPull: _propTypes2['default'].number,
-	  /**
-	   * Change the order of grid columns to the left
-	   *
-	   * for Large devices Desktops
-	   *
-	   * class-prefix `col-lg-pull-`
-	   */
-	  lgPull: _propTypes2['default'].number
-	};
-
-	var defaultProps = {
-	  componentClass: 'div'
-	};
-
-	var Col = function (_React$Component) {
-	  (0, _inherits3['default'])(Col, _React$Component);
-
-	  function Col() {
-	    (0, _classCallCheck3['default'])(this, Col);
-	    return (0, _possibleConstructorReturn3['default'])(this, _React$Component.apply(this, arguments));
-	  }
-
-	  Col.prototype.render = function render() {
-	    var _props = this.props,
-	        Component = _props.componentClass,
-	        className = _props.className,
-	        props = (0, _objectWithoutProperties3['default'])(_props, ['componentClass', 'className']);
-
-	    var _splitBsProps = (0, _bootstrapUtils.splitBsProps)(props),
-	        bsProps = _splitBsProps[0],
-	        elementProps = _splitBsProps[1];
-
-	    var classes = [];
-
-	    _StyleConfig.DEVICE_SIZES.forEach(function (size) {
-	      function popProp(propSuffix, modifier) {
-	        var propName = '' + size + propSuffix;
-	        var propValue = elementProps[propName];
-
-	        if (propValue != null) {
-	          classes.push((0, _bootstrapUtils.prefix)(bsProps, '' + size + modifier + '-' + propValue));
-	        }
-
-	        delete elementProps[propName];
-	      }
-
-	      popProp('', '');
-	      popProp('Offset', '-offset');
-	      popProp('Push', '-push');
-	      popProp('Pull', '-pull');
-
-	      var hiddenPropName = size + 'Hidden';
-	      if (elementProps[hiddenPropName]) {
-	        classes.push('hidden-' + size);
-	      }
-	      delete elementProps[hiddenPropName];
-	    });
-
-	    return _react2['default'].createElement(Component, (0, _extends3['default'])({}, elementProps, {
-	      className: (0, _classnames2['default'])(className, classes)
-	    }));
-	  };
-
-	  return Col;
-	}(_react2['default'].Component);
-
-	Col.propTypes = propTypes;
-	Col.defaultProps = defaultProps;
-
-	exports['default'] = (0, _bootstrapUtils.bsClass)('col', Col);
-	module.exports = exports['default'];
-
-/***/ }),
-/* 327 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
@@ -27635,9 +27536,17 @@
 
 	var _actions = __webpack_require__(228);
 
-	var _reactModal = __webpack_require__(328);
+	var _reactModal = __webpack_require__(327);
 
 	var _reactModal2 = _interopRequireDefault(_reactModal);
+
+	var _Col = __webpack_require__(231);
+
+	var _Col2 = _interopRequireDefault(_Col);
+
+	var _Button = __webpack_require__(338);
+
+	var _Button2 = _interopRequireDefault(_Button);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27647,10 +27556,9 @@
 		    title = _ref.title,
 		    head = _ref.head,
 		    body = _ref.body,
-		    foot = _ref.foot,
-		    photos = _ref.photos;
+		    foot = _ref.foot;
 
-		var images = __webpack_require__(339);
+		var images = __webpack_require__(343);
 
 		var handleClick = function handleClick() {
 			dispatch((0, _actions.hideItem)());
@@ -27662,59 +27570,60 @@
 				isOpen: show,
 				shouldCloseOnOverlayClick: true,
 				contentLabel: 'Modal',
-				onClick: handleClick
+				onClick: handleClick,
+				style: {
+
+					content: {
+						background: '#DFDFDF',
+						border: '6px solid #1700FC',
+						borderRadius: 0
+					}
+				}
 			},
 			_react2.default.createElement(
 				'div',
-				null,
+				{ className: 'container-fluid modalContainer' },
 				_react2.default.createElement(
 					'div',
-					null,
+					{ className: 'modalNav' },
 					_react2.default.createElement(
-						'button',
-						{ onClick: handleClick },
+						_Button2.default,
+						{ className: 'modalClose', onClick: handleClick },
 						'X'
-					),
-					_react2.default.createElement(
-						'h1',
-						null,
-						' ',
-						title,
-						' '
 					)
 				),
 				_react2.default.createElement(
-					'div',
-					null,
+					_Col2.default,
+					{ lg: 8, className: 'imageContainer' },
 					' Images here '
 				),
 				_react2.default.createElement(
-					'div',
-					null,
+					_Col2.default,
+					{ lg: 4, className: 'infoContainer' },
 					_react2.default.createElement(
-						'h2',
-						null,
+						'h1',
+						{ className: 'modalTitle' },
 						' ',
 						title,
 						' '
 					),
 					_react2.default.createElement(
-						'p',
-						null,
+						'span',
+						{ className: 'infoHead' },
 						'  ',
 						head,
 						' '
 					),
 					_react2.default.createElement(
 						'p',
-						null,
+						{ className: 'infoBody' },
 						'  ',
 						body,
 						' '
 					),
 					_react2.default.createElement(
-						'p',
-						null,
+						'span',
+						{ className: 'infoFoot' },
 						'  ',
 						foot,
 						' '
@@ -27739,7 +27648,7 @@
 	exports.default = ProjectModal;
 
 /***/ }),
-/* 328 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27748,7 +27657,7 @@
 	  value: true
 	});
 
-	var _Modal = __webpack_require__(329);
+	var _Modal = __webpack_require__(328);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -27760,7 +27669,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 329 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -27804,15 +27713,15 @@
 
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 
-	var _ModalPortal = __webpack_require__(330);
+	var _ModalPortal = __webpack_require__(329);
 
 	var _ModalPortal2 = _interopRequireDefault(_ModalPortal);
 
-	var _ariaAppHider = __webpack_require__(334);
+	var _ariaAppHider = __webpack_require__(333);
 
 	var ariaAppHider = _interopRequireWildcard(_ariaAppHider);
 
-	var _safeHTMLElement = __webpack_require__(337);
+	var _safeHTMLElement = __webpack_require__(336);
 
 	var _safeHTMLElement2 = _interopRequireDefault(_safeHTMLElement);
 
@@ -28028,7 +27937,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 330 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -28071,27 +27980,27 @@
 
 	var _propTypes = __webpack_require__(186);
 
-	var _focusManager = __webpack_require__(331);
+	var _focusManager = __webpack_require__(330);
 
 	var focusManager = _interopRequireWildcard(_focusManager);
 
-	var _scopeTab = __webpack_require__(333);
+	var _scopeTab = __webpack_require__(332);
 
 	var _scopeTab2 = _interopRequireDefault(_scopeTab);
 
-	var _ariaAppHider = __webpack_require__(334);
+	var _ariaAppHider = __webpack_require__(333);
 
 	var ariaAppHider = _interopRequireWildcard(_ariaAppHider);
 
-	var _refCount = __webpack_require__(335);
+	var _refCount = __webpack_require__(334);
 
 	var refCount = _interopRequireWildcard(_refCount);
 
-	var _bodyClassList = __webpack_require__(336);
+	var _bodyClassList = __webpack_require__(335);
 
 	var bodyClassList = _interopRequireWildcard(_bodyClassList);
 
-	var _safeHTMLElement = __webpack_require__(337);
+	var _safeHTMLElement = __webpack_require__(336);
 
 	var _safeHTMLElement2 = _interopRequireDefault(_safeHTMLElement);
 
@@ -28432,7 +28341,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 331 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28447,7 +28356,7 @@
 	exports.setupScopedFocus = setupScopedFocus;
 	exports.teardownScopedFocus = teardownScopedFocus;
 
-	var _tabbable = __webpack_require__(332);
+	var _tabbable = __webpack_require__(331);
 
 	var _tabbable2 = _interopRequireDefault(_tabbable);
 
@@ -28526,7 +28435,7 @@
 	}
 
 /***/ }),
-/* 332 */
+/* 331 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -28582,7 +28491,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 333 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28592,7 +28501,7 @@
 	});
 	exports.default = scopeTab;
 
-	var _tabbable = __webpack_require__(332);
+	var _tabbable = __webpack_require__(331);
 
 	var _tabbable2 = _interopRequireDefault(_tabbable);
 
@@ -28618,7 +28527,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 334 */
+/* 333 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -28687,7 +28596,7 @@
 	}
 
 /***/ }),
-/* 335 */
+/* 334 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -28728,7 +28637,7 @@
 	}
 
 /***/ }),
-/* 336 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28739,7 +28648,7 @@
 	exports.add = add;
 	exports.remove = remove;
 
-	var _refCount = __webpack_require__(335);
+	var _refCount = __webpack_require__(334);
 
 	var refCount = _interopRequireWildcard(_refCount);
 
@@ -28774,7 +28683,7 @@
 	}
 
 /***/ }),
-/* 337 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28783,7 +28692,7 @@
 	  value: true
 	});
 
-	var _exenv = __webpack_require__(338);
+	var _exenv = __webpack_require__(337);
 
 	var _exenv2 = _interopRequireDefault(_exenv);
 
@@ -28799,7 +28708,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 338 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -28842,47 +28751,320 @@
 	})();
 
 /***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _values = __webpack_require__(339);
+
+	var _values2 = _interopRequireDefault(_values);
+
+	var _objectWithoutProperties2 = __webpack_require__(270);
+
+	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+	var _extends3 = __webpack_require__(232);
+
+	var _extends4 = _interopRequireDefault(_extends3);
+
+	var _classCallCheck2 = __webpack_require__(271);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(272);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(308);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _classnames = __webpack_require__(316);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(186);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _elementType = __webpack_require__(318);
+
+	var _elementType2 = _interopRequireDefault(_elementType);
+
+	var _bootstrapUtils = __webpack_require__(320);
+
+	var _StyleConfig = __webpack_require__(325);
+
+	var _SafeAnchor = __webpack_require__(342);
+
+	var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
+
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { 'default': obj };
+	}
+
+	var propTypes = {
+	  active: _propTypes2['default'].bool,
+	  disabled: _propTypes2['default'].bool,
+	  block: _propTypes2['default'].bool,
+	  onClick: _propTypes2['default'].func,
+	  componentClass: _elementType2['default'],
+	  href: _propTypes2['default'].string,
+	  /**
+	   * Defines HTML button type attribute
+	   * @defaultValue 'button'
+	   */
+	  type: _propTypes2['default'].oneOf(['button', 'reset', 'submit'])
+	};
+
+	var defaultProps = {
+	  active: false,
+	  block: false,
+	  disabled: false
+	};
+
+	var Button = function (_React$Component) {
+	  (0, _inherits3['default'])(Button, _React$Component);
+
+	  function Button() {
+	    (0, _classCallCheck3['default'])(this, Button);
+	    return (0, _possibleConstructorReturn3['default'])(this, _React$Component.apply(this, arguments));
+	  }
+
+	  Button.prototype.renderAnchor = function renderAnchor(elementProps, className) {
+	    return _react2['default'].createElement(_SafeAnchor2['default'], (0, _extends4['default'])({}, elementProps, {
+	      className: (0, _classnames2['default'])(className, elementProps.disabled && 'disabled')
+	    }));
+	  };
+
+	  Button.prototype.renderButton = function renderButton(_ref, className) {
+	    var componentClass = _ref.componentClass,
+	        elementProps = (0, _objectWithoutProperties3['default'])(_ref, ['componentClass']);
+
+	    var Component = componentClass || 'button';
+
+	    return _react2['default'].createElement(Component, (0, _extends4['default'])({}, elementProps, {
+	      type: elementProps.type || 'button',
+	      className: className
+	    }));
+	  };
+
+	  Button.prototype.render = function render() {
+	    var _extends2;
+
+	    var _props = this.props,
+	        active = _props.active,
+	        block = _props.block,
+	        className = _props.className,
+	        props = (0, _objectWithoutProperties3['default'])(_props, ['active', 'block', 'className']);
+
+	    var _splitBsProps = (0, _bootstrapUtils.splitBsProps)(props),
+	        bsProps = _splitBsProps[0],
+	        elementProps = _splitBsProps[1];
+
+	    var classes = (0, _extends4['default'])({}, (0, _bootstrapUtils.getClassSet)(bsProps), (_extends2 = {
+	      active: active
+	    }, _extends2[(0, _bootstrapUtils.prefix)(bsProps, 'block')] = block, _extends2));
+	    var fullClassName = (0, _classnames2['default'])(className, classes);
+
+	    if (elementProps.href) {
+	      return this.renderAnchor(elementProps, fullClassName);
+	    }
+
+	    return this.renderButton(elementProps, fullClassName);
+	  };
+
+	  return Button;
+	}(_react2['default'].Component);
+
+	Button.propTypes = propTypes;
+	Button.defaultProps = defaultProps;
+
+	exports['default'] = (0, _bootstrapUtils.bsClass)('btn', (0, _bootstrapUtils.bsSizes)([_StyleConfig.Size.LARGE, _StyleConfig.Size.SMALL, _StyleConfig.Size.XSMALL], (0, _bootstrapUtils.bsStyles)([].concat((0, _values2['default'])(_StyleConfig.State), [_StyleConfig.Style.DEFAULT, _StyleConfig.Style.PRIMARY, _StyleConfig.Style.LINK]), _StyleConfig.Style.DEFAULT, Button)));
+	module.exports = exports['default'];
+
+/***/ }),
 /* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var map = {
-		"./imeshyou/0.png": 340
-	};
-	function webpackContext(req) {
-		return __webpack_require__(webpackContextResolve(req));
-	};
-	function webpackContextResolve(req) {
-		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
-	};
-	webpackContext.keys = function webpackContextKeys() {
-		return Object.keys(map);
-	};
-	webpackContext.resolve = webpackContextResolve;
-	module.exports = webpackContext;
-	webpackContext.id = 339;
+	"use strict";
 
+	module.exports = { "default": __webpack_require__(340), __esModule: true };
 
 /***/ }),
 /* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/0.png";
+	'use strict';
+
+	__webpack_require__(341);
+	module.exports = __webpack_require__(238).Object.values;
 
 /***/ }),
 /* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	// https://github.com/tc39/proposal-object-values-entries
+	var $export = __webpack_require__(236);
+	var $values = __webpack_require__(324)(false);
+
+	$export($export.S, 'Object', {
+	  values: function values(it) {
+	    return $values(it);
+	  }
+	});
+
+/***/ }),
+/* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	exports.__esModule = true;
+
+	var _extends2 = __webpack_require__(232);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _objectWithoutProperties2 = __webpack_require__(270);
+
+	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+	var _classCallCheck2 = __webpack_require__(271);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(272);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(308);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(186);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _elementType = __webpack_require__(318);
+
+	var _elementType2 = _interopRequireDefault(_elementType);
+
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { 'default': obj };
+	}
+
+	var propTypes = {
+	  href: _propTypes2['default'].string,
+	  onClick: _propTypes2['default'].func,
+	  disabled: _propTypes2['default'].bool,
+	  role: _propTypes2['default'].string,
+	  tabIndex: _propTypes2['default'].oneOfType([_propTypes2['default'].number, _propTypes2['default'].string]),
+	  /**
+	   * this is sort of silly but needed for Button
+	   */
+	  componentClass: _elementType2['default']
+	};
+
+	var defaultProps = {
+	  componentClass: 'a'
+	};
+
+	function isTrivialHref(href) {
+	  return !href || href.trim() === '#';
+	}
+
+	/**
+	 * There are situations due to browser quirks or Bootstrap CSS where
+	 * an anchor tag is needed, when semantically a button tag is the
+	 * better choice. SafeAnchor ensures that when an anchor is used like a
+	 * button its accessible. It also emulates input `disabled` behavior for
+	 * links, which is usually desirable for Buttons, NavItems, MenuItems, etc.
+	 */
+
+	var SafeAnchor = function (_React$Component) {
+	  (0, _inherits3['default'])(SafeAnchor, _React$Component);
+
+	  function SafeAnchor(props, context) {
+	    (0, _classCallCheck3['default'])(this, SafeAnchor);
+
+	    var _this = (0, _possibleConstructorReturn3['default'])(this, _React$Component.call(this, props, context));
+
+	    _this.handleClick = _this.handleClick.bind(_this);
+	    return _this;
+	  }
+
+	  SafeAnchor.prototype.handleClick = function handleClick(event) {
+	    var _props = this.props,
+	        disabled = _props.disabled,
+	        href = _props.href,
+	        onClick = _props.onClick;
+
+	    if (disabled || isTrivialHref(href)) {
+	      event.preventDefault();
+	    }
+
+	    if (disabled) {
+	      event.stopPropagation();
+	      return;
+	    }
+
+	    if (onClick) {
+	      onClick(event);
+	    }
+	  };
+
+	  SafeAnchor.prototype.render = function render() {
+	    var _props2 = this.props,
+	        Component = _props2.componentClass,
+	        disabled = _props2.disabled,
+	        props = (0, _objectWithoutProperties3['default'])(_props2, ['componentClass', 'disabled']);
+
+	    if (isTrivialHref(props.href)) {
+	      props.role = props.role || 'button';
+	      // we want to make sure there is a href attribute on the node
+	      // otherwise, the cursor incorrectly styled (except with role='button')
+	      props.href = props.href || '#';
+	    }
+
+	    if (disabled) {
+	      props.tabIndex = -1;
+	      props.style = (0, _extends3['default'])({ pointerEvents: 'none' }, props.style);
+	    }
+
+	    return _react2['default'].createElement(Component, (0, _extends3['default'])({}, props, {
+	      onClick: this.handleClick
+	    }));
+	  };
+
+	  return SafeAnchor;
+	}(_react2['default'].Component);
+
+	SafeAnchor.propTypes = propTypes;
+	SafeAnchor.defaultProps = defaultProps;
+
+	exports['default'] = SafeAnchor;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 343 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	var map = {
-		"./0.png": 342,
-		"./belieber.png": 343,
-		"./diffuse.png": 344,
-		"./genertech.png": 345,
-		"./githubleague.png": 346,
-		"./imeshyou.png": 347,
-		"./myco.png": 348,
-		"./nationalparks.png": 349,
-		"./salarycalc.png": 350,
-		"./taxidermy.png": 351
+		"./imeshyou/0.png": 344
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -28895,80 +29077,116 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 341;
+	webpackContext.id = 343;
 
-
-/***/ }),
-/* 342 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "/assets/thumbnails/0.png";
-
-/***/ }),
-/* 343 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "/assets/thumbnails/belieber.png";
 
 /***/ }),
 /* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/diffuse.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/0.png";
 
 /***/ }),
 /* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/genertech.png";
+	var map = {
+		"./0.png": 346,
+		"./belieber.png": 347,
+		"./diffuse.png": 348,
+		"./genertech.png": 349,
+		"./githubleague.png": 350,
+		"./imeshyou.png": 351,
+		"./myco.png": 352,
+		"./nationalparks.png": 353,
+		"./salarycalc.png": 354,
+		"./taxidermy.png": 355
+	};
+	function webpackContext(req) {
+		return __webpack_require__(webpackContextResolve(req));
+	};
+	function webpackContextResolve(req) {
+		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+	};
+	webpackContext.keys = function webpackContextKeys() {
+		return Object.keys(map);
+	};
+	webpackContext.resolve = webpackContextResolve;
+	module.exports = webpackContext;
+	webpackContext.id = 345;
+
 
 /***/ }),
 /* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/githubleague.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/0.png";
 
 /***/ }),
 /* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/imeshyou.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/belieber.png";
 
 /***/ }),
 /* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/myco.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/diffuse.png";
 
 /***/ }),
 /* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/nationalparks.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/genertech.png";
 
 /***/ }),
 /* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/salarycalc.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/githubleague.png";
 
 /***/ }),
 /* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/taxidermy.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/imeshyou.png";
 
 /***/ }),
 /* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "/assets/thumbnails/myco.png";
+
+/***/ }),
+/* 353 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/assets/thumbnails/nationalparks.png";
+
+/***/ }),
+/* 354 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/assets/thumbnails/salarycalc.png";
+
+/***/ }),
+/* 355 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/assets/thumbnails/taxidermy.png";
+
+/***/ }),
+/* 356 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(353);
+	var content = __webpack_require__(357);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(355)(content, {});
+	var update = __webpack_require__(359)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -28985,21 +29203,21 @@
 	}
 
 /***/ }),
-/* 353 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(354)();
+	exports = module.exports = __webpack_require__(358)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  color: #000;\n  font-size: 2.5em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n\n@media only screen and (min-width: 800px) and (max-width: 1000px) {\n  .project {\n    display: block; } }\n", ""]);
+	exports.push([module.id, ".imageContainer {\n  fill: white; }\n\n.modalNav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modalTitle {\n  display: inline-block;\n  margin-top: -1em;\n  color: #1700FC; }\n\n.modalClose {\n  border: 3px solid #1700FC;\n  border-radius: 0;\n  color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.infoHead {\n  font-style: italic;\n  font-weight: bold;\n  color: #1700FC; }\n\n.infoBody {\n  margin: 1em 0;\n  color: #1700FC; }\n\n.infoFoot {\n  color: #1700FC; }\n\n.projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  color: #000;\n  font-size: 2.5em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n\n@media only screen and (min-width: 800px) and (max-width: 1000px) {\n  .project {\n    display: block; } }\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 354 */
+/* 358 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -29054,7 +29272,7 @@
 	};
 
 /***/ }),
-/* 355 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*

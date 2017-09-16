@@ -1,0 +1,50 @@
+$gray: #DFDFDF;
+$blue: #1700FC;
+
+
+.modalContainer {
+
+}
+
+.imageContainer {
+	fill: white;
+}
+
+.infoContainer {
+
+}
+
+.modalNav {
+	display: block;
+	padding-bottom: 1.5em;
+}
+
+.modalTitle {
+	display: inline-block;
+	margin-top: -1em;
+	color: $blue
+}
+
+.modalClose {
+    border: 3px solid $blue;
+    border-radius: 0;
+    color: $blue;
+    display: inline-block;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.infoHead {
+	font-style: italic;
+	font-weight: bold;
+	color: $blue;
+}
+
+.infoBody {
+	margin: 1em 0;
+	color: $blue;
+}
+
+.infoFoot {
+	color: $blue;
+}

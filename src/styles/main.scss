@@ -1,4 +1,4 @@
-
+@import 'modal';
 
 #gridContainer {
 	//margin: 0 25em 20em 25em;
@@ -43,14 +43,15 @@
 }
 
 
+
 @media only screen 
 and (min-width: 800px) 
 and (max-width: 1000px) {
 
-.project {
+	.project {
 
-	display:block;
-}
+		display:block;
+	}
 
 
 }

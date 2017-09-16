@@ -5,24 +5,29 @@ import projectData from '../assets/projectData';
 import Project from '../components/Project';
 import ProjectModal from './ProjectModal';
 
-import Grid from "react-bootstrap/lib/Grid";
+//import Grid from "react-bootstrap/lib/Grid";
 
 
 const ProjectGrid = ({ dispatch, target, modal }) => {
 	// Require context image file
 	// Set as style, pass as props to child presentational component
 	const images = require.context('../../public/assets/thumbnails', true);
-	const data = projectData["projectData"];
+	const dataContainer = projectData["projectData"];
 
 	const handleClick = (e) => {
 
 		let target = e.target.id;
-	 	let title = data[target]["title"];
-		let paragraphs = data[target]["paragraphs"];
-		let head = paragraphs["head"];
-		let body = paragraphs["main"];
-		let footer = paragraphs["foot"];
-		//let photos = data[target]["photos"];
+		let title, paragraphs, head, body, footer;
+		let data = dataContainer[target];
+
+		[ title, paragraphs, head, body, footer ] = [ 
+			data["title"], 
+			data["paragraphs"], 
+			data["paragraphs"]["head"], 
+			data["paragraphs"]["main"], 
+			data["paragraphs"]["foot"] 
+		]
+
 		dispatch(showItem(target, title, head, body, footer));
 	}
 	
@@ -32,9 +37,9 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 		<ProjectModal show={modal} />
 				{
 
-					Object.keys(data).map((keyname, keyindex) => {
-						let code = data[keyname]["code"];
-						let title = data[keyname]["title"];
+					Object.keys(dataContainer).map((keyname, keyindex) => {
+						let code = dataContainer[keyname]["code"];
+						let title = dataContainer[keyname]["title"];
 						let imgsrc = images("./" + code + ".png");
 
 						let styler = {
