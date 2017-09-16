@@ -2,6 +2,42 @@ $gray: #DFDFDF;
 $blue: #1700FC;
 
 
+
+
+.ReactModalPortal > div {
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: opacity 400ms ease-in-out;
+  background: rgba(0, 0, 0, 0.15);
+  &--after-open {
+    opacity: 1;
+      transition: opacity 200ms ease-in-out;
+  }
+  &--before-close {
+      opacity: 0;
+  }
+}
+
+
+.ReactModal__Content {
+  transition: all 400ms ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+
+  &--after-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &--before-close {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+
 .modalContainer {
 
 }
@@ -26,18 +62,34 @@ $blue: #1700FC;
 }
 
 .modalClose {
+	border-radius: 0;
     border: 3px solid $blue;
-    border-radius: 0;
-    color: $blue;
+    color: #FFF;
+    background-color: $blue;
     display: inline-block;
     margin-bottom: 1em;
     font-weight: bold;
+}
+
+.modalClose:hover {
+	border: 3px solid $blue;
+	color: $blue;
+	background-color: #FFF;
+}
+
+.btn:focus,.btn:active,.btn:active:focus, {
+	outline: none;
+	box-shadow: none;
+	border: 3px solid $blue;
+	color: $blue;
+	background-color: #FFF;
 }
 
 .infoHead {
 	font-style: italic;
 	font-weight: bold;
 	color: $blue;
+	display: block;
 }
 
 .infoBody {

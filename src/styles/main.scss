@@ -1,7 +1,8 @@
+@import 'header';
 @import 'modal';
-
+$blue: #1700FC;
 #gridContainer {
-	//margin: 0 25em 20em 25em;
+	padding: 0 25em 0 25em;
 }
 
 .projectParent {
@@ -25,7 +26,7 @@
 
 // keep for hover?
 .layer {
-   // background-color: rgba(25, 25, 25, 0.3);
+    //background-color: rgba(25, 25, 25, 0.3);
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +35,8 @@
 }
 
 .projectTitle {
-	color: #000;
+	color: #FFF;
+	background-color: $blue;
 	font-size: 2.5em;
 	display: table;
 	margin: 0 auto;

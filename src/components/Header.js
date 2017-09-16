@@ -2,14 +2,15 @@ import React from 'react'
 
 
 const Header = () => (
-  <p>
-    <span>
-      John Farrell - 
+  <div className="headerContainer">
+  	<hr />
+    <span className="headerName">
+      John Farrell
     </span>
-    <span>
+    <span className="headerAbout">
       About
     </span>
-  </p>
+  </div>
 )
 
 export default Header;

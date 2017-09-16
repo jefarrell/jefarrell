@@ -1,0 +1,44 @@
+$blue: #1700FC;
+
+.headerContainer {
+	padding-bottom: 5em;
+}
+
+.headerName {
+	float: left;
+	padding-left: 10%;
+}
+
+.headerAbout {
+	float: right;
+	padding-right: 10%;
+}
+
+.headerName, .headerAbout {
+	font-size: 3em;
+	color: $blue;
+}
+
+hr {
+	margin: 1em 10% 0.5em 10%;
+	border: 0;
+	border-top: 5px solid $blue;
+}
+
+
+
+.ReactModalPortal > * {
+    // When the modal is closed, overlay div has no css class
+    // This selector should be overridden by the `&--after-open` class below
+    opacity: 0;
+}
+.ReactModal__Overlay {
+    transition: opacity 200ms ease-in-out;
+    background: rgba(0, 0, 0, 0.15);
+    &--after-open {
+        opacity: 1;
+    }
+    &--before-close {
+        opacity: 0;
+    }
+}

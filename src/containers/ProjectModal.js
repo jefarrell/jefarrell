@@ -22,7 +22,7 @@ let Popup = ({ dispatch, show, title, head, body, foot }) => {
 			style= {{
 
 				content: {
-					background: '#DFDFDF',
+					background: '#FFF',
 					border: '6px solid #1700FC',
 					borderRadius: 0
 				}
