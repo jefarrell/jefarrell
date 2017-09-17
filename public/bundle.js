@@ -66,7 +66,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(355);
+	__webpack_require__(356);
 	var store = (0, _redux.createStore)(_reducers2.default);
 
 	store.subscribe(function () {
@@ -24851,7 +24851,7 @@
 			"paragraphs": {
 				"head": "A full-stack web application built for goTenna.  Designed, developed and deployed in under two weeks.",
 				"main": "#imeshyou is a website created for goTenna as part of the release of their new mesh networking device, the goTenna Mesh.  #imeshyou was made as a promotional addition for the launch of their kickstarter campaign, which was met within two days.  The site is meant to show the community of mesh users around the world – backers of the kickstarter campaign would register their new devices and add them to the map.  A mesh network gets more powerful as more people join, and seeing the active users is an encouragement to join the network.",
-				"foot": "Built in MERN stack, on Digital Ocean hosting with nginx servers."
+				"foot": "Built in MERN stack, running on Digital Ocean & nginx."
 			},
 			"photos": {
 				"thumbnail": "./thumbnails/imeshyou.png",
@@ -24992,7 +24992,7 @@
 		    onClick = _ref.onClick;
 		return _react2.default.createElement(
 			_Col2.default,
-			{ lg: 4, md: 6, sm: 10, xs: 12, className: 'projectParent', onClick: onClick },
+			{ lg: 4, xs: 12, className: 'projectParent', onClick: onClick },
 			_react2.default.createElement('div', { className: 'dummy' }),
 			_react2.default.createElement(
 				'div',
@@ -29092,16 +29092,16 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./0.png": 359,
-		"./belieber.png": 346,
-		"./diffuse.png": 347,
-		"./genertech.png": 348,
-		"./githubleague.png": 349,
-		"./imeshyou.png": 350,
-		"./myco.png": 351,
-		"./nationalparks.png": 352,
-		"./salarycalc.png": 353,
-		"./taxidermy.png": 354
+		"./0.png": 346,
+		"./belieber.png": 347,
+		"./diffuse.png": 348,
+		"./genertech.png": 349,
+		"./githubleague.png": 350,
+		"./imeshyou.png": 351,
+		"./myco.png": 352,
+		"./nationalparks.png": 353,
+		"./salarycalc.png": 354,
+		"./taxidermy.png": 355
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -29121,67 +29121,73 @@
 /* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/belieber.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/0.png";
 
 /***/ }),
 /* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/diffuse.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/belieber.png";
 
 /***/ }),
 /* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/genertech.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/diffuse.png";
 
 /***/ }),
 /* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/githubleague.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/genertech.png";
 
 /***/ }),
 /* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/imeshyou.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/githubleague.png";
 
 /***/ }),
 /* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/myco.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/imeshyou.png";
 
 /***/ }),
 /* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/nationalparks.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/myco.png";
 
 /***/ }),
 /* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/salarycalc.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/nationalparks.png";
 
 /***/ }),
 /* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/taxidermy.png";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/salarycalc.png";
 
 /***/ }),
 /* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "/assets/thumbnails/taxidermy.png";
+
+/***/ }),
+/* 356 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(356);
+	var content = __webpack_require__(357);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(358)(content, {});
+	var update = __webpack_require__(360)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -29198,21 +29204,21 @@
 	}
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(357)();
+	exports = module.exports = __webpack_require__(358)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".headerContainer {\n  padding-bottom: 5em; }\n\n.headerName {\n  float: left;\n  padding-left: 10%; }\n\n.headerAbout {\n  float: right;\n  padding-right: 10%; }\n\n.headerName, .headerAbout {\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > * {\n  opacity: 0; }\n\n.ReactModal__Overlay {\n  transition: opacity 200ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1;\n    transition: opacity 200ms ease-in-out; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.imageContainer {\n  fill: white; }\n\n.modalNav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modalTitle {\n  display: inline-block;\n  margin-top: -1em;\n  color: #1700FC; }\n\n.modalClose {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modalClose:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.infoHead {\n  font-style: italic;\n  font-weight: bold;\n  color: #1700FC;\n  display: block; }\n\n.infoBody {\n  margin: 1em 0;\n  color: #1700FC; }\n\n.infoFoot {\n  color: #1700FC; }\n\n#gridContainer {\n  padding: 0 25em 0 25em; }\n\n.projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.5em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n\n@media only screen and (min-width: 800px) and (max-width: 1000px) {\n  .project {\n    display: block; } }\n", ""]);
+	exports.push([module.id, ".headerContainer {\n  padding-bottom: 5em; }\n\n.headerName {\n  float: left;\n  padding-left: 10%; }\n\n.headerAbout {\n  float: right;\n  padding-right: 10%; }\n\n.headerName, .headerAbout {\n  font-family: GinoraSansBold;\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.imageContainer {\n  fill: white; }\n\n.modalNav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modalClose {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modalClose:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.infoHead, .infoBody, .infoFoot {\n  color: #1700FC; }\n\n.modalTitle {\n  display: inline-block;\n  margin-top: -1em;\n  background-color: #1700FC;\n  color: #FFF;\n  padding: 0.2em;\n  font-family: GinoraSansBold; }\n\n.infoHead, .infoFoot {\n  font-family: LibreBaskerville-Italic; }\n\n.infoHead {\n  display: block; }\n\n.infoBody {\n  font-family: LibreBaskerville-Regular;\n  margin: 1em 0; }\n\n@font-face {\n  font-family: GinoraSansBold;\n  font-weight: bold;\n  src: url(" + __webpack_require__(363) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansLight;\n  font-weight: bold;\n  src: url(" + __webpack_require__(364) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Regular;\n  font-weight: normal;\n  src: url(" + __webpack_require__(365) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Italic;\n  font-weight: normal;\n  src: url(" + __webpack_require__(366) + ") format(\"opentype\"); }\n\n#gridContainer {\n  padding: 0 25em 0 25em; }\n\n.projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  -webkit-transition: background 0.5s ease; }\n\n.project:hover {\n  -webkit-transition: background-size 0.5s ease;\n  background-size: 175%; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  font-family: GinoraSansBold;\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.5em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n\n@media only screen and (min-width: 800px) and (max-width: 1000px) {\n  .project {\n    display: block; } }\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -29267,7 +29273,8 @@
 	};
 
 /***/ }),
-/* 358 */
+/* 359 */,
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -29519,10 +29526,30 @@
 
 
 /***/ }),
-/* 359 */
+/* 361 */,
+/* 362 */,
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/assets/thumbnails/0.png";
+	module.exports = __webpack_require__.p + "/fonts/GinoraSansBold.otf";
+
+/***/ }),
+/* 364 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/GinoraSansLight.otf";
+
+/***/ }),
+/* 365 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/LibreBaskerville-Regular.otf";
+
+/***/ }),
+/* 366 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/LibreBaskerville-Italic.otf";
 
 /***/ })
 /******/ ]);

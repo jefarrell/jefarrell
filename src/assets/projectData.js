@@ -5,7 +5,7 @@ exports.projectData = {
 		"paragraphs": {
 			"head": "A full-stack web application built for goTenna.  Designed, developed and deployed in under two weeks.",
 			"main": "#imeshyou is a website created for goTenna as part of the release of their new mesh networking device, the goTenna Mesh.  #imeshyou was made as a promotional addition for the launch of their kickstarter campaign, which was met within two days.  The site is meant to show the community of mesh users around the world – backers of the kickstarter campaign would register their new devices and add them to the map.  A mesh network gets more powerful as more people join, and seeing the active users is an encouragement to join the network.",
-			"foot": "Built in MERN stack, on Digital Ocean hosting with nginx servers."
+			"foot": "Built in MERN stack, running on Digital Ocean & nginx."
 		},
 		"photos": {
 			"thumbnail":"./thumbnails/imeshyou.png",

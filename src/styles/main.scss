@@ -1,6 +1,34 @@
 @import 'header';
 @import 'modal';
 $blue: #1700FC;
+
+
+
+@font-face {
+	font-family: GinoraSansBold;
+	font-weight: bold;
+	src: url('./fonts/GinoraSansBold.otf') format('opentype');
+}
+
+@font-face {
+	font-family: GinoraSansLight;
+	font-weight: bold;
+	src: url('./fonts/GinoraSansLight.otf') format('opentype');
+}
+
+@font-face {
+	font-family: LibreBaskerville-Regular;
+	font-weight: normal;
+	src: url('./fonts/LibreBaskerville-Regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: LibreBaskerville-Italic;
+	font-weight: normal;
+	src: url('./fonts/LibreBaskerville-Italic.otf') format('opentype');
+}
+
+
 #gridContainer {
 	padding: 0 25em 0 25em;
 }
@@ -18,6 +46,12 @@ $blue: #1700FC;
     right: 0;
 	background-size: 100%;
 	background-repeat: no-repeat;
+	-webkit-transition: background 0.5s ease;
+}
+
+.project:hover {
+	-webkit-transition: background-size 0.5s ease;
+	background-size: 175%;
 }
 
 .dummy {
@@ -35,6 +69,7 @@ $blue: #1700FC;
 }
 
 .projectTitle {
+	font-family: GinoraSansBold; 
 	color: #FFF;
 	background-color: $blue;
 	font-size: 2.5em;

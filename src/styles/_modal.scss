@@ -1,9 +1,10 @@
 $gray: #DFDFDF;
 $blue: #1700FC;
 
-
-
-
+/////////
+//////
+// Adding animation to modal open
+// https://github.com/reactjs/react-modal/issues/334
 .ReactModalPortal > div {
     opacity: 0;
 }
@@ -13,13 +14,11 @@ $blue: #1700FC;
   background: rgba(0, 0, 0, 0.15);
   &--after-open {
     opacity: 1;
-      transition: opacity 200ms ease-in-out;
   }
   &--before-close {
       opacity: 0;
   }
 }
-
 
 .ReactModal__Content {
   transition: all 400ms ease-in-out;
@@ -36,6 +35,8 @@ $blue: #1700FC;
     transform: translateY(30px);
   }
 }
+//////
+/////////
 
 
 .modalContainer {
@@ -53,12 +54,6 @@ $blue: #1700FC;
 .modalNav {
 	display: block;
 	padding-bottom: 1.5em;
-}
-
-.modalTitle {
-	display: inline-block;
-	margin-top: -1em;
-	color: $blue
 }
 
 .modalClose {
@@ -85,18 +80,37 @@ $blue: #1700FC;
 	background-color: #FFF;
 }
 
-.infoHead {
-	font-style: italic;
-	font-weight: bold;
+// .infoHead {
+// 	font-family: Gin¢raSansBold;
+// 	font-style: italic;
+// 	font-weight: bold;
+// 	color: $blue;
+// 	display: block;
+// }
+
+.infoHead, .infoBody, .infoFoot {
 	color: $blue;
-	display: block;
+}
+
+.modalTitle {
+	display: inline-block;
+	margin-top: -1em;
+	background-color: $blue;
+	color: #FFF;
+	padding: 0.2em;
+	font-family: GinoraSansBold;
+}
+
+.infoHead, .infoFoot {
+	font-family: LibreBaskerville-Italic;
+}
+
+.infoHead {
+	display:block;
 }
 
 .infoBody {
+	font-family: LibreBaskerville-Regular;
 	margin: 1em 0;
-	color: $blue;
 }
 
-.infoFoot {
-	color: $blue;
-}
