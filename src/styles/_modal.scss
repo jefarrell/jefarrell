@@ -114,3 +114,23 @@ $blue: #1700FC;
 	margin: 1em 0;
 }
 
+.aboutModalInfo {
+	margin-top: -2em;
+}
+
+.aboutImage {
+	display: block;
+	margin: auto;
+	width: 66.6%;
+}
+
+.aboutModalText {
+	color: $blue;
+	font-family: LibreBaskerville-Regular;
+	font-size: 1.25em;
+	line-height: 1.65em;
+	text-align: center;
+	margin: auto;
+	width: 66.6%;
+	padding: 2em;
+}

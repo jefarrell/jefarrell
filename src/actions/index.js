@@ -10,3 +10,9 @@ export const hideItem = () => {
 		type: 'HIDE_MODAL'
 	}
 }
+
+export const showAbout = () => {
+	return {
+		type: 'SHOW_ABOUT'
+	}
+}

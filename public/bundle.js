@@ -24637,6 +24637,11 @@
 					modal: false,
 					project: null
 				};
+			case 'SHOW_ABOUT':
+				return {
+					modal: true,
+					project: 'About'
+				};
 			default:
 				return state;
 		}
@@ -24683,35 +24688,55 @@
 /* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(184);
+
+	var _actions = __webpack_require__(228);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Header = function Header() {
-	  return _react2.default.createElement(
-	    "div",
-	    { className: "headerContainer" },
-	    _react2.default.createElement("hr", null),
-	    _react2.default.createElement(
-	      "span",
-	      { className: "headerName" },
-	      "John Farrell"
-	    ),
-	    _react2.default.createElement(
-	      "span",
-	      { className: "headerAbout" },
-	      "About"
-	    )
-	  );
+	var Header = function Header(_ref) {
+		var dispatch = _ref.dispatch,
+		    modal = _ref.modal;
+
+
+		var handleClick = function handleClick(e) {
+			dispatch((0, _actions.showAbout)());
+		};
+
+		return _react2.default.createElement(
+			'div',
+			{ className: 'headerContainer' },
+			_react2.default.createElement('hr', null),
+			_react2.default.createElement(
+				'span',
+				{ className: 'headerName' },
+				'John Farrell'
+			),
+			_react2.default.createElement(
+				'span',
+				{ className: 'headerAbout', onClick: handleClick },
+				'About'
+			)
+		);
 	};
+
+	var mapStateToProps = function mapStateToProps(state) {
+		return {
+			modal: state.modal
+		};
+	};
+
+	Header = (0, _reactRedux.connect)()(Header);
 
 	exports.default = Header;
 
@@ -24747,14 +24772,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//import Grid from "react-bootstrap/lib/Grid";
-
-
 	var ProjectGrid = function ProjectGrid(_ref) {
 		var dispatch = _ref.dispatch,
 		    target = _ref.target,
 		    modal = _ref.modal;
 
+		console.log("proj grid");
 		// Require context image file
 		// Set as style, pass as props to child presentational component
 		var images = __webpack_require__(345);
@@ -24835,6 +24858,12 @@
 	var hideItem = exports.hideItem = function hideItem() {
 		return {
 			type: 'HIDE_MODAL'
+		};
+	};
+
+	var showAbout = exports.showAbout = function showAbout() {
+		return {
+			type: 'SHOW_ABOUT'
 		};
 	};
 
@@ -27554,88 +27583,144 @@
 	var Popup = function Popup(_ref) {
 		var dispatch = _ref.dispatch,
 		    show = _ref.show,
+		    project = _ref.project,
 		    title = _ref.title,
 		    head = _ref.head,
 		    body = _ref.body,
 		    foot = _ref.foot;
 
 		var images = __webpack_require__(343);
+		var aboutImage = images("./about.jpg");
 
 		var handleClick = function handleClick() {
 			dispatch((0, _actions.hideItem)());
 		};
 
-		return _react2.default.createElement(
-			_reactModal2.default,
-			{
-				isOpen: show,
-				shouldCloseOnOverlayClick: true,
-				contentLabel: 'Modal',
-				onClick: handleClick,
-				style: {
+		if (project === 'About') {
 
-					content: {
-						background: '#FFF',
-						border: '6px solid #1700FC',
-						borderRadius: 0
+			return _react2.default.createElement(
+				_reactModal2.default,
+				{
+					isOpen: show,
+					shouldCloseOnOverlayClick: true,
+					contentLabel: 'Modal',
+					onClick: handleClick,
+					style: {
+						overlay: {
+							background: 'rgba(252,215,0,0.55)'
+						},
+						content: {
+							background: '#FFF',
+							border: '6px solid #1700FC',
+							borderRadius: 0
+						}
 					}
-				}
-			},
-			_react2.default.createElement(
-				'div',
-				{ className: 'container-fluid modalContainer' },
+				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'modalNav' },
+					{ className: 'container-fluid modalContainer' },
 					_react2.default.createElement(
-						_Button2.default,
-						{ className: 'modalClose', onClick: handleClick },
-						'X'
-					)
-				),
-				_react2.default.createElement(
-					_Col2.default,
-					{ lg: 8, className: 'imageContainer' },
-					' Images here '
-				),
-				_react2.default.createElement(
-					_Col2.default,
-					{ lg: 4, className: 'infoContainer' },
-					_react2.default.createElement(
-						'h1',
-						{ className: 'modalTitle' },
-						' ',
-						title,
-						' '
+						'div',
+						{ className: 'modalNav' },
+						_react2.default.createElement(
+							_Button2.default,
+							{ className: 'modalClose', onClick: handleClick },
+							'X'
+						)
 					),
 					_react2.default.createElement(
-						'span',
-						{ className: 'infoHead' },
-						'  ',
-						head,
-						' '
-					),
-					_react2.default.createElement(
-						'p',
-						{ className: 'infoBody' },
-						'  ',
-						body,
-						' '
-					),
-					_react2.default.createElement(
-						'span',
-						{ className: 'infoFoot' },
-						'  ',
-						foot,
-						' '
+						'div',
+						{ className: 'aboutModalInfo' },
+						_react2.default.createElement('img', { src: aboutImage, className: 'aboutImage' }),
+						_react2.default.createElement(
+							'div',
+							{ className: 'aboutModalText' },
+							_react2.default.createElement(
+								'p',
+								null,
+								'My name is John Farrell, I\u2019m a Portland-based developer and designer. Graduate of & former Research Fellow at ITP-NYU. I have a resume over here, and am on github over there. Available for freelance work related to full-stack web development, data wrangling & analysis, interactive maps, and more. johnefarrell18 at gmail dot com'
+							)
+						)
 					)
 				)
-			)
-		);
+			);
+		} else {
+
+			return _react2.default.createElement(
+				_reactModal2.default,
+				{
+					isOpen: show,
+					shouldCloseOnOverlayClick: true,
+					contentLabel: 'Modal',
+					onClick: handleClick,
+					style: {
+						overlay: {
+							background: 'rgba(252,215,0,0.55)'
+						},
+						content: {
+							background: '#FFF',
+							border: '6px solid #1700FC',
+							borderRadius: 0
+						}
+					}
+				},
+				_react2.default.createElement(
+					'div',
+					{ className: 'container-fluid modalContainer' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'modalNav' },
+						_react2.default.createElement(
+							_Button2.default,
+							{ className: 'modalClose', onClick: handleClick },
+							'X'
+						)
+					),
+					_react2.default.createElement(
+						_Col2.default,
+						{ lg: 8, className: 'imageContainer' },
+						' Images here '
+					),
+					_react2.default.createElement(
+						_Col2.default,
+						{ lg: 4, className: 'infoContainer' },
+						_react2.default.createElement(
+							'h1',
+							{ className: 'modalTitle' },
+							' ',
+							title,
+							' '
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: 'infoHead' },
+							'  ',
+							head,
+							' '
+						),
+						_react2.default.createElement(
+							'p',
+							{ className: 'infoBody' },
+							'  ',
+							body,
+							' '
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: 'infoFoot' },
+							'  ',
+							foot,
+							' '
+						)
+					)
+				)
+			);
+		}
 	};
 
 	var mapStateToProps = function mapStateToProps(state) {
 		return {
+			project: state.project,
 			title: state.title,
 			head: state.head,
 			body: state.body,
@@ -29065,6 +29150,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
+		"./about.jpg": 368,
 		"./imeshyou/0.png": 344
 	};
 	function webpackContext(req) {
@@ -29093,10 +29179,12 @@
 
 	var map = {
 		"./0.png": 346,
+		"./about.jpg": 369,
 		"./belieber.png": 347,
 		"./diffuse.png": 348,
 		"./genertech.png": 349,
 		"./githubleague.png": 350,
+		"./glitch224415.jpg": 367,
 		"./imeshyou.png": 351,
 		"./myco.png": 352,
 		"./nationalparks.png": 353,
@@ -29187,7 +29275,7 @@
 	var content = __webpack_require__(357);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(360)(content, {});
+	var update = __webpack_require__(364)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -29212,7 +29300,7 @@
 
 
 	// module
-	exports.push([module.id, ".headerContainer {\n  padding-bottom: 5em; }\n\n.headerName {\n  float: left;\n  padding-left: 10%; }\n\n.headerAbout {\n  float: right;\n  padding-right: 10%; }\n\n.headerName, .headerAbout {\n  font-family: GinoraSansBold;\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.imageContainer {\n  fill: white; }\n\n.modalNav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modalClose {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modalClose:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.infoHead, .infoBody, .infoFoot {\n  color: #1700FC; }\n\n.modalTitle {\n  display: inline-block;\n  margin-top: -1em;\n  background-color: #1700FC;\n  color: #FFF;\n  padding: 0.2em;\n  font-family: GinoraSansBold; }\n\n.infoHead, .infoFoot {\n  font-family: LibreBaskerville-Italic; }\n\n.infoHead {\n  display: block; }\n\n.infoBody {\n  font-family: LibreBaskerville-Regular;\n  margin: 1em 0; }\n\n@font-face {\n  font-family: GinoraSansBold;\n  font-weight: bold;\n  src: url(" + __webpack_require__(363) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansLight;\n  font-weight: bold;\n  src: url(" + __webpack_require__(364) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Regular;\n  font-weight: normal;\n  src: url(" + __webpack_require__(365) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Italic;\n  font-weight: normal;\n  src: url(" + __webpack_require__(366) + ") format(\"opentype\"); }\n\n#gridContainer {\n  padding: 0 25em 0 25em; }\n\n.projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  -webkit-transition: background 0.5s ease; }\n\n.project:hover {\n  -webkit-transition: background-size 0.5s ease;\n  background-size: 175%; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  font-family: GinoraSansBold;\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.5em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n\n@media only screen and (min-width: 800px) and (max-width: 1000px) {\n  .project {\n    display: block; } }\n", ""]);
+	exports.push([module.id, ".headerContainer {\n  padding-bottom: 5em; }\n\n.headerName {\n  float: left;\n  padding-left: 10%; }\n\n.headerAbout {\n  float: right;\n  padding-right: 10%; }\n\n.headerName, .headerAbout {\n  font-family: GinoraSansBold;\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.imageContainer {\n  fill: white; }\n\n.modalNav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modalClose {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modalClose:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.infoHead, .infoBody, .infoFoot {\n  color: #1700FC; }\n\n.modalTitle {\n  display: inline-block;\n  margin-top: -1em;\n  background-color: #1700FC;\n  color: #FFF;\n  padding: 0.2em;\n  font-family: GinoraSansBold; }\n\n.infoHead, .infoFoot {\n  font-family: LibreBaskerville-Italic; }\n\n.infoHead {\n  display: block; }\n\n.infoBody {\n  font-family: LibreBaskerville-Regular;\n  margin: 1em 0; }\n\n.aboutModalInfo {\n  margin-top: -2em; }\n\n.aboutImage {\n  display: block;\n  margin: auto;\n  width: 66.6%; }\n\n.aboutModalText {\n  color: #1700FC;\n  font-family: LibreBaskerville-Regular;\n  font-size: 1.25em;\n  line-height: 1.65em;\n  text-align: center;\n  margin: auto;\n  width: 66.6%;\n  padding: 2em; }\n\n@font-face {\n  font-family: GinoraSansLight;\n  font-weight: bold;\n  src: url(" + __webpack_require__(359) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansRegular;\n  font-weight: bold;\n  src: url(" + __webpack_require__(360) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansBold;\n  font-weight: bold;\n  src: url(" + __webpack_require__(361) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Regular;\n  font-weight: normal;\n  src: url(" + __webpack_require__(362) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Italic;\n  font-weight: normal;\n  src: url(" + __webpack_require__(363) + ") format(\"opentype\"); }\n\n#gridContainer {\n  padding: 0 25em 0 25em; }\n\n.projectParent {\n  position: relative; }\n\n.project {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  -webkit-transition: background 0.5s ease; }\n\n.project:hover {\n  -webkit-transition: background-size 0.5s ease;\n  background-size: 175%;\n  cursor: pointer; }\n\n.dummy {\n  margin-top: 100%; }\n\n.layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.projectTitle {\n  font-family: GinoraSansRegular;\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.25em;\n  display: table;\n  margin: 0 auto;\n  margin-top: 30%;\n  text-align: center; }\n\n@media only screen and (min-width: 800px) and (max-width: 1000px) {\n  .project {\n    display: block; } }\n", ""]);
 
 	// exports
 
@@ -29273,8 +29361,37 @@
 	};
 
 /***/ }),
-/* 359 */,
+/* 359 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/GinoraSansLight.otf";
+
+/***/ }),
 /* 360 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/GinoraSansRegular.otf";
+
+/***/ }),
+/* 361 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/GinoraSansBold.otf";
+
+/***/ }),
+/* 362 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/LibreBaskerville-Regular.otf";
+
+/***/ }),
+/* 363 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/fonts/LibreBaskerville-Italic.otf";
+
+/***/ }),
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -29526,30 +29643,24 @@
 
 
 /***/ }),
-/* 361 */,
-/* 362 */,
-/* 363 */
+/* 365 */,
+/* 366 */,
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/fonts/GinoraSansBold.otf";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/glitch224415.jpg";
 
 /***/ }),
-/* 364 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/fonts/GinoraSansLight.otf";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/about.jpg";
 
 /***/ }),
-/* 365 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/fonts/LibreBaskerville-Regular.otf";
-
-/***/ }),
-/* 366 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "/fonts/LibreBaskerville-Italic.otf";
+	module.exports = __webpack_require__.p + "/assets/thumbnails/about.jpg";
 
 /***/ })
 /******/ ]);

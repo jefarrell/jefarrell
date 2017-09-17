@@ -16,6 +16,11 @@ const selection = (state = {modal: false}, action) => {
 				modal: false,
 				project: null
 			}
+		case 'SHOW_ABOUT':
+			return {
+				modal: true,
+				project: 'About'
+			}
 		default: 
 			return state
 	}

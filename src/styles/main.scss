@@ -3,6 +3,17 @@
 $blue: #1700FC;
 
 
+@font-face {
+	font-family: GinoraSansLight;
+	font-weight: bold;
+	src: url('./fonts/GinoraSansLight.otf') format('opentype');
+}
+
+@font-face {
+	font-family: GinoraSansRegular;
+	font-weight: bold;
+	src: url('./fonts/GinoraSansRegular.otf') format('opentype');
+}
 
 @font-face {
 	font-family: GinoraSansBold;
@@ -10,11 +21,6 @@ $blue: #1700FC;
 	src: url('./fonts/GinoraSansBold.otf') format('opentype');
 }
 
-@font-face {
-	font-family: GinoraSansLight;
-	font-weight: bold;
-	src: url('./fonts/GinoraSansLight.otf') format('opentype');
-}
 
 @font-face {
 	font-family: LibreBaskerville-Regular;
@@ -52,6 +58,7 @@ $blue: #1700FC;
 .project:hover {
 	-webkit-transition: background-size 0.5s ease;
 	background-size: 175%;
+	cursor: pointer;
 }
 
 .dummy {
@@ -69,10 +76,10 @@ $blue: #1700FC;
 }
 
 .projectTitle {
-	font-family: GinoraSansBold; 
+	font-family: GinoraSansRegular; 
 	color: #FFF;
 	background-color: $blue;
-	font-size: 2.5em;
+	font-size: 2.25em;
 	display: table;
 	margin: 0 auto;
 	margin-top: 30%;

@@ -5,10 +5,9 @@ import projectData from '../assets/projectData';
 import Project from '../components/Project';
 import ProjectModal from './ProjectModal';
 
-//import Grid from "react-bootstrap/lib/Grid";
-
 
 const ProjectGrid = ({ dispatch, target, modal }) => {
+	console.log("proj grid")
 	// Require context image file
 	// Set as style, pass as props to child presentational component
 	const images = require.context('../../public/assets/thumbnails', true);

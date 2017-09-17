@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import Header from '../containers/Header';
 import ProjectContainer from '../containers/Grid';
 
 const App = () => (
