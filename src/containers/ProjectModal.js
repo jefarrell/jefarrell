@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/lib/Col';
 import Button from 'react-bootstrap/lib/Button';
 
 let Popup = ({ dispatch, show, project, title, head, body, foot }) => {
-	const images = require.context('../../public/assets/images', true);
+	const images = require.context('../assets/images', true);
 	let aboutImage = images("./about.jpg");
 
 	const handleClick = () => {

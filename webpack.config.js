@@ -31,14 +31,15 @@ module.exports = {
         test: /\.s?css$/,
         loaders: ['style', 'css', 'sass']
       },
+
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=/fonts/[name].[ext]'
+        loader: 'url-loader?name=/fonts/[name].[ext]'
       },
       {
-        test: /\.(jpg|png)$/,
-        loader: 'file-loader?name=/assets/thumbnails/[name].[ext]'
-      }
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader?name=./assets/thumbnails/[name].[ext]',
+       }
     ]
   },
 
@@ -57,4 +58,5 @@ module.exports = {
       }
     })
   ] : []
-};
+ };
+
