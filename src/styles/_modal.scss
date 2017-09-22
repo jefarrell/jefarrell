@@ -1,7 +1,7 @@
 $gray: #DFDFDF;
 $blue: #1700FC;
 
-/////////
+/////////~~~~~~~~~~
 //////
 // Adding animation to modal open
 // https://github.com/reactjs/react-modal/issues/334
@@ -36,27 +36,27 @@ $blue: #1700FC;
   }
 }
 //////
-/////////
+/////////~~~~~~~~~~
 
 
-.modalContainer {
+.modal_container {
 
 }
 
-.imageContainer {
+.modal_image_container {
 	fill: white;
 }
 
-.infoContainer {
+.modal_info_container {
 
 }
 
-.modalNav {
+.modal_nav {
 	display: block;
 	padding-bottom: 1.5em;
 }
 
-.modalClose {
+.modal_close {
 	border-radius: 0;
     border: 3px solid $blue;
     color: #FFF;
@@ -66,7 +66,7 @@ $blue: #1700FC;
     font-weight: bold;
 }
 
-.modalClose:hover {
+.modal_close:hover {
 	border: 3px solid $blue;
 	color: $blue;
 	background-color: #FFF;
@@ -80,19 +80,12 @@ $blue: #1700FC;
 	background-color: #FFF;
 }
 
-// .infoHead {
-// 	font-family: Gin¢raSansBold;
-// 	font-style: italic;
-// 	font-weight: bold;
-// 	color: $blue;
-// 	display: block;
-// }
 
-.infoHead, .infoBody, .infoFoot {
+.modal_info_head, .modal_info_body, .modal_info_foot {
 	color: $blue;
 }
 
-.modalTitle {
+.modal_title {
 	display: inline-block;
 	margin-top: -1em;
 	background-color: $blue;
@@ -101,31 +94,31 @@ $blue: #1700FC;
 	font-family: GinoraSansBold;
 }
 
-.infoHead, .infoFoot {
+.modal_info_head, .modal_info_foot {
 	font-family: LibreBaskerville-Italic;
 }
 
-.infoHead {
+.modal_info_head {
 	display:block;
 }
 
-.infoBody {
+.modal_info_body {
 	font-family: LibreBaskerville-Regular;
 	margin: 1em 0;
 }
 
-.aboutModalInfo {
+.modal_about_info {
 	margin-top: -2em;
 }
 
-.aboutImage {
+.modal_about_image {
 	border: 5px solid $blue;
 	display: block;
 	margin: auto;
 	width: 50%;
 }
 
-.aboutModalText {
+.modal_about_text {
 	color: $blue;
 	font-family: LibreBaskerville-Regular;
 	font-size: 1.25em;
@@ -136,7 +129,7 @@ $blue: #1700FC;
 	padding: 2em;
 }
 
-#aboutModalEmail {
+#modal_about_email {
 	width: 50%;
 	margin: 0 auto;
 	display: block;

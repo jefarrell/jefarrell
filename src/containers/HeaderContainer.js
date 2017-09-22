@@ -4,13 +4,13 @@ import { showAbout } from '../actions';
 import Header from '../components/Header';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
 	return { 
 		modal: state.modal 
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
 	return {
 		onClick: () => {
 			dispatch(showAbout())

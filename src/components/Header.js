@@ -3,13 +3,13 @@ import React from 'react'
 const Header = ({onClick}) => {
 
 	return (
-		<div className="headerContainer">
+		<div className="header">
 			<hr />
-			<span className="headerName">
+			<span className="header_name">
 			  John Farrell
 			</span>
 			<span 
-				className="headerAbout" 
+				className="header_about" 
 				onClick = { e => {
 					e.preventDefault()
 					onClick()

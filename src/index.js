@@ -9,7 +9,7 @@ require('./styles/main.scss');
 let store = createStore(selection);
 
 
-store.subscribe(()=> {
+store.subscribe(() => {
 	console.log("store state: ", store.getState());	
 })
 

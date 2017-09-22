@@ -28,27 +28,28 @@ const ProjectModal = ({modal, project, title, head, body, foot, images, onClick}
 					}
 				}}
 			> 
-				<div className="container-fluid modalContainer">
-					<div className="modalNav">
+				<div className="container-fluid modal_container">
+					<div className="modal_nav">
 						<Button 
-							className="modalClose" 
+							className="modal_close" 
 							onClick = { e => {
 								e.preventDefault()
 								onClick()
 							}
-						}
-						>X</Button>
+						}>
+							X
+						</Button>
 					</div>
-					<div className="aboutModalInfo">
-						<img src={images} className="aboutImage" />
-						<div className="aboutModalText">
+					<div className="modal_about_info">
+						<img src={images} className="modal_about_image" />
+						<div className="modal_about_text">
 							<p> 
 								My name is John Farrell, I’m a Portland-based developer and designer. 
 								Graduate of & former Research Fellow at ITP-NYU. 
 								I have a resume over here, and am on github over there. 
 								Available for freelance work related to full-stack web development, 
 								data wrangling & analysis, interactive maps, and more. 
-								<span id="aboutModalEmail">johnefarrell18 at gmail dot com</span>
+								<span id="modal_about_email">johnefarrell18 at gmail dot com</span>
 							</p>
 						</div>
 					</div>
@@ -80,23 +81,24 @@ const ProjectModal = ({modal, project, title, head, body, foot, images, onClick}
 					}
 				}}
 			> 
-				<div className="container-fluid modalContainer">
-					<div className="modalNav">
+				<div className="container-fluid modal_container">
+					<div className="modal_nav">
 						<Button 
-							className="modalClose" 
+							className="modal_close" 
 							onClick = { e => {
 								e.preventDefault()
 								onClick()
 								}
-							}
-						>X</Button>
+						}>
+							X
+						</Button>
 					</div>
-					<Col lg={8} className="imageContainer"> Images here </Col>
-					<Col lg={4} className="infoContainer">
-						<h1 className="modalTitle"> { title } </h1>
-						<span className="infoHead">  { head } </span>
-						<p className="infoBody">  { body } </p>
-						<span className="infoFoot">  { foot } </span>
+					<Col lg={8} className="modal_image_container"> Images here </Col>
+					<Col lg={4} className="modal_info_container">
+						<h1 className="modal_title"> { title } </h1>
+						<span className="modal_info_head">  { head } </span>
+						<p className="modal_info_body">  { body } </p>
+						<span className="modal_info_foot">  { foot } </span>
 					</Col>
 				</div>
 			</Modal>

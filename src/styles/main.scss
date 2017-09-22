@@ -1,50 +1,20 @@
 @import 'header';
 @import 'modal';
+@import 'fonts';
+
 $blue: #1700FC;
-
-
-@font-face {
-	font-family: GinoraSansLight;
-	font-weight: bold;
-	src: url('./fonts/GinoraSansLight.otf') format('opentype');
-}
-
-@font-face {
-	font-family: GinoraSansRegular;
-	font-weight: bold;
-	src: url('./fonts/GinoraSansRegular.otf') format('opentype');
-}
-
-@font-face {
-	font-family: GinoraSansBold;
-	font-weight: bold;
-	src: url('./fonts/GinoraSansBold.otf') format('opentype');
-}
-
-
-@font-face {
-	font-family: LibreBaskerville-Regular;
-	font-weight: normal;
-	src: url('./fonts/LibreBaskerville-Regular.otf') format('opentype');
-}
-
-@font-face {
-	font-family: LibreBaskerville-Italic;
-	font-weight: normal;
-	src: url('./fonts/LibreBaskerville-Italic.otf') format('opentype');
-}
 
 
 #gridContainer {
 	padding: 0 25em 0 25em;
 }
 
-.projectParent {
+.project {
 	position:relative;
 
 }
 
-.project {
+.project_container{
 	position: absolute;
     top: 0;
     bottom: 0;
@@ -55,19 +25,17 @@ $blue: #1700FC;
 	-webkit-transition: background 0.5s ease;
 }
 
-.project:hover {
+.project_container:hover {
 	-webkit-transition: background-size 0.5s ease;
 	background-size: 175%;
 	cursor: pointer;
 }
 
-.dummy {
+.project_dummy {
 	margin-top: 100%;
 }
 
-// keep for hover?
-.layer {
-    //background-color: rgba(25, 25, 25, 0.3);
+.project_layer {
     position: absolute;
     top: 0;
     left: 0;
@@ -75,7 +43,7 @@ $blue: #1700FC;
     height: 100%;
 }
 
-.projectTitle {
+.project_title {
 	font-family: GinoraSansRegular; 
 	color: #FFF;
 	background-color: $blue;
@@ -92,7 +60,7 @@ $blue: #1700FC;
 and (min-width: 800px) 
 and (max-width: 1000px) {
 
-	.project {
+	.project_container{
 
 		display:block;
 	}

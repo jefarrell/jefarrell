@@ -1,26 +1,26 @@
 $blue: #1700FC;
 
-.headerContainer {
+.header {
 	padding-bottom: 5em;
 }
 
-.headerName {
+.header_name {
 	float: left;
 	padding-left: 10%;
 }
 
-.headerAbout {
+.header_about {
 	cursor: pointer;
 	float: right;
 	padding-right: 10%;
 }
 
-.headerAbout:hover {
+.header_about:hover {
 	background: $blue;
 	color: #FFF;
 }
 
-.headerName, .headerAbout {
+.header_name, .header_about {
 	font-family: GinoraSansBold;
 	font-size: 3em;
 	color: $blue;
