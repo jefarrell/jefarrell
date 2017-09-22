@@ -53,7 +53,7 @@ module.exports = {
       },
       mangle: {
         except: ['$'],
-        screw_ie8: true,
+        screw_ie8: false,
         keep_fnames: false
       }
     })

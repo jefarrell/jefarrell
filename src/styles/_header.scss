@@ -10,8 +10,14 @@ $blue: #1700FC;
 }
 
 .headerAbout {
+	cursor: pointer;
 	float: right;
 	padding-right: 10%;
+}
+
+.headerAbout:hover {
+	background: $blue;
+	color: #FFF;
 }
 
 .headerName, .headerAbout {

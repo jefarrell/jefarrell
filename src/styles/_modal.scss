@@ -119,9 +119,10 @@ $blue: #1700FC;
 }
 
 .aboutImage {
+	border: 5px solid $blue;
 	display: block;
 	margin: auto;
-	width: 66.6%;
+	width: 50%;
 }
 
 .aboutModalText {
@@ -133,4 +134,13 @@ $blue: #1700FC;
 	margin: auto;
 	width: 66.6%;
 	padding: 2em;
+}
+
+#aboutModalEmail {
+	width: 50%;
+	margin: 0 auto;
+	display: block;
+	background-color: $blue;
+	color: #FFF;
+	text-align:center;
 }

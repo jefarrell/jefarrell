@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../containers/Header';
-import ProjectContainer from '../containers/Grid';
+import HeaderContainer from '../containers/HeaderContainer';
+import ProjectContainer from '../containers/ProjectContainer';
 
 const App = () => (
 	<div>
-		<Header />
+		<HeaderContainer />
 		<ProjectContainer />
 	</div>
 )
