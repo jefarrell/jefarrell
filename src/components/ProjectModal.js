@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from 'react-modal';
 import Col from 'react-bootstrap/lib/Col';
 import Button from 'react-bootstrap/lib/Button';
+import SimpleSlider from './Carousel'
 
 
 const ProjectModal = ({modal, project, title, head, body, foot, images, onClick}) => {
@@ -93,7 +94,9 @@ const ProjectModal = ({modal, project, title, head, body, foot, images, onClick}
 							X
 						</Button>
 					</div>
-					<Col lg={8} className="modal_image_container"> Images here </Col>
+					<Col lg={8} className="modal_image_container">
+						<SimpleSlider project={ project }  />
+					</Col>
 					<Col lg={4} className="modal_info_container">
 						<h1 className="modal_title"> { title } </h1>
 						<span className="modal_info_head">  { head } </span>

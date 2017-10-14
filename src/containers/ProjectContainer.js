@@ -39,7 +39,6 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 					Object.keys(dataContainer).map((keyname, keyindex) => {
 						let code = dataContainer[keyname]["code"];
 						let title = dataContainer[keyname]["title"];
-
 						let imgsrc = images(`./${code}.png`);
 						let styler = {
 							backgroundImage: `url(${imgsrc})`

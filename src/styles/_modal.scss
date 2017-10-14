@@ -44,6 +44,7 @@ $blue: #1700FC;
 }
 
 .modal_image_container {
+	padding-left: 7em;
 	fill: white;
 }
 
@@ -136,4 +137,16 @@ $blue: #1700FC;
 	background-color: $blue;
 	color: #FFF;
 	text-align:center;
+}
+
+.carousel_img {
+	max-width: 700px;
+}
+
+.slick-arrow {
+	-webkit-text-fill-color: $blue;
+}
+
+#carousel_next_arrow {
+	right: 16%;
 }
