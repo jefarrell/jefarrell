@@ -9,7 +9,10 @@ const selection = (state = {modal: false}, action) => {
 				head: action.head,
 				body: action.body,
 				foot: action.foot,
-				photos: action.photos
+				photo_count: action.photo_count, 
+				videos: action.videos, 
+				video_count: action.video_count, 
+				video_src: action.video_src
 			}
 		case 'HIDE_MODAL':
 			return {

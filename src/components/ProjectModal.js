@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/lib/Button';
 import SimpleSlider from './Carousel'
 
 
-const ProjectModal = ({modal, project, title, head, body, foot, images, onClick}) => {
+const ProjectModal = ({modal, project, title, head, body, foot, photo_count, videos, video_count, video_src, onClick}) => {
 
 	if (project === 'About') {
 		return (
@@ -60,7 +60,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, images, onClick}
 			)
 
 	} else {
-
+		console.log("hi")
 		return (
 			<Modal
 				isOpen={modal}

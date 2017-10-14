@@ -25,15 +25,11 @@ function PrevArrow(props) {
 }
 
 class SimpleSlider extends React.Component {
-  
-
 
   render() {
-  	let p = this.props.project;
-  	console.log("propsssss: ", this.props.project);
-  	//import img from `'../assets/images/${p}/01.jpg'`;
-
-    var settings = {
+  	let ext = /\.[0-9a-z]/;
+  	console.log(this.props.photo_count, this.video_src);
+    let settings = {
       dots: false,
       infinite: true,
       speed: 500,
@@ -42,9 +38,14 @@ class SimpleSlider extends React.Component {
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />
     };
+
     return (
       <Slider {...settings}>
-        <div><img className="carousel_img" src={require('../assets/images/'+this.props.project+'/01.jpg')}/></div>
+        <div>
+        	<img className="carousel_img" src={
+        		require('../assets/images/'+this.props.project+'/0.jpg')
+       		 }/>
+        </div>
         <div><h3>2</h3></div>
         <div><h3>3</h3></div>
         <div><h3>4</h3></div>

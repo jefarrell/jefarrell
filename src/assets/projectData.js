@@ -8,7 +8,7 @@ exports.projectData = {
 			"foot": "Built in MERN stack, running on Digital Ocean & nginx."
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": false,
 			"video_count": 0,
 			"video_src": []
@@ -23,7 +23,7 @@ exports.projectData = {
 			"foot": "Originally developed for VICE News, with design by Michael Deal."
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": false,
 			"video_count": 0,
 			"video_src": []
@@ -38,7 +38,7 @@ exports.projectData = {
 			"foot": "The data was collected and parsed in python.  An explanation of that process is available on github. The site itself was created using Node, React, Leaflet and D3.  That code is also on github."
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": false,
 			"video_count": 0,
 			"video_src": []
@@ -53,7 +53,7 @@ exports.projectData = {
 			"foot": "Completed as a Masters Thesis Project at NYU ITP, Spring 2015."  
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": true,
 			"video_count": 4,
 			"video_src": [
@@ -73,7 +73,7 @@ exports.projectData = {
 			"foot": "A limited-edition run of cards was printed, to be sold at the Internet Yami-Ichi Art Fair in New York City on September 12, 2015.  Created with Fletcher Bach."
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": false,
 			"video_count": 0,
 			"video_src": []
@@ -88,7 +88,7 @@ exports.projectData = {
 			"foot": "Created with Daphto Tracy.  Built using Python and Gephi." 
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": false,
 			"video_count": 0,
 			"video_src": []
@@ -103,7 +103,7 @@ exports.projectData = {
 			"foot":  null
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": false,
 			"video_count": 0,
 			"video_src": []
@@ -118,7 +118,7 @@ exports.projectData = {
 			"foot": "Role:  Concept, Form and Interaction Design, Projection Mapping.  Created with Dan Melancon."
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": true,
 			"video_count": 1,
 			"video_src": [
@@ -136,7 +136,7 @@ exports.projectData = {
 			"foot": "Measures 21″ x 21″ x 7″"
 		},
 		"media": {
-			"photo_count":2,
+			"photo_count": 2,
 			"videos": false,
 			"video_count": 0,
 			"video_src": []

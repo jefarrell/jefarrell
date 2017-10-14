@@ -16,18 +16,32 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 	const handleClick = (e) => {
 
 		let target = e.target.id;
-		let title, paragraphs, head, body, footer;
+		let title, paragraphs, head, body, footer, photo_count, videos, video_count, video_src;
 		let data = dataContainer[target];
 
-		[ title, paragraphs, head, body, footer ] = [ 
+		[ 
+			title, 
+			paragraphs, 
+			head, 
+			body, 
+			footer, 
+			photo_count, 
+			videos, 
+			video_count, 
+			video_src 
+		] = [ 
 			data["title"], 
 			data["paragraphs"], 
 			data["paragraphs"]["head"], 
 			data["paragraphs"]["main"], 
-			data["paragraphs"]["foot"] 
+			data["paragraphs"]["foot"],
+			data["media"]["photo_count"],
+			data["media"]["videos"],
+			data["media"]["video_count"],
+			data["media"]["video_src"]
 		]
 
-		dispatch(showItem(target, title, head, body, footer));
+		dispatch(showItem(target, title, head, body, footer, photo_count, videos, video_count, video_src));
 	}
 	
 
