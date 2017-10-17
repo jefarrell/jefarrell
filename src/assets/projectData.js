@@ -8,9 +8,8 @@ exports.projectData = {
 			"foot": "Built in MERN stack, running on Digital Ocean & nginx."
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 3,
 			"videos": false,
-			"video_count": 0,
 			"video_src": []
 		}
 	},
@@ -25,7 +24,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": false,
-			"video_count": 0,
 			"video_src": []
 		}
 	},
@@ -40,7 +38,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": false,
-			"video_count": 0,
 			"video_src": []
 		}
 	},
@@ -55,7 +52,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": true,
-			"video_count": 4,
 			"video_src": [
 				"https://player.vimeo.com/video/129975629",
 				"https://player.vimeo.com/video/129443196",
@@ -75,7 +71,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": false,
-			"video_count": 0,
 			"video_src": []
 		}
 	},
@@ -90,7 +85,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": false,
-			"video_count": 0,
 			"video_src": []
 		}
 	},
@@ -105,7 +99,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": false,
-			"video_count": 0,
 			"video_src": []
 		}
 	},
@@ -120,7 +113,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": true,
-			"video_count": 1,
 			"video_src": [
 				"https://player.vimeo.com/video/104343534"
 			]
@@ -138,7 +130,6 @@ exports.projectData = {
 		"media": {
 			"photo_count": 2,
 			"videos": false,
-			"video_count": 0,
 			"video_src": []
 		}
 	}

@@ -37,9 +37,21 @@ module.exports = {
         loader: 'url-loader?name=/fonts/[name].[ext]'
       },
       {
-        test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?name=./assets/thumbnails/[name].[ext]',
-       }
+        test: /\.(png|jpe?g|gif)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 50000,
+          name: './assets/thumbnails/[name].[ext]'
+        }
+      }
+      // {
+      //   test: /\.(png|jpe?g|gif)$/,
+      //   loader: 'url-loader',
+      //   options: {
+      //     limit: 3000,
+      //     name: './assets/images/[name]/[name].[ext]'
+      //   }
+      // }
     ]
   },
 

@@ -60,7 +60,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 			)
 
 	} else {
-		console.log("hi")
+
 		return (
 			<Modal
 				isOpen={modal}
@@ -95,7 +95,12 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 						</Button>
 					</div>
 					<Col lg={8} className="modal_image_container">
-						<SimpleSlider project={ project }  />
+						<SimpleSlider 
+							project={ project } 
+							photo_count={ photo_count }
+							videos={ videos }
+							video_src={ video_src } 
+						/>
 					</Col>
 					<Col lg={4} className="modal_info_container">
 						<h1 className="modal_title"> { title } </h1>
