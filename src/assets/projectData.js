@@ -22,7 +22,7 @@ exports.projectData = {
 			"foot": "Originally developed for VICE News, with design by Michael Deal."
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 4,
 			"videos": false,
 			"video_src": []
 		}
@@ -36,7 +36,7 @@ exports.projectData = {
 			"foot": "The data was collected and parsed in python.  An explanation of that process is available on github. The site itself was created using Node, React, Leaflet and D3.  That code is also on github."
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 3,
 			"videos": false,
 			"video_src": []
 		}
@@ -50,7 +50,7 @@ exports.projectData = {
 			"foot": "Completed as a Masters Thesis Project at NYU ITP, Spring 2015."  
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 4,
 			"videos": true,
 			"video_src": [
 				"https://player.vimeo.com/video/129975629"
@@ -66,7 +66,7 @@ exports.projectData = {
 			"foot": "A limited-edition run of cards was printed, to be sold at the Internet Yami-Ichi Art Fair in New York City on September 12, 2015.  Created with Fletcher Bach."
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 4,
 			"videos": false,
 			"video_src": []
 		}
@@ -94,7 +94,7 @@ exports.projectData = {
 			"foot":  null
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 7,
 			"videos": false,
 			"video_src": []
 		}
@@ -125,7 +125,7 @@ exports.projectData = {
 			"foot": "Measures 21″ x 21″ x 7″"
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 4,
 			"videos": false,
 			"video_src": []
 		}

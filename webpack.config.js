@@ -40,7 +40,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/,
         loader: 'url-loader',
         options: {
-          limit: 500000,
+          limit: 50000,
           name: '/assets/[name].[ext]'
         }
       }

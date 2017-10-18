@@ -40,6 +40,7 @@ class SimpleSlider extends React.Component {
     	};
 
     	const types = ["jpg", "jpeg", "png", "gif"];
+    	let project = this.props.project;
 
     	// Slider with video iframes
     	if(this.props.videos) {
@@ -47,7 +48,7 @@ class SimpleSlider extends React.Component {
     		
     		this.props.video_src.map((v, vIndex) => {
     			images.push(
-	    			<div key={ vIndex }>
+	    			<div key={ v }>
 	    				<iframe src={ v } 
 		    				title="project video" 
 		    				width="700" 
@@ -65,7 +66,7 @@ class SimpleSlider extends React.Component {
     						<div key={ i }>
     							<img 
     								className="carousel_img" 
-    								src={ imgs(`./${this.props.project}/${i}.${type}`) }
+    								src={ imgs(`./${project}/${project+i}.${type}`) }
     								/>
     						</div>
     					)
@@ -93,7 +94,7 @@ class SimpleSlider extends React.Component {
     						<div key={ i }>
     							<img 
     								className="carousel_img" 
-    								src={ imgs(`./${this.props.project}/${i}.${type}`) }
+    								src={ imgs(`./${project}/${project+i}.${type}`) }
     								/>
     						</div>
     					)
