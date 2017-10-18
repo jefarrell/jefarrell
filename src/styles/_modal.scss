@@ -113,7 +113,6 @@ $blue: #1700FC;
 }
 
 .modal_about_image {
-	border: 5px solid $blue;
 	display: block;
 	margin: auto;
 	width: 50%;
@@ -137,6 +136,10 @@ $blue: #1700FC;
 	background-color: $blue;
 	color: #FFF;
 	text-align:center;
+}
+
+.modal_about_image, .carousel_img {
+	border: 5px solid $blue;
 }
 
 .carousel_img {

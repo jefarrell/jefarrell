@@ -53,10 +53,7 @@ exports.projectData = {
 			"photo_count": 2,
 			"videos": true,
 			"video_src": [
-				"https://player.vimeo.com/video/129975629",
-				"https://player.vimeo.com/video/129443196",
-				"https://player.vimeo.com/video/129442751",
-				"https://player.vimeo.com/video/127054164"
+				"https://player.vimeo.com/video/129975629"
 			]
 		}
 	},
@@ -83,7 +80,7 @@ exports.projectData = {
 			"foot": "Created with Daphto Tracy.  Built using Python and Gephi." 
 		},
 		"media": {
-			"photo_count": 2,
+			"photo_count": 6,
 			"videos": false,
 			"video_src": []
 		}
