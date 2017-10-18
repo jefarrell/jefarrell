@@ -10,7 +10,7 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 
 	// Require context image file
 	// Set as style, pass as props to child presentational component
-	const images = require.context('../assets/thumbnails', true);
+	const imgs = require.context('../assets/thumbnails', true);
 	const dataContainer = projectData["projectData"];
 
 	const handleClick = (e) => {
@@ -53,7 +53,7 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 					Object.keys(dataContainer).map((keyname, keyindex) => {
 						let code = dataContainer[keyname]["code"];
 						let title = dataContainer[keyname]["title"];
-						let imgsrc = images(`./${code}.png`);
+						let imgsrc = imgs(`./${code}.png`);
 						let styler = {
 							backgroundImage: `url(${imgsrc})`
 						}

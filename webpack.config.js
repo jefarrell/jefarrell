@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: PATHS.build,
     filename: PROD ? 'bundle.min.js' : 'bundle.js',
-    publicPath: PATHS.build
+    publicPath: './public/'
   },
 
   module: {
@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        loaders: ['style', 'css', 'sass']
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
 
       {
@@ -40,18 +40,10 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/,
         loader: 'url-loader',
         options: {
-          limit: 50000,
-          name: './assets/thumbnails/[name].[ext]'
+          limit: 500000,
+          name: '/assets/[name].[ext]'
         }
       }
-      // {
-      //   test: /\.(png|jpe?g|gif)$/,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 3000,
-      //     name: './assets/images/[name]/[name].[ext]'
-      //   }
-      // }
     ]
   },
 

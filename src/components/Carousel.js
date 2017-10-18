@@ -52,7 +52,7 @@ class SimpleSlider extends React.Component {
 		    				title="project video" 
 		    				width="700" 
 		    				height="400"
-		    				frameborder="0"
+		    				frameBorder="0"
 		    			/>
 	    			</div>
     			)
