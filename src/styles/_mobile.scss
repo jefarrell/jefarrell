@@ -1,0 +1,91 @@
+// /****** iPhone 5 ********/
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) { 
+	
+	.header {
+		padding-bottom: 0;
+	}
+
+	.header_name, .header_about {
+		display: block;
+		color: red;
+	}
+
+	.header_name {
+		float: none;
+	}
+
+	.header_about {
+		float: left;
+		padding-left: 10%;
+	}
+}
+
+
+// /****** iPhone 6 ********/
+@media only screen 
+and (min-width : 375px) 
+and (max-width : 480px) { 
+
+	.header {
+		padding-bottom: 0;
+	}
+
+	.header_name, .header_about {
+		display: block;
+	}
+
+	.header_name {
+		float: none;
+	}
+
+	.header_about {
+		float: left;
+		padding-left: 10%;
+	}
+
+	.project_title {
+		font-size: 1.25em;
+		line-height: 1.25em;
+	}
+
+	.modal_about_image {
+		margin-top: 1.5em;
+	}
+
+	.modal_title {
+		margin: 0.25em 0 0.25em 0;
+		font-size: 1.75em;
+	}
+	.modal_about_text {
+		font-size: 1em;
+		line-height: 1.85em;
+		width: 100%;
+		padding: 0;
+	}
+
+	.modal_about_text, .modal_about_email {
+		margin-top: 1em;
+	}
+
+	.modal_about_image, .modal_about_email {
+		width: 100%;
+	}
+
+	.modal_about_email_id {
+		display: block;
+	}
+
+	.modal_image_container, .modal_info_container {
+		padding-left: 0;
+	}
+
+	.carousel_img {
+		width: 100%;
+	}
+
+	#carousel_next_arrow {
+		right: -12%;
+	}
+}

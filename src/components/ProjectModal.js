@@ -9,6 +9,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 
 	if (project === 'About') {
 		return (
+			
 			<Modal
 				isOpen={modal}
 				shouldCloseOnOverlayClick={true}
@@ -53,7 +54,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 								I have a resume over here, and am on github over there. 
 								Available for freelance work related to full-stack web development, 
 								data wrangling & analysis, interactive maps, and more. 
-								<span id="modal_about_email">johnefarrell18 at gmail dot com</span>
+								<span id="modal_about_email"><span id="modal_about_email_id">johnefarrell18</span> at gmail dot com</span>
 							</p>
 						</div>
 					</div>
