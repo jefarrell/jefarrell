@@ -9,7 +9,6 @@ and (max-width : 480px) {
 
 	.header_name, .header_about {
 		display: block;
-		color: red;
 	}
 
 	.header_name {
@@ -34,6 +33,7 @@ and (max-width : 480px) {
 
 	.header_name, .header_about {
 		display: block;
+		font-size: 2em;
 	}
 
 	.header_name {
@@ -45,7 +45,7 @@ and (max-width : 480px) {
 		padding-left: 10%;
 	}
 
-	.project_title {
+	.project_container > .project_title {
 		font-size: 1.25em;
 		line-height: 1.25em;
 	}
@@ -54,12 +54,16 @@ and (max-width : 480px) {
 		margin-top: 1.5em;
 	}
 
+	.modal_nav {
+		padding-bottom: 0;
+	}
+
 	.modal_title {
 		margin: 0.25em 0 0.25em 0;
 		font-size: 1.75em;
 	}
 	.modal_about_text {
-		font-size: 1em;
+		font-size: 0.8em;
 		line-height: 1.85em;
 		width: 100%;
 		padding: 0;
@@ -73,6 +77,11 @@ and (max-width : 480px) {
 		width: 100%;
 	}
 
+	.modal_about_email {
+		width: 100%;
+		margin-top: 0.9em;
+	}
+
 	.modal_about_email_id {
 		display: block;
 	}
@@ -81,11 +90,16 @@ and (max-width : 480px) {
 		padding-left: 0;
 	}
 
-	.carousel_img {
+	.modal_carousel_img {
 		width: 100%;
 	}
 
-	#carousel_next_arrow {
-		right: -12%;
+	.modal_carousel_video {
+		width: 100%;
+		height: auto;
+	}
+
+	#modal_carousel_next_arrow {
+		left: 102%;
 	}
 }

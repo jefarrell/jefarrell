@@ -138,11 +138,11 @@ $blue: #1700FC;
 	text-align:center;
 }
 
-.modal_about_image, .carousel_img {
+.modal_about_image, .modal_carousel_img {
 	border: 5px solid $blue;
 }
 
-.carousel_img {
+.modal_carousel_img {
 	max-width: 700px;
 }
 
@@ -150,6 +150,6 @@ $blue: #1700FC;
 	-webkit-text-fill-color: $blue;
 }
 
-#carousel_next_arrow {
-	right: 16%;
+#modal_carousel_next_arrow {
+	left: 89%;
 }

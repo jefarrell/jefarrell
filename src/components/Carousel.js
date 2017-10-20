@@ -7,7 +7,7 @@ function NextArrow(props) {
 	return (
 		<div
 			className={className}
-			id="carousel_next_arrow"
+			id="modal_carousel_next_arrow"
 			style={{...style, display: 'block'}}
 			onClick={onClick}
 	    ></div>
@@ -49,7 +49,9 @@ class SimpleSlider extends React.Component {
     		this.props.video_src.map((v, vIndex) => {
     			images.push(
 	    			<div key={ v }>
-	    				<iframe src={ v } 
+	    				<iframe 
+                            src={ v } 
+                            className="modal_carousel_video"
 		    				title="project video" 
 		    				width="700" 
 		    				height="400"
@@ -65,7 +67,7 @@ class SimpleSlider extends React.Component {
     					images.push(
     						<div key={ i }>
     							<img 
-    								className="carousel_img" 
+    								className="modal_carousel_img" 
     								src={ imgs(`./${project}/${project+i}.${type}`) }
     								/>
     						</div>
@@ -93,7 +95,7 @@ class SimpleSlider extends React.Component {
     					images.push(
     						<div key={ i }>
     							<img 
-    								className="carousel_img" 
+    								className="modal_carousel_img" 
     								src={ imgs(`./${project}/${project+i}.${type}`) }
     								/>
     						</div>
