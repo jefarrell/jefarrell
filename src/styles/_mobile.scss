@@ -3,6 +3,10 @@
 and (min-width : 320px) 
 and (max-width : 480px) { 
 	
+	#gridContainer {
+		margin-bottom: 2em;
+	}
+
 	.header {
 		padding-bottom: 0;
 	}
@@ -26,6 +30,10 @@ and (max-width : 480px) {
 @media only screen 
 and (min-width : 375px) 
 and (max-width : 480px) { 
+	
+	#gridContainer {
+		margin-bottom: 2em;
+	}
 
 	.header {
 		padding-bottom: 0;
@@ -109,7 +117,11 @@ and (max-width : 480px) {
 @media only screen 
 and (min-device-width : 414px) 
 and (max-device-width : 736px) 
-and (orientation : landscape) {
+and (orientation : landscape) 
+{
+	#gridContainer {
+		margin-bottom: 2em;
+	}
 
 	.modal_title {
 		z-index: 10;
@@ -127,7 +139,7 @@ and (orientation : landscape) {
 	#modal_about_email {
 		width: 75%;
 	}
-	
+
 	.modal_image_container {
 		padding-left: 0;
 	}
@@ -136,7 +148,11 @@ and (orientation : landscape) {
 		left: 102%;
 	}
 
-	.modal_carousel_img, .modal_carousel_video {
+	.modal_about_image {
+		margin-top: 1.5em;
+	}
+
+	.modal_about_image, .modal_carousel_img, .modal_carousel_video {
 		width: 100%;
 	}
 
