@@ -19,6 +19,7 @@ function PrevArrow(props) {
 	return (
 		<div
 			className={className}
+            id="modal_carousel_prev_arrow"
 			style={{...style, display: 'block'}}
 			onClick={onClick}
 		></div>

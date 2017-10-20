@@ -81,7 +81,7 @@ $blue: #1700FC;
 
 .modal_title {
 	display: inline-block;
-	margin-top: -1em;
+	margin-top: 0;
 	background-color: $blue;
 	color: #FFF;
 	padding: 0.2em;
@@ -140,8 +140,16 @@ $blue: #1700FC;
 	//max-width: 700px;
 }
 
+.slick-prev:before, .slick-next:before {
+	font-size: 40px;
+}
+
 .slick-arrow {
 	-webkit-text-fill-color: $blue;
+}
+
+#modal_carousel_prev_arrow {
+	left: -8%;
 }
 
 #modal_carousel_next_arrow {

@@ -107,6 +107,14 @@ and (max-width : 480px) {
 		height: auto;
 	}
 
+	.slick-prev:before, .slick-next:before {
+		font-size: 27px;
+	}
+
+	#modal_carousel_prev_arrow {
+		left: -15%;
+	}
+
 	#modal_carousel_next_arrow {
 		left: 102%;
 	}
@@ -142,6 +150,14 @@ and (orientation : landscape)
 
 	.modal_image_container {
 		padding-left: 0;
+	}
+	
+	.slick-prev:before, .slick-next:before{
+		font-size: 27px;
+	}
+
+	#modal_carousel_prev_arrow {
+		left: -7%;
 	}
 
 	#modal_carousel_next_arrow {
