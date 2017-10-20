@@ -22,7 +22,7 @@ and (max-width : 480px) {
 }
 
 
-// /****** iPhone 6 ********/
+// /****** iPhone 6 portait ********/
 @media only screen 
 and (min-width : 375px) 
 and (max-width : 480px) { 
@@ -77,12 +77,12 @@ and (max-width : 480px) {
 		width: 100%;
 	}
 
-	.modal_about_email {
+	#modal_about_email {
 		width: 100%;
-		margin-top: 0.9em;
+		margin-top: 1em;
 	}
 
-	.modal_about_email_id {
+	#modal_about_email_id {
 		display: block;
 	}
 
@@ -103,3 +103,25 @@ and (max-width : 480px) {
 		left: 102%;
 	}
 }
+
+
+// /****** iPhone 6 landscape ********/
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : landscape) {
+
+	.modal_image_container {
+		padding-left: 0;
+	}
+
+	#modal_carousel_next_arrow {
+		left: 102%;
+	}
+
+	.modal_carousel_img {
+		width: 100%;
+	}
+}
+
+

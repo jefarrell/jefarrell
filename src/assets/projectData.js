@@ -77,7 +77,7 @@ exports.projectData = {
 		"paragraphs": {
 			"head": "An exploration of the hashtag #belieber on twitter.",
 			"main": "What can a hashtag reveal about a celebrity like Justin Bieber?  How does his influence span the globe, subsets of Twitter users, and social media marketing?  This project examines the network of users who use the #belieber hashtag, both through social groups and geographically.",
-			"foot": "Created with Daphto Tracy.  Built using Python and Gephi." 
+			"foot": "Created with David Tracy.  Built using Python and Gephi." 
 		},
 		"media": {
 			"photo_count": 6,
@@ -90,8 +90,8 @@ exports.projectData = {
 		"code": "taxidermy",
 		"paragraphs": {
 			"head": "A twitter bot offering live psychological diagnosis for supporters of Donald Trump.",
-			"main": "Rambling Taxidermy is a twitter bot originally created for Reading and Writing Electronic Text at NYU ITP.  The bot takes the form of a taxidermied fox acting as a deranged psychiatrist.  His practice serves to offer free, unsolicited psychoanalysis to supporters of Donald Trump.  His “analysis” typically ends up being strange, nonsensical ramblings.  A baseline corpus was created by manipulating and mixing Freud’s “Psychoanalysis for Beginners, and “Practical Taxidermy”, both courtesy of Project Gutenberg.  Some selected conversations are below.",
-			"foot":  null
+			"main": "Rambling Taxidermy is a twitter bot originally created for Reading and Writing Electronic Text at NYU ITP.  The bot takes the form of a taxidermied fox acting as a deranged psychiatrist.  His practice serves to offer free, unsolicited psychoanalysis to supporters of Donald Trump.  His “analysis” typically ends up being strange, nonsensical ramblings.  A baseline corpus was created by manipulating and mixing Freud’s “Psychoanalysis for Beginners, and “Practical Taxidermy”, both courtesy of Project Gutenberg.",
+			"foot":  "These are selected conversations, originally on display in 'The Lounge', 721 Broadway."
 		},
 		"media": {
 			"photo_count": 7,

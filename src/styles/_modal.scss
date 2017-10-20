@@ -39,18 +39,11 @@ $blue: #1700FC;
 /////////~~~~~~~~~~
 
 
-.modal_container {
-
-}
-
 .modal_image_container {
 	padding-left: 7em;
 	fill: white;
 }
 
-.modal_info_container {
-
-}
 
 .modal_nav {
 	display: block;
@@ -143,7 +136,8 @@ $blue: #1700FC;
 }
 
 .modal_carousel_img {
-	max-width: 700px;
+	max-width: 85%;
+	//max-width: 700px;
 }
 
 .slick-arrow {

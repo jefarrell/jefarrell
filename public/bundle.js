@@ -14799,8 +14799,8 @@ var map = {
 	"./myco/myco1.jpg": 391,
 	"./myco/myco2.jpg": 392,
 	"./myco/myco3.jpg": 393,
-	"./nationalparks/nationalparks0.png": 394,
-	"./nationalparks/nationalparks1.gif": 395,
+	"./nationalparks/nationalparks0.gif": 436,
+	"./nationalparks/nationalparks1.png": 437,
 	"./nationalparks/nationalparks2.png": 396,
 	"./salarycalc/salarycalc0.gif": 397,
 	"./salarycalc/salarycalc1.png": 398,
@@ -27989,7 +27989,7 @@ exports.projectData = {
 		"paragraphs": {
 			"head": "An exploration of the hashtag #belieber on twitter.",
 			"main": "What can a hashtag reveal about a celebrity like Justin Bieber?  How does his influence span the globe, subsets of Twitter users, and social media marketing?  This project examines the network of users who use the #belieber hashtag, both through social groups and geographically.",
-			"foot": "Created with Daphto Tracy.  Built using Python and Gephi."
+			"foot": "Created with David Tracy.  Built using Python and Gephi."
 		},
 		"media": {
 			"photo_count": 6,
@@ -28002,8 +28002,8 @@ exports.projectData = {
 		"code": "taxidermy",
 		"paragraphs": {
 			"head": "A twitter bot offering live psychological diagnosis for supporters of Donald Trump.",
-			"main": "Rambling Taxidermy is a twitter bot originally created for Reading and Writing Electronic Text at NYU ITP.  The bot takes the form of a taxidermied fox acting as a deranged psychiatrist.  His practice serves to offer free, unsolicited psychoanalysis to supporters of Donald Trump.  His “analysis” typically ends up being strange, nonsensical ramblings.  A baseline corpus was created by manipulating and mixing Freud’s “Psychoanalysis for Beginners, and “Practical Taxidermy”, both courtesy of Project Gutenberg.  Some selected conversations are below.",
-			"foot": null
+			"main": "Rambling Taxidermy is a twitter bot originally created for Reading and Writing Electronic Text at NYU ITP.  The bot takes the form of a taxidermied fox acting as a deranged psychiatrist.  His practice serves to offer free, unsolicited psychoanalysis to supporters of Donald Trump.  His “analysis” typically ends up being strange, nonsensical ramblings.  A baseline corpus was created by manipulating and mixing Freud’s “Psychoanalysis for Beginners, and “Practical Taxidermy”, both courtesy of Project Gutenberg.",
+			"foot": "These are selected conversations, originally on display in 'The Lounge', 721 Broadway."
 		},
 		"media": {
 			"photo_count": 7,
@@ -32651,18 +32651,8 @@ module.exports = __webpack_require__.p + "/assets/myco2.jpg";
 module.exports = __webpack_require__.p + "/assets/myco3.jpg";
 
 /***/ }),
-/* 394 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/assets/nationalparks0.png";
-
-/***/ }),
-/* 395 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/assets/nationalparks1.gif";
-
-/***/ }),
+/* 394 */,
+/* 395 */,
 /* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32874,7 +32864,7 @@ exports.i(__webpack_require__(422), "");
 exports.i(__webpack_require__(423), "");
 
 // module
-exports.push([module.i, ".header {\n  padding-bottom: 5em; }\n\n.header_name {\n  float: left;\n  padding-left: 10%; }\n\n.header_about {\n  cursor: pointer;\n  float: right;\n  padding-right: 10%; }\n\n.header_about:hover {\n  background: #1700FC;\n  color: #FFF; }\n\n.header_name, .header_about {\n  font-family: GinoraSansBold;\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.modal_image_container {\n  padding-left: 7em;\n  fill: white; }\n\n.modal_nav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modal_close {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modal_close:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.modal_info_head, .modal_info_body, .modal_info_foot {\n  color: #1700FC; }\n\n.modal_title {\n  display: inline-block;\n  margin-top: -1em;\n  background-color: #1700FC;\n  color: #FFF;\n  padding: 0.2em;\n  font-family: GinoraSansBold; }\n\n.modal_info_head, .modal_info_foot {\n  font-family: LibreBaskerville-Italic; }\n\n.modal_info_head {\n  display: block; }\n\n.modal_info_body {\n  font-family: LibreBaskerville-Regular;\n  margin: 1em 0; }\n\n.modal_about_info {\n  margin-top: -2em; }\n\n.modal_about_image {\n  display: block;\n  margin: auto;\n  width: 50%; }\n\n.modal_about_text {\n  color: #1700FC;\n  font-family: LibreBaskerville-Regular;\n  font-size: 1.25em;\n  line-height: 1.65em;\n  text-align: center;\n  margin: auto;\n  width: 66.6%;\n  padding: 2em; }\n\n#modal_about_email {\n  width: 50%;\n  margin: 0 auto;\n  display: block;\n  background-color: #1700FC;\n  color: #FFF;\n  text-align: center; }\n\n.modal_about_image, .modal_carousel_img {\n  border: 5px solid #1700FC; }\n\n.modal_carousel_img {\n  max-width: 700px; }\n\n.slick-arrow {\n  -webkit-text-fill-color: #1700FC; }\n\n#modal_carousel_next_arrow {\n  left: 89%; }\n\n@font-face {\n  font-family: GinoraSansLight;\n  font-weight: bold;\n  src: url(" + __webpack_require__(428) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansRegular;\n  font-weight: bold;\n  src: url(" + __webpack_require__(429) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansBold;\n  font-weight: bold;\n  src: url(" + __webpack_require__(430) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Regular;\n  font-weight: normal;\n  src: url(" + __webpack_require__(431) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Italic;\n  font-weight: normal;\n  src: url(" + __webpack_require__(432) + ") format(\"opentype\"); }\n\n@media only screen and (min-width: 320px) and (max-width: 480px) {\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; } }\n\n@media only screen and (min-width: 375px) and (max-width: 480px) {\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block;\n    font-size: 2em; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; }\n  .project_container > .project_title {\n    font-size: 1.25em;\n    line-height: 1.25em; }\n  .modal_about_image {\n    margin-top: 1.5em; }\n  .modal_nav {\n    padding-bottom: 0; }\n  .modal_title {\n    margin: 0.25em 0 0.25em 0;\n    font-size: 1.75em; }\n  .modal_about_text {\n    font-size: 0.8em;\n    line-height: 1.85em;\n    width: 100%;\n    padding: 0; }\n  .modal_about_text, .modal_about_email {\n    margin-top: 1em; }\n  .modal_about_image, .modal_about_email {\n    width: 100%; }\n  .modal_about_email {\n    width: 100%;\n    margin-top: 0.9em; }\n  .modal_about_email_id {\n    display: block; }\n  .modal_image_container, .modal_info_container {\n    padding-left: 0; }\n  .modal_carousel_img {\n    width: 100%; }\n  .modal_carousel_video {\n    width: 100%;\n    height: auto; }\n  #modal_carousel_next_arrow {\n    left: 102%; } }\n\n#gridContainer {\n  padding: 0 20% 0 20%; }\n\n.project {\n  position: relative; }\n\n.project_container {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  -webkit-transition: background 0.5s ease; }\n\n.project_container:hover {\n  -webkit-transition: background-size 0.5s ease;\n  background-size: 175%;\n  cursor: pointer; }\n\n.project_dummy {\n  margin-top: 100%; }\n\n.project_layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.project_title {\n  font-family: GinoraSansRegular;\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.25em;\n  display: table;\n  margin: 0 auto;\n  width: 75%;\n  margin-top: 30%;\n  text-align: center; }\n", ""]);
+exports.push([module.i, ".header {\n  padding-bottom: 5em; }\n\n.header_name {\n  float: left;\n  padding-left: 10%; }\n\n.header_about {\n  cursor: pointer;\n  float: right;\n  padding-right: 10%; }\n\n.header_about:hover {\n  background: #1700FC;\n  color: #FFF; }\n\n.header_name, .header_about {\n  font-family: GinoraSansBold;\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.modal_image_container {\n  padding-left: 7em;\n  fill: white; }\n\n.modal_nav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modal_close {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modal_close:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.modal_info_head, .modal_info_body, .modal_info_foot {\n  color: #1700FC; }\n\n.modal_title {\n  display: inline-block;\n  margin-top: -1em;\n  background-color: #1700FC;\n  color: #FFF;\n  padding: 0.2em;\n  font-family: GinoraSansBold; }\n\n.modal_info_head, .modal_info_foot {\n  font-family: LibreBaskerville-Italic; }\n\n.modal_info_head {\n  display: block; }\n\n.modal_info_body {\n  font-family: LibreBaskerville-Regular;\n  margin: 1em 0; }\n\n.modal_about_info {\n  margin-top: -2em; }\n\n.modal_about_image {\n  display: block;\n  margin: auto;\n  width: 50%; }\n\n.modal_about_text {\n  color: #1700FC;\n  font-family: LibreBaskerville-Regular;\n  font-size: 1.25em;\n  line-height: 1.65em;\n  text-align: center;\n  margin: auto;\n  width: 66.6%;\n  padding: 2em; }\n\n#modal_about_email {\n  width: 50%;\n  margin: 0 auto;\n  display: block;\n  background-color: #1700FC;\n  color: #FFF;\n  text-align: center; }\n\n.modal_about_image, .modal_carousel_img {\n  border: 5px solid #1700FC; }\n\n.modal_carousel_img {\n  max-width: 85%; }\n\n.slick-arrow {\n  -webkit-text-fill-color: #1700FC; }\n\n#modal_carousel_next_arrow {\n  left: 89%; }\n\n@font-face {\n  font-family: GinoraSansLight;\n  font-weight: bold;\n  src: url(" + __webpack_require__(428) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansRegular;\n  font-weight: bold;\n  src: url(" + __webpack_require__(429) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansBold;\n  font-weight: bold;\n  src: url(" + __webpack_require__(430) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Regular;\n  font-weight: normal;\n  src: url(" + __webpack_require__(431) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Italic;\n  font-weight: normal;\n  src: url(" + __webpack_require__(432) + ") format(\"opentype\"); }\n\n@media only screen and (min-width: 320px) and (max-width: 480px) {\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; } }\n\n@media only screen and (min-width: 375px) and (max-width: 480px) {\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block;\n    font-size: 2em; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; }\n  .project_container > .project_title {\n    font-size: 1.25em;\n    line-height: 1.25em; }\n  .modal_about_image {\n    margin-top: 1.5em; }\n  .modal_nav {\n    padding-bottom: 0; }\n  .modal_title {\n    margin: 0.25em 0 0.25em 0;\n    font-size: 1.75em; }\n  .modal_about_text {\n    font-size: 0.8em;\n    line-height: 1.85em;\n    width: 100%;\n    padding: 0; }\n  .modal_about_text, .modal_about_email {\n    margin-top: 1em; }\n  .modal_about_image, .modal_about_email {\n    width: 100%; }\n  #modal_about_email {\n    width: 100%;\n    margin-top: 1em; }\n  #modal_about_email_id {\n    display: block; }\n  .modal_image_container, .modal_info_container {\n    padding-left: 0; }\n  .modal_carousel_img {\n    width: 100%; }\n  .modal_carousel_video {\n    width: 100%;\n    height: auto; }\n  #modal_carousel_next_arrow {\n    left: 102%; } }\n\n@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {\n  .modal_image_container {\n    padding-left: 0; }\n  #modal_carousel_next_arrow {\n    left: 102%; }\n  .modal_carousel_img {\n    width: 100%; } }\n\n#gridContainer {\n  padding: 0 20% 0 20%; }\n\n.project {\n  position: relative; }\n\n.project_container {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  -webkit-transition: background 0.5s ease; }\n\n.project_container:hover {\n  -webkit-transition: background-size 0.5s ease;\n  background-size: 175%;\n  cursor: pointer; }\n\n.project_dummy {\n  margin-top: 100%; }\n\n.project_layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.project_title {\n  font-family: GinoraSansRegular;\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.25em;\n  display: table;\n  margin: 0 auto;\n  width: 75%;\n  margin-top: 30%;\n  text-align: center; }\n", ""]);
 
 // exports
 
@@ -33427,6 +33417,19 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+/***/ }),
+/* 435 */,
+/* 436 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/nationalparks0.gif";
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/nationalparks1.png";
 
 /***/ })
 /******/ ]);
