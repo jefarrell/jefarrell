@@ -36,6 +36,7 @@ class SimpleSlider extends React.Component {
 			speed: 500,
 			slidesToShow: 1,
 			slidesToScroll: 1,
+            lazyLoad: true,
 			nextArrow: <NextArrow />,
 			prevArrow: <PrevArrow />
     	};
@@ -54,8 +55,8 @@ class SimpleSlider extends React.Component {
                             src={ v } 
                             className="modal_carousel_video"
 		    				title="project video" 
-		    				width="700" 
-		    				height="400"
+		    				width="700"
+                            height="400" 
 		    				frameBorder="0"
 		    			/>
 	    			</div>

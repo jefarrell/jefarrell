@@ -137,7 +137,6 @@ $blue: #1700FC;
 
 .modal_carousel_img {
 	width: 85%;
-	//max-width: 700px;
 }
 
 .slick-prev:before, .slick-next:before {
@@ -149,9 +148,19 @@ $blue: #1700FC;
 }
 
 #modal_carousel_prev_arrow {
-	left: -8%;
+	margin-left: -3%;
 }
 
 #modal_carousel_next_arrow {
-	left: 89%;
+	margin-right: 14%;
+}
+
+@media only screen 
+and (min-width : 737px) 
+and (max-width : 1200px) { 
+
+	.modal_title {
+		margin-top: 0.5em;
+	}
+
 }

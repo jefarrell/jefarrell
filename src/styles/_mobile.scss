@@ -133,6 +133,7 @@ and (orientation : landscape)
 
 	.modal_title {
 		z-index: 10;
+		margin-top: 0.5em;
 	}
 
 	.modal_nav {
@@ -156,13 +157,13 @@ and (orientation : landscape)
 		font-size: 27px;
 	}
 
-	#modal_carousel_prev_arrow {
-		left: -7%;
-	}
+	// #modal_carousel_prev_arrow {
+	// 	left: -7%;
+	// }
 
-	#modal_carousel_next_arrow {
-		left: 102%;
-	}
+	// #modal_carousel_next_arrow {
+	// 	left: 102%;
+	// }
 
 	.modal_about_image {
 		margin-top: 1.5em;
