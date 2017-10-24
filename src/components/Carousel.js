@@ -9,7 +9,7 @@ function NextArrow(props) {
 			className={className}
 			id="modal_carousel_next_arrow"
 			style={{...style, display: 'block'}}
-			onClick={onClick}
+			onClick={ onClick }
 	    ></div>
 	);
 }
@@ -21,7 +21,7 @@ function PrevArrow(props) {
 			className={className}
             id="modal_carousel_prev_arrow"
 			style={{...style, display: 'block'}}
-			onClick={onClick}
+			onClick={ onClick} 
 		></div>
 	);
 }
@@ -50,12 +50,12 @@ class SimpleSlider extends React.Component {
     		
     		this.props.video_src.map((v, vIndex) => {
     			images.push(
-	    			<div key={ v }>
+	    			<div key={ v } className="modal_carousel_video_container">
 	    				<iframe 
                             src={ v } 
                             className="modal_carousel_video"
 		    				title="project video" 
-		    				width="700"
+		    				width="85%"
                             height="400" 
 		    				frameBorder="0"
 		    			/>

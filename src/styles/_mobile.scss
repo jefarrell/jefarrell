@@ -157,13 +157,13 @@ and (orientation : landscape)
 		font-size: 27px;
 	}
 
-	// #modal_carousel_prev_arrow {
-	// 	left: -7%;
-	// }
+	#modal_carousel_prev_arrow {
+		margin-left: -1%;
+	}
 
-	// #modal_carousel_next_arrow {
-	// 	left: 102%;
-	// }
+	#modal_carousel_next_arrow {
+		margin-right: 0;
+	}
 
 	.modal_about_image {
 		margin-top: 1.5em;
