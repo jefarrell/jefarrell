@@ -6,7 +6,18 @@
 @import 'mobile';
 
 $blue: #1700FC;
+$yellow: #FCD700;
 
+a {
+	background-color: $yellow;
+	color: $blue;
+	padding: 0.25em;
+}
+
+a:hover {
+	background-color: $blue;
+	color: $yellow;
+}
 
 #gridContainer {
 	padding: 0 20% 0 20%;
