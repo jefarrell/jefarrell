@@ -11,7 +11,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 		return (
 			
 			<Modal
-				isOpen={modal}
+				isOpen={ modal }
 				shouldCloseOnOverlayClick={true}
 				contentLabel="Modal"
 				onClick = { e => {
@@ -50,8 +50,8 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 						<div className="modal_about_text">
 							<p> 
 								My name is John Farrell, I’m a Portland-based developer and designer. 
-								Graduate of & former Research Fellow at ITP-NYU. 
-								I have a resume over here, and am on github over there. 
+								Graduate of & former Research Fellow at <a href="http://tisch.nyu.edu/itp">ITP-NYU</a>. 
+								I have a resume over here, and am on <a href="https://github.com/jefarrell">github</a> over there. 
 								Available for freelance work related to full-stack web development, 
 								data wrangling & analysis, interactive maps, and more. 
 								<span id="modal_about_email"><span id="modal_about_email_id">johnefarrell18</span> at gmail dot com</span>
@@ -67,7 +67,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 
 		return (
 			<Modal
-				isOpen={modal}
+				isOpen={ modal }
 				shouldCloseOnOverlayClick={true}
 				contentLabel="Modal"
 				onClick = { e => {
@@ -82,7 +82,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 					content: {
 						background: '#FFF',
 						border: '6px solid #1700FC',
-						borderRadius: 0
+						borderRadius: 0,
 					}
 				}}
 			> 
@@ -108,9 +108,9 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 					</Col>
 					<Col lg={4} className="modal_info_container">
 						<h1 className="modal_title"> { title } </h1>
-						<span className="modal_info_head">  { head } </span>
-						<p className="modal_info_body">  { body } </p>
-						<span className="modal_info_foot">  { foot } </span>
+						<span className="modal_info_head" dangerouslySetInnerHTML={{__html: head }} />
+						<p className="modal_info_body" dangerouslySetInnerHTML={{__html: body }} />
+						<span className="modal_info_foot" dangerouslySetInnerHTML={{__html: foot }} />
 					</Col>
 				</div>
 			</Modal>

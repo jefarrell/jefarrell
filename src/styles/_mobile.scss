@@ -58,6 +58,14 @@ and (max-width : 480px) {
 		line-height: 1.25em;
 	}
 
+
+	.ReactModal__Content, .ReactModal__Content--after-open {
+		top: 10px !important;
+		right: 10px !important;
+		bottom: 10px !important;
+		left: 10px !important;
+	}
+
 	.modal_about_image {
 		margin-top: 1.5em;
 	}
@@ -111,9 +119,9 @@ and (max-width : 480px) {
 		font-size: 27px;
 	}
 
-	#modal_carousel_prev_arrow {
-		left: -15%;
-	}
+	// #modal_carousel_prev_arrow {
+	// 	left: -15%;
+	// }
 
 	#modal_carousel_next_arrow {
 		left: 102%;

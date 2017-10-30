@@ -14799,8 +14799,8 @@ var map = {
 	"./myco/myco1.jpg": 391,
 	"./myco/myco2.jpg": 392,
 	"./myco/myco3.jpg": 393,
-	"./nationalparks/nationalparks0.gif": 436,
-	"./nationalparks/nationalparks1.png": 437,
+	"./nationalparks/nationalparks0.gif": 394,
+	"./nationalparks/nationalparks1.png": 395,
 	"./nationalparks/nationalparks2.png": 396,
 	"./salarycalc/salarycalc0.gif": 397,
 	"./salarycalc/salarycalc1.png": 398,
@@ -27919,7 +27919,7 @@ exports.projectData = {
 		"paragraphs": {
 			"head": "A full-stack web application built for goTenna.  Designed, developed and deployed in under two weeks.",
 			"main": "#imeshyou is a website created for goTenna as part of the release of their new mesh networking device, the goTenna Mesh.  #imeshyou was made as a promotional addition for the launch of their kickstarter campaign, which was met within two days.  The site is meant to show the community of mesh users around the world – backers of the kickstarter campaign would register their new devices and add them to the map.  A mesh network gets more powerful as more people join, and seeing the active users is an encouragement to join the network.",
-			"foot": "Built in MERN stack, running on Digital Ocean & nginx."
+			"foot": "Built in MERN stack, running on Digital Ocean & nginx.  Code available on <a href=\"https://github.com/jefarrell/I-Mesh-You\">github<\/a>."
 		},
 		"media": {
 			"photo_count": 3,
@@ -27932,8 +27932,8 @@ exports.projectData = {
 		"code": "salarycalc",
 		"paragraphs": {
 			"head": "A tool to determine if you're being paid fairly",
-			"main": "Select the area where you live and occupation, and see if you are underpaid compared to data from the Bureau of Labor Statistics.  Certificates are generated as either a congratulations, or as a prompt to discuss a raise with your boss. All data was sourced from the BLS’s Occupational Employment Statistics for 2016.  Data formatted in python, site built in React, with code available on github.",
-			"foot": "Originally developed for VICE News, with design by Michael Deal."
+			"main": "Select the area where you live and occupation, and see if you are underpaid compared to data from the Bureau of Labor Statistics.  Certificates are generated as either a congratulations, or as a prompt to discuss a raise with your boss. All data was sourced from the BLS’s Occupational Employment Statistics for 2016.  Data formatted in python, site built in React, with code available on <a href=\"https://github.com/jefarrell/VICE-Money-Salary-Calculator\">github<\/a>.",
+			"foot": "Originally developed for VICE News, with design by <a href=\"http://mikedeal.org/\">Michael Deal<\/a>."
 		},
 		"media": {
 			"photo_count": 4,
@@ -27946,8 +27946,8 @@ exports.projectData = {
 		"code": "nationalparks",
 		"paragraphs": {
 			"head": "An online, interactive map displaying social media activity in the National Parks",
-			"main": "Over 300,000 Instagram posts were collected around the 10 most-visited National Parks in 2015.  This data allows us to see user activity over time and place, creating maps of visitor activity that has never before been available.  View multiple photographs from the same locations, see remote outposts, or see photographs follow the rivers and valleys of the parks.",
-			"foot": "The data was collected and parsed in python.  An explanation of that process is available on github. The site itself was created using Node, React, Leaflet and D3.  That code is also on github."
+			"main": "Over 300,000 Instagram posts were collected around the 10 most-visited National Parks in 2015.  This data allows us to see user activity over time and place, creating maps of visitor activity that has never before been available.  View multiple photographs from the same locations, see remote outposts, or see photographs follow the rivers and valleys of the parks. <a href=\"https://github.com/jefarrell/Mapping_Instagram_Data\">Data parsing<\/a> in python, site built with Node, React, Leaflet & d3.  View code on <a href=\"https://github.com/jefarrell/Photos_in_National_Parks\">github<\/a>.",
+			"foot": "<a href=\"http://www.photosinthenationalparks.com\">View the live site!<\/a>"
 		},
 		"media": {
 			"photo_count": 3,
@@ -27974,8 +27974,8 @@ exports.projectData = {
 		"code": "githubleague",
 		"paragraphs": {
 			"head": "The GitHub League imagines a moment where, much like baseball players, open source software engineers are collected, traded, and looked up to.",
-			"main": "The GitHub League consists of the ten most active users within a one-year period, from August 24, 2014-August 25, 2015. In this context, “most active” means most commits to public repositories. We were inspired by, and based our ranking system off of, work by GitHub user paulmillr and his git.io/top page.",
-			"foot": "A limited-edition run of cards was printed, to be sold at the Internet Yami-Ichi Art Fair in New York City on September 12, 2015.  Created with Fletcher Bach."
+			"main": "The GitHub League consists of the ten most active users within a one-year period, from August 24, 2014-August 25, 2015. In this context, “most active” means most commits to public repositories. We were inspired by, and based our ranking system off of, work by GitHub user paulmillr and his <a href=\"http://git.io/top\">git.io/top<\/a> page.",
+			"foot": "A limited-edition run of cards was printed, to be sold at the Internet Yami-Ichi Art Fair in New York City on September 12, 2015.  Created with <a href=\"http://fletcherbach.com/\">Fletcher Bach<\/a>."
 		},
 		"media": {
 			"photo_count": 4,
@@ -27989,7 +27989,7 @@ exports.projectData = {
 		"paragraphs": {
 			"head": "An exploration of the hashtag #belieber on twitter.",
 			"main": "What can a hashtag reveal about a celebrity like Justin Bieber?  How does his influence span the globe, subsets of Twitter users, and social media marketing?  This project examines the network of users who use the #belieber hashtag, both through social groups and geographically.",
-			"foot": "Created with David Tracy.  Built using Python and Gephi."
+			"foot": "Created with <a href=\"http://davidptracy.com//\">David Tracy<\/a>.  Built using Python and Gephi."
 		},
 		"media": {
 			"photo_count": 6,
@@ -28017,7 +28017,7 @@ exports.projectData = {
 		"paragraphs": {
 			"head": "Interactive projection mapping installation.",
 			"main": "Generative graphics, based on a reaction-diffusion simulation, are projection mapped onto a polygonal three dimensional object.  A Kinect mounted beneath the object detects the viewers proximity.  As the viewer moves closer and around the object, variables controlling aspects of the simulation will fluctuate.  The will object will take on a life of its own as the simulation oozes and flows around its sides and vertices.  As the viewer interacts, they will begin to understand their effect on the object, both subtle and direct, creating an eerie and visceral experience.",
-			"foot": "Role:  Concept, Form and Interaction Design, Projection Mapping.  Created with Dan Melancon."
+			"foot": "Role:  Concept, Form and Interaction Design, Projection Mapping.  Created with <a href=\"http://www.danmelancon.com/\">Dan Melancon<\/a>."
 		},
 		"media": {
 			"photo_count": 2,
@@ -29241,7 +29241,19 @@ var ProjectModal = function ProjectModal(_ref) {
 						_react2.default.createElement(
 							'p',
 							null,
-							'My name is John Farrell, I\u2019m a Portland-based developer and designer. Graduate of & former Research Fellow at ITP-NYU. I have a resume over here, and am on github over there. Available for freelance work related to full-stack web development, data wrangling & analysis, interactive maps, and more.',
+							'My name is John Farrell, I\u2019m a Portland-based developer and designer. Graduate of & former Research Fellow at ',
+							_react2.default.createElement(
+								'a',
+								{ href: 'http://tisch.nyu.edu/itp' },
+								'ITP-NYU'
+							),
+							'. I have a resume over here, and am on ',
+							_react2.default.createElement(
+								'a',
+								{ href: 'https://github.com/jefarrell' },
+								'github'
+							),
+							' over there. Available for freelance work related to full-stack web development, data wrangling & analysis, interactive maps, and more.',
 							_react2.default.createElement(
 								'span',
 								{ id: 'modal_about_email' },
@@ -29317,27 +29329,9 @@ var ProjectModal = function ProjectModal(_ref) {
 						title,
 						' '
 					),
-					_react2.default.createElement(
-						'span',
-						{ className: 'modal_info_head' },
-						'  ',
-						head,
-						' '
-					),
-					_react2.default.createElement(
-						'p',
-						{ className: 'modal_info_body' },
-						'  ',
-						body,
-						' '
-					),
-					_react2.default.createElement(
-						'span',
-						{ className: 'modal_info_foot' },
-						'  ',
-						foot,
-						' '
-					)
+					_react2.default.createElement('span', { className: 'modal_info_head', dangerouslySetInnerHTML: { __html: head } }),
+					_react2.default.createElement('p', { className: 'modal_info_body', dangerouslySetInnerHTML: { __html: body } }),
+					_react2.default.createElement('span', { className: 'modal_info_foot', dangerouslySetInnerHTML: { __html: foot } })
 				)
 			)
 		);
@@ -32653,8 +32647,18 @@ module.exports = __webpack_require__.p + "/assets/myco2.jpg";
 module.exports = __webpack_require__.p + "/assets/myco3.jpg";
 
 /***/ }),
-/* 394 */,
-/* 395 */,
+/* 394 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/nationalparks0.gif";
+
+/***/ }),
+/* 395 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/nationalparks1.png";
+
+/***/ }),
 /* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32866,7 +32870,7 @@ exports.i(__webpack_require__(422), "");
 exports.i(__webpack_require__(423), "");
 
 // module
-exports.push([module.i, ".header {\n  padding-bottom: 5em; }\n\n.header_name {\n  float: left;\n  padding-left: 10%; }\n\n.header_about {\n  cursor: pointer;\n  float: right;\n  padding-right: 10%; }\n\n.header_about:hover {\n  background: #1700FC;\n  color: #FFF; }\n\n.header_name, .header_about {\n  font-family: GinoraSansBold;\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.col-lg-8 {\n  padding-right: 2%; }\n\n.col-lg-4 {\n  padding-right: 18px; }\n\n.modal_image_container {\n  padding-left: 7em;\n  fill: white; }\n\n.modal_nav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modal_close {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modal_close:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.modal_info_head, .modal_info_body, .modal_info_foot {\n  color: #1700FC; }\n\n.modal_title {\n  display: inline-block;\n  margin-top: 0;\n  background-color: #1700FC;\n  color: #FFF;\n  padding: 0.2em;\n  font-family: GinoraSansBold; }\n\n.modal_info_head, .modal_info_foot {\n  font-family: LibreBaskerville-Italic; }\n\n.modal_info_head {\n  display: block; }\n\n.modal_info_body {\n  font-family: LibreBaskerville-Regular;\n  margin: 1em 0; }\n\n.modal_about_info {\n  margin-top: -2em; }\n\n.modal_about_image {\n  display: block;\n  margin: auto;\n  width: 50%; }\n\n.modal_about_text {\n  color: #1700FC;\n  font-family: LibreBaskerville-Regular;\n  font-size: 1.25em;\n  line-height: 1.65em;\n  text-align: center;\n  margin: auto;\n  width: 66.6%;\n  padding: 1em 2em; }\n\n#modal_about_email {\n  width: 50%;\n  margin: 0 auto;\n  display: block;\n  background-color: #1700FC;\n  color: #FFF;\n  text-align: center; }\n\n.modal_about_image, .modal_carousel_img {\n  border: 5px solid #1700FC; }\n\n.modal_carousel_img {\n  width: 85%; }\n\n.slick-prev:before, .slick-next:before {\n  font-size: 40px; }\n\n.slick-arrow {\n  -webkit-text-fill-color: #1700FC; }\n\n#modal_carousel_prev_arrow {\n  margin-left: -3%; }\n\n#modal_carousel_next_arrow {\n  margin-right: 14%; }\n\n@media only screen and (min-width: 737px) and (max-width: 1200px) {\n  .modal_title {\n    margin-top: 0.5em; } }\n\n@font-face {\n  font-family: GinoraSansLight;\n  font-weight: bold;\n  src: url(" + __webpack_require__(428) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansRegular;\n  font-weight: bold;\n  src: url(" + __webpack_require__(429) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansBold;\n  font-weight: bold;\n  src: url(" + __webpack_require__(430) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Regular;\n  font-weight: normal;\n  src: url(" + __webpack_require__(431) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Italic;\n  font-weight: normal;\n  src: url(" + __webpack_require__(432) + ") format(\"opentype\"); }\n\n@media only screen and (min-width: 320px) and (max-width: 480px) {\n  #gridContainer {\n    margin-bottom: 2em; }\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; } }\n\n@media only screen and (min-width: 375px) and (max-width: 480px) {\n  #gridContainer {\n    margin-bottom: 2em; }\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block;\n    font-size: 2em; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; }\n  .project_container > .project_title {\n    font-size: 1.25em;\n    line-height: 1.25em; }\n  .modal_about_image {\n    margin-top: 1.5em; }\n  .modal_nav {\n    padding-bottom: 0; }\n  .modal_title {\n    margin: 0.25em 0 0.25em 0;\n    font-size: 1.75em; }\n  .modal_about_text {\n    font-size: 0.8em;\n    line-height: 1.85em;\n    width: 100%;\n    padding: 0; }\n  .modal_about_text, .modal_about_email {\n    margin-top: 1em; }\n  .modal_about_image, .modal_about_email {\n    width: 100%; }\n  #modal_about_email {\n    width: 100%;\n    margin-top: 1em; }\n  #modal_about_email_id {\n    display: block; }\n  .modal_image_container, .modal_info_container {\n    padding-left: 0; }\n  .modal_carousel_img {\n    width: 100%; }\n  .modal_carousel_video {\n    width: 100%;\n    height: auto; }\n  .slick-prev:before, .slick-next:before {\n    font-size: 27px; }\n  #modal_carousel_prev_arrow {\n    left: -15%; }\n  #modal_carousel_next_arrow {\n    left: 102%; } }\n\n@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {\n  #gridContainer {\n    margin-bottom: 2em; }\n  .modal_title {\n    z-index: 10;\n    margin-top: 0.5em; }\n  .modal_nav {\n    padding-bottom: 0; }\n  .modal_about_text {\n    width: 100%;\n    padding: 1em 0; }\n  #modal_about_email {\n    width: 75%; }\n  .modal_image_container {\n    padding-left: 0; }\n  .slick-prev:before, .slick-next:before {\n    font-size: 27px; }\n  #modal_carousel_prev_arrow {\n    margin-left: -1%; }\n  #modal_carousel_next_arrow {\n    margin-right: 0; }\n  .modal_about_image {\n    margin-top: 1.5em; }\n  .modal_about_image, .modal_carousel_img, .modal_carousel_video {\n    width: 100%; } }\n\n#gridContainer {\n  padding: 0 20% 0 20%; }\n\n.project {\n  position: relative; }\n\n.project_container {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  -webkit-transition: background 0.5s ease; }\n\n.project_container:hover {\n  -webkit-transition: background-size 0.5s ease;\n  background-size: 175%;\n  cursor: pointer; }\n\n.project_dummy {\n  margin-top: 100%; }\n\n.project_layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.project_title {\n  font-family: GinoraSansRegular;\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.25em;\n  display: table;\n  margin: 0 auto;\n  width: 75%;\n  margin-top: 30%;\n  text-align: center; }\n", ""]);
+exports.push([module.i, ".header {\n  padding-bottom: 5em; }\n\n.header_name {\n  float: left;\n  padding-left: 10%; }\n\n.header_about {\n  cursor: pointer;\n  float: right;\n  padding-right: 10%; }\n\n.header_about:hover {\n  background: #1700FC;\n  color: #FFF; }\n\n.header_name, .header_about {\n  font-family: GinoraSansBold;\n  font-size: 3em;\n  color: #1700FC; }\n\nhr {\n  margin: 1em 10% 0.5em 10%;\n  border: 0;\n  border-top: 5px solid #1700FC; }\n\n.ReactModalPortal > div {\n  opacity: 0; }\n\n.ReactModalPortal .ReactModal__Overlay {\n  transition: opacity 400ms ease-in-out;\n  background: rgba(0, 0, 0, 0.15); }\n  .ReactModalPortal .ReactModal__Overlay--after-open {\n    opacity: 1; }\n  .ReactModalPortal .ReactModal__Overlay--before-close {\n    opacity: 0; }\n\n.ReactModal__Content {\n  transition: all 400ms ease-in-out;\n  transform: translateY(30px);\n  opacity: 0; }\n  .ReactModal__Content--after-open {\n    opacity: 1;\n    transform: translateY(0); }\n  .ReactModal__Content--before-close {\n    opacity: 0;\n    transform: translateY(30px); }\n\n.col-lg-8 {\n  padding-right: 2%; }\n\n.col-lg-4 {\n  padding-right: 18px; }\n\n.modal_image_container {\n  padding-left: 7em;\n  fill: white; }\n\n.modal_nav {\n  display: block;\n  padding-bottom: 1.5em; }\n\n.modal_close {\n  border-radius: 0;\n  border: 3px solid #1700FC;\n  color: #FFF;\n  background-color: #1700FC;\n  display: inline-block;\n  margin-bottom: 1em;\n  font-weight: bold; }\n\n.modal_close:hover {\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.btn:focus, .btn:active, .btn:active:focus {\n  outline: none;\n  box-shadow: none;\n  border: 3px solid #1700FC;\n  color: #1700FC;\n  background-color: #FFF; }\n\n.modal_info_head, .modal_info_body, .modal_info_foot {\n  color: #1700FC; }\n\n.modal_title {\n  display: inline-block;\n  margin-top: 0;\n  background-color: #1700FC;\n  color: #FFF;\n  padding: 0.2em;\n  font-family: GinoraSansBold; }\n\n.modal_info_head, .modal_info_foot {\n  font-family: LibreBaskerville-Italic; }\n\n.modal_info_head {\n  display: block; }\n\n.modal_info_body {\n  font-family: LibreBaskerville-Regular;\n  margin: 1em 0; }\n\n.modal_about_info {\n  margin-top: -2em; }\n\n.modal_about_image {\n  display: block;\n  margin: auto;\n  width: 50%; }\n\n.modal_about_text {\n  color: #1700FC;\n  font-family: LibreBaskerville-Regular;\n  font-size: 1.25em;\n  line-height: 1.65em;\n  text-align: center;\n  margin: auto;\n  width: 66.6%;\n  padding: 1em 2em; }\n\n#modal_about_email {\n  width: 50%;\n  margin: 0 auto;\n  display: block;\n  background-color: #1700FC;\n  color: #FFF;\n  text-align: center; }\n\n.modal_about_image, .modal_carousel_img {\n  border: 5px solid #1700FC; }\n\n.modal_carousel_img {\n  width: 85%; }\n\n.slick-prev:before, .slick-next:before {\n  font-size: 40px; }\n\n.slick-arrow {\n  -webkit-text-fill-color: #1700FC; }\n\n#modal_carousel_prev_arrow {\n  margin-left: -3%; }\n\n#modal_carousel_next_arrow {\n  margin-right: 14%; }\n\n@media only screen and (min-width: 737px) and (max-width: 1200px) {\n  .modal_title {\n    margin-top: 0.5em; } }\n\n@font-face {\n  font-family: GinoraSansLight;\n  font-weight: bold;\n  src: url(" + __webpack_require__(428) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansRegular;\n  font-weight: bold;\n  src: url(" + __webpack_require__(429) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: GinoraSansBold;\n  font-weight: bold;\n  src: url(" + __webpack_require__(430) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Regular;\n  font-weight: normal;\n  src: url(" + __webpack_require__(431) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: LibreBaskerville-Italic;\n  font-weight: normal;\n  src: url(" + __webpack_require__(432) + ") format(\"opentype\"); }\n\n@media only screen and (min-width: 320px) and (max-width: 480px) {\n  #gridContainer {\n    margin-bottom: 2em; }\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; } }\n\n@media only screen and (min-width: 375px) and (max-width: 480px) {\n  #gridContainer {\n    margin-bottom: 2em; }\n  .header {\n    padding-bottom: 0; }\n  .header_name, .header_about {\n    display: block;\n    font-size: 2em; }\n  .header_name {\n    float: none; }\n  .header_about {\n    float: left;\n    padding-left: 10%; }\n  .project_container > .project_title {\n    font-size: 1.25em;\n    line-height: 1.25em; }\n  .ReactModal__Content, .ReactModal__Content--after-open {\n    top: 10px !important;\n    right: 10px !important;\n    bottom: 10px !important;\n    left: 10px !important; }\n  .modal_about_image {\n    margin-top: 1.5em; }\n  .modal_nav {\n    padding-bottom: 0; }\n  .modal_title {\n    margin: 0.25em 0 0.25em 0;\n    font-size: 1.75em; }\n  .modal_about_text {\n    font-size: 0.8em;\n    line-height: 1.85em;\n    width: 100%;\n    padding: 0; }\n  .modal_about_text, .modal_about_email {\n    margin-top: 1em; }\n  .modal_about_image, .modal_about_email {\n    width: 100%; }\n  #modal_about_email {\n    width: 100%;\n    margin-top: 1em; }\n  #modal_about_email_id {\n    display: block; }\n  .modal_image_container, .modal_info_container {\n    padding-left: 0; }\n  .modal_carousel_img {\n    width: 100%; }\n  .modal_carousel_video {\n    width: 100%;\n    height: auto; }\n  .slick-prev:before, .slick-next:before {\n    font-size: 27px; }\n  #modal_carousel_next_arrow {\n    left: 102%; } }\n\n@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {\n  #gridContainer {\n    margin-bottom: 2em; }\n  .modal_title {\n    z-index: 10;\n    margin-top: 0.5em; }\n  .modal_nav {\n    padding-bottom: 0; }\n  .modal_about_text {\n    width: 100%;\n    padding: 1em 0; }\n  #modal_about_email {\n    width: 75%; }\n  .modal_image_container {\n    padding-left: 0; }\n  .slick-prev:before, .slick-next:before {\n    font-size: 27px; }\n  #modal_carousel_prev_arrow {\n    margin-left: -1%; }\n  #modal_carousel_next_arrow {\n    margin-right: 0; }\n  .modal_about_image {\n    margin-top: 1.5em; }\n  .modal_about_image, .modal_carousel_img, .modal_carousel_video {\n    width: 100%; } }\n\n#gridContainer {\n  padding: 0 20% 0 20%; }\n\n.project {\n  position: relative; }\n\n.project_container {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-size: 100%;\n  background-repeat: no-repeat;\n  -webkit-transition: background 0.5s ease; }\n\n.project_container:hover {\n  -webkit-transition: background-size 0.5s ease;\n  background-size: 175%;\n  cursor: pointer; }\n\n.project_dummy {\n  margin-top: 100%; }\n\n.project_layer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n.project_title {\n  font-family: GinoraSansRegular;\n  color: #FFF;\n  background-color: #1700FC;\n  font-size: 2.25em;\n  display: table;\n  margin: 0 auto;\n  width: 75%;\n  margin-top: 30%;\n  text-align: center; }\n", ""]);
 
 // exports
 
@@ -33419,19 +33423,6 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
-
-/***/ }),
-/* 435 */,
-/* 436 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/assets/nationalparks0.gif";
-
-/***/ }),
-/* 437 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/assets/nationalparks1.png";
 
 /***/ })
 /******/ ]);
