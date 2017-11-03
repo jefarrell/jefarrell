@@ -174,9 +174,9 @@ and (max-width : 1200px) {
 }
 
 
-	.ReactModal__Content, .ReactModal__Content--after-open {
-		top: 1em !important;
-		right: 1em !important;
-		bottom: 1em !important;
-		left: 1em !important;
-	}
+.ReactModal__Content, .ReactModal__Content--after-open {
+	top: 1em !important;
+	right: 1em !important;
+	bottom: 1em !important;
+	left: 1em !important;
+}
