@@ -1,9 +1,8 @@
-$gray: #DFDFDF;
 $blue: #1700FC;
 
 /////////~~~~~~~~~~
 //////
-// Adding animation to modal open
+// Adding animation to modal open/close
 // https://github.com/reactjs/react-modal/issues/334
 .ReactModalPortal > div {
     opacity: 0;
@@ -173,3 +172,11 @@ and (max-width : 1200px) {
 	}
 
 }
+
+
+	.ReactModal__Content, .ReactModal__Content--after-open {
+		top: 1em !important;
+		right: 1em !important;
+		bottom: 1em !important;
+		left: 1em !important;
+	}

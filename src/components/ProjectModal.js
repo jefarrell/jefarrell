@@ -14,6 +14,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 				isOpen={ modal }
 				shouldCloseOnOverlayClick={true}
 				contentLabel="Modal"
+				closeTimeoutMS={1000}
 				onClick = { e => {
 					e.preventDefault()
 					onClick()
@@ -70,6 +71,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 				isOpen={ modal }
 				shouldCloseOnOverlayClick={true}
 				contentLabel="Modal"
+				closeTimeoutMS={1000}
 				onClick = { e => {
 					e.preventDefault()
 					onClick()
