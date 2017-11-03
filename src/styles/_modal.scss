@@ -82,6 +82,12 @@ $blue: #1700FC;
 	background-color: #FFF;
 }
 
+.ReactModal__Content, .ReactModal__Content--after-open {
+	top: 1em !important;
+	right: 1em !important;
+	bottom: 1em !important;
+	left: 1em !important;
+}
 
 .modal_info_head, .modal_info_body, .modal_info_foot {
 	color: $blue;
@@ -171,12 +177,4 @@ and (max-width : 1200px) {
 		margin-top: 0.5em;
 	}
 
-}
-
-
-.ReactModal__Content, .ReactModal__Content--after-open {
-	top: 1em !important;
-	right: 1em !important;
-	bottom: 1em !important;
-	left: 1em !important;
 }
