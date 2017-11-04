@@ -54,7 +54,7 @@ and (max-width : 667px) {
 	}
 
 	.project_container > .project_title {
-		font-size: 1.25em;
+		font-size: 2.25em;
 		line-height: 1.25em;
 	}
 
@@ -109,18 +109,9 @@ and (max-width : 667px) {
 		width: 100%;
 	}
 
-	// .modal_carousel_video {
-	// 	width: 100%;
-	// 	height: auto;
-	// }
-
 	.slick-prev:before, .slick-next:before {
 		font-size: 27px;
 	}
-
-	// #modal_carousel_prev_arrow {
-	// 	left: -15%;
-	// }
 
 	#modal_carousel_next_arrow {
 		left: 102%;
@@ -136,6 +127,11 @@ and (orientation : landscape)
 {
 	#gridContainer {
 		margin-bottom: 2em;
+	}
+	
+	.project_container > .project_title {
+	    font-size: 3.25em;
+	    line-height: 1.25em;
 	}
 
 	.modal_title {
