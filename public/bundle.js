@@ -2029,12 +2029,10 @@ module.exports = DOMProperty;
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 if (process.env.NODE_ENV !== 'production') {
@@ -5226,12 +5224,10 @@ module.exports = lowPriorityWarning;
 
 "use strict";
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
@@ -8652,12 +8648,10 @@ module.exports = ReactElementValidator;
 
 "use strict";
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
@@ -8680,12 +8674,10 @@ module.exports = function (isValidElement) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
@@ -8695,6 +8687,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var emptyFunction = __webpack_require__(9);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
+var assign = __webpack_require__(4);
 
 var ReactPropTypesSecret = __webpack_require__(56);
 var checkPropTypes = __webpack_require__(175);
@@ -8793,7 +8786,8 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
     objectOf: createObjectOfTypeChecker,
     oneOf: createEnumTypeChecker,
     oneOfType: createUnionTypeChecker,
-    shape: createShapeTypeChecker
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker
   };
 
   /**
@@ -8990,7 +8984,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
     for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
       var checker = arrayOfTypeCheckers[i];
       if (typeof checker !== 'function') {
-        warning(false, 'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' + 'received %s at index %s.', getPostfixForTypeWarning(checker), i);
+        warning(false, 'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' + 'received %s at index %s.', getPostfixForTypeWarning(checker), i);
         return emptyFunction.thatReturnsNull;
       }
     }
@@ -9037,6 +9031,32 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
       }
       return null;
     }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
     return createChainableTypeChecker(validate);
   }
 
@@ -14866,10 +14886,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 __webpack_require__(420);
 var store = (0, _redux.createStore)(_reducers2.default);
 
-store.subscribe(function () {
-	console.log("store state: ", store.getState());
-});
-
 (0, _reactDom.render)(_react2.default.createElement(
 	_reactRedux.Provider,
 	{ store: store },
@@ -15790,12 +15806,10 @@ module.exports = factory(isValidElement);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
@@ -15831,7 +15845,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
         try {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
-          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
+          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'the `prop-types` package, but received `%s`.', componentName || 'React class', location, typeSpecName, _typeof(typeSpecs[typeSpecName]));
           error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
         } catch (ex) {
           error = ex;
@@ -26230,12 +26244,10 @@ exports.default = createProvider();
 
 "use strict";
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
@@ -26275,7 +26287,8 @@ module.exports = function () {
     objectOf: getShim,
     oneOf: getShim,
     oneOfType: getShim,
-    shape: getShim
+    shape: getShim,
+    exact: getShim
   };
 
   ReactPropTypes.checkPropTypes = emptyFunction;
@@ -27770,6 +27783,10 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header(_ref) {
@@ -27777,25 +27794,29 @@ var Header = function Header(_ref) {
 
 
 	return _react2.default.createElement(
-		"div",
-		{ className: "header" },
-		_react2.default.createElement("hr", null),
+		'div',
+		{ className: 'header' },
+		_react2.default.createElement('hr', null),
 		_react2.default.createElement(
-			"span",
-			{ className: "header_name" },
-			"John Farrell"
+			'span',
+			{ className: 'header_name' },
+			'John Farrell'
 		),
 		_react2.default.createElement(
-			"span",
+			'span',
 			{
-				className: "header_about",
+				className: 'header_about',
 				onClick: function onClick(e) {
 					e.preventDefault();
 					_onClick();
 				} },
-			"About"
+			'About'
 		)
 	);
+};
+
+Header.propTypes = {
+	onClick: _propTypes2.default.func.isRequired
 };
 
 exports.default = Header;
@@ -27883,13 +27904,23 @@ var ProjectGrid = function ProjectGrid(_ref) {
 				backgroundImage: 'url(' + imgsrc + ')'
 			};
 
-			return _react2.default.createElement(_Project2.default, {
+			var props = {
 				key: keyindex,
 				title: title,
 				code: code,
 				style: styler,
 				onClick: handleClick
-			});
+			};
+
+			return _react2.default.createElement(_Project2.default, props)
+			// <Project 
+			// 	key={keyindex}
+			// 	title={title}
+			// 	code={code}
+			// 	style={styler}
+			// 	onClick={handleClick}
+			// />
+			;
 		})
 	);
 };
@@ -28061,28 +28092,35 @@ var _Col = __webpack_require__(141);
 
 var _Col2 = _interopRequireDefault(_Col);
 
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Project = function Project(_ref) {
-	var title = _ref.title,
-	    style = _ref.style,
-	    code = _ref.code,
-	    onClick = _ref.onClick;
+var Project = function Project(props) {
 	return _react2.default.createElement(
 		_Col2.default,
-		{ lg: 4, xs: 12, className: 'project', onClick: onClick },
+		{ lg: 4, xs: 12, className: 'project', onClick: props.onClick },
 		_react2.default.createElement('div', { className: 'project_dummy' }),
 		_react2.default.createElement(
 			'div',
-			{ className: 'project_container', style: style },
-			_react2.default.createElement('div', { className: 'project_layer', id: code }),
+			{ className: 'project_container', style: props.style },
+			_react2.default.createElement('div', { className: 'project_layer', id: props.code }),
 			_react2.default.createElement(
 				'span',
 				{ className: 'project_title' },
-				title
+				props.title
 			)
 		)
 	);
+};
+
+Project.propTypes = {
+	onClick: _propTypes2.default.func.isRequired,
+	style: _propTypes2.default.object.isRequired,
+	code: _propTypes2.default.string.isRequired,
+	title: _propTypes2.default.string.isRequired
 };
 
 exports.default = Project;
@@ -29171,6 +29209,10 @@ var _Carousel = __webpack_require__(353);
 
 var _Carousel2 = _interopRequireDefault(_Carousel);
 
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var imgs = __webpack_require__(163);
@@ -29344,6 +29386,20 @@ var ProjectModal = function ProjectModal(_ref) {
 			)
 		);
 	}
+};
+
+ProjectModal.propTypes = {
+	modal: _propTypes2.default.bool,
+	project: _propTypes2.default.string,
+	title: _propTypes2.default.string,
+	head: _propTypes2.default.string,
+	body: _propTypes2.default.string,
+	foot: _propTypes2.default.string,
+	photo_count: _propTypes2.default.number,
+	videos: _propTypes2.default.bool,
+	video_count: _propTypes2.default.number,
+	video_src: _propTypes2.default.array,
+	onClick: _propTypes2.default.func
 };
 
 exports.default = ProjectModal;
@@ -30607,6 +30663,10 @@ var _reactSlick = __webpack_require__(354);
 
 var _reactSlick2 = _interopRequireDefault(_reactSlick);
 
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30765,6 +30825,13 @@ var SimpleSlider = function (_React$Component) {
 
   return SimpleSlider;
 }(_react2.default.Component);
+
+SimpleSlider.propTypes = {
+  project: _propTypes2.default.string,
+  photo_count: _propTypes2.default.number,
+  videos: _propTypes2.default.bool,
+  video_src: _propTypes2.default.array
+};
 
 exports.default = SimpleSlider;
 

@@ -55,15 +55,24 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 						let styler = {
 							backgroundImage: `url(${imgsrc})`
 						}
+
+						let props = {
+							key: keyindex,
+							title: title,
+							code: code,
+							style: styler,
+							onClick:handleClick
+						}
 						
 						return (
-							<Project 
-								key={keyindex}
-								title={title}
-								code={code}
-								style={styler}
-								onClick={handleClick}
-							/>
+							<Project {...props} />
+							// <Project 
+							// 	key={keyindex}
+							// 	title={title}
+							// 	code={code}
+							// 	style={styler}
+							// 	onClick={handleClick}
+							// />
 						)
 
 					})

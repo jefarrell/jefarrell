@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import PropTypes from 'prop-types';
 const imgs = require.context('../assets/images', true);
 
 function NextArrow(props) {
@@ -114,9 +115,18 @@ class SimpleSlider extends React.Component {
 		        { images }
 		      </Slider>
 		    );
-    	}
-	    
-  }
+    	}  
+    }
 }
+
+SimpleSlider.propTypes = {
+    project: PropTypes.string,
+    photo_count: PropTypes.number,
+    videos: PropTypes.bool,
+    video_src: PropTypes.array
+}
+
+
+
 
 export default SimpleSlider;

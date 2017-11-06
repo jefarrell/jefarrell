@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const Header = ({onClick}) => {
 
@@ -19,6 +20,10 @@ const Header = ({onClick}) => {
 			</span>
 		</div>
 	)
+}
+
+Header.propTypes = {
+	onClick: PropTypes.func.isRequired
 }
 
 export default Header;
