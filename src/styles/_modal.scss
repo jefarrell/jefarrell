@@ -66,13 +66,16 @@ $blue: #1700FC;
     display: inline-block;
     margin-bottom: 1em;
     font-weight: bold;
+    padding: 6px 12px;
+    line-height: 1.5;
+    
+    &:hover {
+		border: 3px solid $blue;
+		color: $blue;
+		background-color: #FFF;    	
+    }
 }
 
-.modal_close:hover {
-	border: 3px solid $blue;
-	color: $blue;
-	background-color: #FFF;
-}
 
 .btn:focus,.btn:active,.btn:active:focus, {
 	outline: none;

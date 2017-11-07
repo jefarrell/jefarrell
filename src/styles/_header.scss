@@ -13,11 +13,11 @@ $blue: #1700FC;
 	cursor: pointer;
 	float: right;
 	padding-right: 10%;
-}
 
-.header_about:hover {
-	background: $blue;
-	color: #FFF;
+	&:hover {
+		background: $blue;
+		color: #FFF;
+	}
 }
 
 .header_name, .header_about {

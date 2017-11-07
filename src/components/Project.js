@@ -1,9 +1,8 @@
 import React from 'react';
-import Col from 'react-bootstrap/lib/Col';
 import PropTypes from 'prop-types';
 
 const Project = (props) => (
-	<Col lg={4} xs={12} className="project" onClick={props.onClick}>
+	<div className="project" onClick={props.onClick}>
 		<div className="project_dummy"></div>
 		<div className="project_container" style={props.style}>
 			<div className="project_layer" id={props.code}></div>
@@ -11,7 +10,7 @@ const Project = (props) => (
 				{props.title}
 			</span>
 		</div>
-	</Col>
+	</div>
 )
 
 

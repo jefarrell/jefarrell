@@ -12,20 +12,29 @@ a {
 	background-color: $yellow;
 	color: $blue;
 	padding: 0.25em;
+
+	&:hover {
+		background-color: $blue;
+		color: $yellow;
+	}
 }
 
-a:hover {
-	background-color: $blue;
-	color: $yellow;
+
+#grid_container {
+	display:flex;
+	flex-flow: row wrap;
+	// &:div {
+	// 	padding: 0 20% 0 20%;
+	// }
 }
 
-#gridContainer {
+.grid {
 	padding: 0 20% 0 20%;
 }
 
 .project {
 	position:relative;
-
+	flex-basis: 33.33%
 }
 
 .project_container{
@@ -37,13 +46,14 @@ a:hover {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	-webkit-transition: background 0.5s ease;
+
+	&:hover {
+		-webkit-transition: background-size 0.5s ease;
+		background-size: 175%;
+		cursor: pointer;		
+	}
 }
 
-.project_container:hover {
-	-webkit-transition: background-size 0.5s ease;
-	background-size: 175%;
-	cursor: pointer;
-}
 
 .project_dummy {
 	margin-top: 100%;
@@ -67,4 +77,11 @@ a:hover {
 	width: 75%;
 	margin-top: 30%;
 	text-align: center;
+}
+
+@media only screen
+and (max-width : 1000px) {
+	.project {
+		flex-basis: 100%;
+	}
 }

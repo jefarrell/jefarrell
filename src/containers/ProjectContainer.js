@@ -41,10 +41,9 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 
 		dispatch(showItem(target, title, head, body, footer, photo_count, videos, video_src));
 	}
-	
 
 	return (
-		<div className="container-fluid" id="gridContainer">
+		<div id="grid_container" className="grid">
 			<ProjectModalContainer />
 				{
 
@@ -66,13 +65,6 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 						
 						return (
 							<Project {...props} />
-							// <Project 
-							// 	key={keyindex}
-							// 	title={title}
-							// 	code={code}
-							// 	style={styler}
-							// 	onClick={handleClick}
-							// />
 						)
 
 					})

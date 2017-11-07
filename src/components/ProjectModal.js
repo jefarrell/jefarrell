@@ -1,7 +1,6 @@
 import React from 'react'
 import Modal from 'react-modal';
 import Col from 'react-bootstrap/lib/Col';
-import Button from 'react-bootstrap/lib/Button';
 import SimpleSlider from './Carousel'
 import PropTypes from 'prop-types';
 const imgs = require.context('../assets/images', true);
@@ -34,7 +33,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 			> 
 				<div className="container-fluid modal_container">
 					<div className="modal_nav">
-						<Button 
+						<button 
 							className="modal_close" 
 							onClick = { e => {
 								e.preventDefault()
@@ -42,7 +41,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 							}
 						}>
 							X
-						</Button>
+						</button>
 					</div>
 					<div className="modal_about_info">
 						<img 
@@ -91,7 +90,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 			> 
 				<div className="container-fluid modal_container">
 					<div className="modal_nav">
-						<Button 
+						<button 
 							className="modal_close" 
 							onClick = { e => {
 								e.preventDefault()
@@ -99,7 +98,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 								}
 						}>
 							X
-						</Button>
+						</button>
 					</div>
 					<Col lg={8} className="modal_image_container">
 						<SimpleSlider 
