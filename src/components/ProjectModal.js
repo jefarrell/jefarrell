@@ -1,6 +1,5 @@
 import React from 'react'
 import Modal from 'react-modal';
-import Col from 'react-bootstrap/lib/Col';
 import SimpleSlider from './Carousel'
 import PropTypes from 'prop-types';
 const imgs = require.context('../assets/images', true);
@@ -31,7 +30,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 					}
 				}}
 			> 
-				<div className="container-fluid modal_container">
+				<div className="modal_about_container">
 					<div className="modal_nav">
 						<button 
 							className="modal_close" 
@@ -88,7 +87,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 					}
 				}}
 			> 
-				<div className="container-fluid modal_container">
+				<div className="modal_container">
 					<div className="modal_nav">
 						<button 
 							className="modal_close" 
@@ -100,20 +99,20 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 							X
 						</button>
 					</div>
-					<Col lg={8} className="modal_image_container">
+					<div className="modal_image_container">
 						<SimpleSlider 
 							project={ project } 
 							photo_count={ photo_count }
 							videos={ videos }
 							video_src={ video_src } 
 						/>
-					</Col>
-					<Col lg={4} className="modal_info_container">
+					</div>
+					<div className="modal_info_container">
 						<h1 className="modal_title"> { title } </h1>
 						<span className="modal_info_head" dangerouslySetInnerHTML={{__html: head }} />
 						<p className="modal_info_body" dangerouslySetInnerHTML={{__html: body }} />
 						<span className="modal_info_foot" dangerouslySetInnerHTML={{__html: foot }} />
-					</Col>
+					</div>
 				</div>
 			</Modal>
 		)

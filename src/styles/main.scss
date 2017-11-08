@@ -19,13 +19,9 @@ a {
 	}
 }
 
-
 #grid_container {
 	display:flex;
 	flex-flow: row wrap;
-	// &:div {
-	// 	padding: 0 20% 0 20%;
-	// }
 }
 
 .grid {
@@ -79,6 +75,7 @@ a {
 	text-align: center;
 }
 
+// Resizing grid 
 @media only screen
 and (max-width : 1000px) {
 	.project {

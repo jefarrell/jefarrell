@@ -38,23 +38,35 @@ $blue: #1700FC;
 /////////~~~~~~~~~~
 
 
-.col-lg-8 {
-	padding-right: 2%;
-	//padding-right: 17px;
+.modal_container, .modal_image_container, .modal_nav {
+	padding-left: 1em;
 }
 
-.col-lg-4 {
+.modal_container, .modal_about_container {
+	padding-right: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    float: left;
+    width: 100%;
+}
+
+
+.modal_image_container {
+	fill: white;
+	flex-basis: 60%;
+	width: 60%;
+}
+
+.modal_info_container {
+	flex-basis: 30%;
+	width: 30%;
 	padding-right: 18px;
 }
 
-.modal_image_container {
-	padding-left: 7em;
-	fill: white;
-}
-
-
 .modal_nav {
-	display: block;
+	flex-basis: 100%;
 	padding-bottom: 1.5em;
 }
 
@@ -68,7 +80,7 @@ $blue: #1700FC;
     font-weight: bold;
     padding: 6px 12px;
     line-height: 1.5;
-    
+    cursor: pointer;
     &:hover {
 		border: 3px solid $blue;
 		color: $blue;
@@ -172,12 +184,26 @@ $blue: #1700FC;
 	margin-right: 14%;
 }
 
+
+// Few helper media queries for weird resizing
+@media only screen
+and (min-width : 750px) 
+and (max-width : 1000px) {
+	.modal_image_container, .modal_info_container, .modal_nav {
+		padding-left: 1em;
+	}
+}
+
 @media only screen 
-and (min-width : 737px) 
-and (max-width : 1200px) { 
+and (max-width : 1000px) { 
 
 	.modal_title {
 		margin-top: 0.5em;
+	}
+
+	.modal_image_container, .modal_info_container, .modal_nav {
+		flex-basis: 100%;
+		width: 100%;
 	}
 
 }
