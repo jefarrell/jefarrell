@@ -1,6 +1,6 @@
-import React from 'react';
-import Slider from 'react-slick';
-import PropTypes from 'prop-types';
+import React from 'react'
+import Slider from 'react-slick'
+import PropTypes from 'prop-types'
 const imgs = require.context('../assets/images', true);
 
 function NextArrow(props) {

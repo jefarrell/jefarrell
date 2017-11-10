@@ -1,7 +1,7 @@
 import React from 'react'
-import { connect } from 'react-redux';
-import { showAbout } from '../actions';
-import Header from '../components/Header';
+import { connect } from 'react-redux'
+import { showAbout } from '../actions'
+import Header from '../components/Header'
 
 
 const mapStateToProps = state => {

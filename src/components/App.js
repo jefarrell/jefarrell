@@ -1,6 +1,6 @@
-import React from 'react';
-import HeaderContainer from '../containers/HeaderContainer';
-import ProjectContainer from '../containers/ProjectContainer';
+import React from 'react'
+import HeaderContainer from '../containers/HeaderContainer'
+import ProjectContainer from '../containers/ProjectContainer'
 
 const App = () => (
 	<div>

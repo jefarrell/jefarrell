@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { showItem } from '../actions';
-import projectData from '../assets/projectData';
-import Project from '../components/Project';
-import ProjectModalContainer from './ProjectModalContainer';
+import React from 'react'
+import { connect } from 'react-redux'
+import { showItem } from '../actions'
+import projectData from '../assets/projectData'
+import Project from '../components/Project'
+import ProjectModalContainer from './ProjectModalContainer'
 
 
 const ProjectGrid = ({ dispatch, target, modal }) => {

@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { hideItem } from '../actions';
-import ProjectModal from '../components/ProjectModal';
+import React from 'react'
+import { connect } from 'react-redux'
+import { hideItem } from '../actions'
+import ProjectModal from '../components/ProjectModal'
 
 
 const mapStateToProps = state => {

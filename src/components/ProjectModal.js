@@ -1,7 +1,7 @@
 import React from 'react'
-import Modal from 'react-modal';
+import Modal from 'react-modal'
 import SimpleSlider from './Carousel'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 const imgs = require.context('../assets/images', true);
 
 const ProjectModal = ({modal, project, title, head, body, foot, photo_count, videos, video_count, video_src, onClick}) => {

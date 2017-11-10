@@ -1,16 +1,24 @@
 {
-  "name": "reactstarter",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "portfolio",
+  "description": "portfolio site",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "webpack --watch",
     "dev-server": "webpack-dev-server",
     "build": "PROD_ENV=1 webpack"
   },
-  "author": "",
+  "author": "John Farrell",
   "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules", "src"],
+    "transform": {
+       "^.+\\.js$": "babel-jest"
+    }
+  },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "json-loader": "^0.5.7",
