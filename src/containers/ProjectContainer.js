@@ -38,7 +38,7 @@ const ProjectGrid = ({ dispatch, target, modal }) => {
 			data["media"]["videos"],
 			data["media"]["video_src"]
 		]
-
+		console.log("TITLE: ", target);
 		dispatch(showItem(target, title, head, body, footer, photo_count, videos, video_src));
 	}
 

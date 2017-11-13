@@ -4,7 +4,7 @@ const selection = (state = {modal: false}, action) => {
 		case 'SHOW_MODAL':
 			return {
 				modal: true,
-				project: action.itemCode,
+				project: action.project,
 				title: action.title,
 				head: action.head,
 				body: action.body,

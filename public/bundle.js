@@ -6888,10 +6888,10 @@ exports.default = isPlainObject;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var showItem = exports.showItem = function showItem(itemCode, title, head, body, foot, photo_count, videos, video_src) {
+var showItem = exports.showItem = function showItem(project, title, head, body, foot, photo_count, videos, video_src) {
 	return {
 		type: 'SHOW_MODAL',
-		itemCode: itemCode, title: title, head: head, body: body, foot: foot, photo_count: photo_count, videos: videos, video_src: video_src
+		project: project, title: title, head: head, body: body, foot: foot, photo_count: photo_count, videos: videos, video_src: video_src
 	};
 };
 
@@ -26008,7 +26008,7 @@ var selection = function selection() {
 		case 'SHOW_MODAL':
 			return {
 				modal: true,
-				project: action.itemCode,
+				project: action.project,
 				title: action.title,
 				head: action.head,
 				body: action.body,
@@ -26233,7 +26233,7 @@ var ProjectGrid = function ProjectGrid(_ref) {
 		videos = _ref2[6];
 		video_src = _ref2[7];
 
-
+		console.log("TITLE: ", target);
 		dispatch((0, _actions.showItem)(target, title, head, body, footer, photo_count, videos, video_src));
 	};
 

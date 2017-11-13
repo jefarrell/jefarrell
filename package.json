@@ -13,14 +13,19 @@
   "license": "ISC",
   "jest": {
     "verbose": true,
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "src"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "transform": {
-       "^.+\\.js$": "babel-jest"
+      "^.+\\.js$": "babel-jest"
     }
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
     "json-loader": "^0.5.7",
     "prop-types": "^15.6.0",
     "react": "^15.6.2",
@@ -29,7 +34,6 @@
     "react-redux": "^5.0.6",
     "react-select": "^1.0.0-rc.10",
     "react-slick": "^0.15.4",
-    "react-social": "^1.10.0",
     "redux": "^3.7.2",
     "webpack-dev-server": "^2.9.4"
   },
