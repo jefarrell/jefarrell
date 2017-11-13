@@ -90,8 +90,12 @@ and (max-width : 667px) {
 		font-size: 27px;
 	}
 
+	#modal_carousel_prev_arrow {
+		margin-left: -2%;
+	}
+
 	#modal_carousel_next_arrow {
-		left: 90%;
+		margin-right: 11%;
 	}
 
 	.modal_carousel_video {
@@ -163,7 +167,7 @@ and (orientation : landscape)
 	}
 
 	#modal_carousel_next_arrow {
-		left: 95%;
+		margin-right: 8%
 	}
 
 	.modal_carousel_img {

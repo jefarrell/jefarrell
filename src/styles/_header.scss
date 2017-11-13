@@ -1,5 +1,5 @@
 $blue: #1700FC;
-
+$yellow: #FCD700;
 .header {
 	padding-bottom: 5em;
 }
@@ -12,11 +12,11 @@ $blue: #1700FC;
 .header_about {
 	cursor: pointer;
 	float: right;
-	padding-right: 10%;
+	margin-right: 9%;
+	padding: 0 0.4em;
 
 	&:hover {
-		background: $blue;
-		color: #FFF;
+		background: $yellow;
 	}
 }
 
