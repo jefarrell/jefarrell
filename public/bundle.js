@@ -26233,7 +26233,7 @@ var ProjectGrid = function ProjectGrid(_ref) {
 		videos = _ref2[6];
 		video_src = _ref2[7];
 
-		console.log("TITLE: ", target);
+
 		dispatch((0, _actions.showItem)(target, title, head, body, footer, photo_count, videos, video_src));
 	};
 
