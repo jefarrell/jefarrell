@@ -7,9 +7,9 @@ function NextArrow(props) {
 	const { className, style, onClick } = props
 	return (
 		<div
-			className={className}
+			className={ className }
 			id="modal_carousel_next_arrow"
-			style={{...style, display: 'block'}}
+			style={{...style, display: 'block', fill: 'red'}}
 			onClick={ onClick }
 	    ></div>
 	);
@@ -19,10 +19,10 @@ function PrevArrow(props) {
 	const { className, style, onClick } = props
 	return (
 		<div
-			className={className}
+			className={ className }
             id="modal_carousel_prev_arrow"
 			style={{...style, display: 'block'}}
-			onClick={ onClick} 
+			onClick={ onClick } 
 		></div>
 	);
 }
@@ -77,13 +77,14 @@ class SimpleSlider extends React.Component {
     					)
     				}
     				catch(e){
-    					// probably use winston
+    					// intentionally empty
+                        // exceptions here are the result of looking for images by each file type
     				}
     			})
     		}
 
     		return (
-		      <Slider {...settings}>
+		      <Slider { ...settings }>
 				{ images }
 		      </Slider>
 		    );
@@ -105,13 +106,14 @@ class SimpleSlider extends React.Component {
     					)
     				}
     				catch(e){
-    					// probably use winston
+                        // intentionally empty
+                        // exceptions here are the result of looking for images by each file type
     				}
     			})
     		}
     		
     		return (
-		      <Slider {...settings}>
+		      <Slider { ...settings }>
 		        { images }
 		      </Slider>
 		    );

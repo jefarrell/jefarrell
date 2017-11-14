@@ -5,30 +5,32 @@ import PropTypes from 'prop-types'
 const imgs = require.context('../assets/images', true);
 
 const ProjectModal = ({modal, project, title, head, body, foot, photo_count, videos, video_count, video_src, onClick}) => {
+	
+	const modalStyle = {
+		overlay: {
+			background: 'rgba(252,215,0,0.9)'
+		},
+		content: {
+			background: '#FFF',
+			border: '6px solid #1700FC',
+			borderRadius: 0
+		}
+	}
 
 	if (project === 'About') {
 		return (
 			
 			<Modal
 				isOpen={ modal }
-				shouldCloseOnOverlayClick={true}
+				shouldCloseOnOverlayClick={ true }
 				contentLabel="Modal"
-				closeTimeoutMS={1000}
+				closeTimeoutMS={ 1000 }
 				onClick = { e => {
 					e.preventDefault()
 					onClick()
 					}
 				}
-				style= {{
-					overlay: {
-						background: 'rgba(252,215,0,0.55)'
-					},
-					content: {
-						background: '#FFF',
-						border: '6px solid #1700FC',
-						borderRadius: 0
-					}
-				}}
+				style={ modalStyle }
 			> 
 				<div className="modal_about_container">
 					<div className="modal_nav">
@@ -53,7 +55,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 								Graduate of & former Research Fellow at <a href="http://tisch.nyu.edu/itp" target="blank" rel="noopener noreferrer">ITP-NYU</a>. 
 								I have a <a href="https://drive.google.com/file/d/1Uh5U2i9pMn2Wnd5_WZSIDV6cYLQzm5GQ/view?usp=sharing" target="blank" rel="noopener noreferrer">resume</a> over here, and am on <a href="https://github.com/jefarrell">github</a> over there. 
 								Available for freelance work related to full-stack web development, 
-								data wrangling & visualization, interactive maps, and more. 
+								data wrangling & visualization, interactive maps, and more.  
 								<span id="modal_about_email"><span id="modal_about_email_id">johnefarrell18</span> at gmail dot com</span>
 							</p>
 						</div>
@@ -68,24 +70,15 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 		return (
 			<Modal
 				isOpen={ modal }
-				shouldCloseOnOverlayClick={true}
+				shouldCloseOnOverlayClick={ true }
 				contentLabel="Modal"
-				closeTimeoutMS={1000}
+				closeTimeoutMS={ 1000 }
 				onClick = { e => {
 					e.preventDefault()
 					onClick()
 					}
 				}
-				style= {{
-					overlay: {
-						background: 'rgba(252,215,0,0.55)'
-					},
-					content: {
-						background: '#FFF',
-						border: '6px solid #1700FC',
-						borderRadius: 0,
-					}
-				}}
+				style={ modalStyle }
 			> 
 				<div className="modal_container">
 					<div className="modal_nav">
