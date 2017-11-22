@@ -18,14 +18,26 @@ function setup() {
 	}
 }
 
-describe('components', () => {
-	describe('Header', () => {
-		it('should render itself and subcomponents', () => {
-			const { enzymeWrapper } = setup()
+describe('<<< components >>>', () => {
+	describe('<<< Header >>>', () => {
 
-			expect(enzymeWrapper.find('div').hasClass('header')).toBe(true)
-			//expect(enzymeWrapper).find('span').hasClass('header_name')).toBe(true)
+		it('renders the dumb component', () => {
+			const { enzymeWrapper } = setup()
+			expect(enzymeWrapper.length).toEqual(1)
 		})
+
+		it('should call onClick', () => {
+			const props = {
+				onClick: jest.fn()
+			}
+			// const { enzymeWrapper, props } = setup()
+			// const output = enzymeWrapper.find('span[className="header_about"]')
+			const output = shallow(<Header {...props} />)
+			output.find('span[className="header_about"]').simulate('click', { preventDefault() {} });
+			//output.simulate('click')
+			expect(props.onClick).toHaveBeenCalledWith('clicked')
+			//expect(enzymeWrapper.find('span[className="header_about"]').prop('onClick')).toEqual(props.onClick)
+		});
 	})
 })
 

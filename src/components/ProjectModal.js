@@ -4,8 +4,9 @@ import SimpleSlider from './Carousel'
 import PropTypes from 'prop-types'
 const imgs = require.context('../assets/images', true);
 
-const ProjectModal = ({modal, project, title, head, body, foot, photo_count, videos, video_count, video_src, onClick}) => {
-	
+
+const ProjectModal = (props) => {
+
 	const modalStyle = {
 		overlay: {
 			background: 'rgba(252,215,0,0.9)'
@@ -17,17 +18,17 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 		}
 	}
 
-	if (project === 'About') {
+	if (props.project === 'About') {
 		return (
 			
 			<Modal
-				isOpen={ modal }
+				isOpen={ props.modal }
 				shouldCloseOnOverlayClick={ true }
 				contentLabel="Modal"
 				closeTimeoutMS={ 1000 }
 				onClick = { e => {
 					e.preventDefault()
-					onClick()
+					props.onClick()
 					}
 				}
 				style={ modalStyle }
@@ -38,7 +39,7 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 							className="modal_close" 
 							onClick = { e => {
 								e.preventDefault()
-								onClick()
+								props.onClick()
 							}
 						}>
 							X
@@ -69,13 +70,13 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 
 		return (
 			<Modal
-				isOpen={ modal }
+				isOpen={ props.modal }
 				shouldCloseOnOverlayClick={ true }
 				contentLabel="Modal"
 				closeTimeoutMS={ 1000 }
 				onClick = { e => {
 					e.preventDefault()
-					onClick()
+					props.onClick()
 					}
 				}
 				style={ modalStyle }
@@ -86,25 +87,25 @@ const ProjectModal = ({modal, project, title, head, body, foot, photo_count, vid
 							className="modal_close" 
 							onClick = { e => {
 								e.preventDefault()
-								onClick()
-								}
+								props.onClick()
+							}
 						}>
 							X
 						</button>
 					</div>
 					<div className="modal_image_container">
 						<SimpleSlider 
-							project={ project } 
-							photo_count={ photo_count }
-							videos={ videos }
-							video_src={ video_src } 
+							project={ props.project } 
+							photo_count={ props.photo_count }
+							videos={ props.videos }
+							video_src={ props.video_src } 
 						/>
 					</div>
 					<div className="modal_info_container">
-						<h1 className="modal_title"> { title } </h1>
-						<span className="modal_info_head" dangerouslySetInnerHTML={{__html: head }} />
-						<p className="modal_info_body" dangerouslySetInnerHTML={{__html: body }} />
-						<span className="modal_info_foot" dangerouslySetInnerHTML={{__html: foot }} />
+						<h1 className="modal_title"> { props.title } </h1>
+						<span className="modal_info_head" dangerouslySetInnerHTML={{__html: props.head }} />
+						<p className="modal_info_body" dangerouslySetInnerHTML={{__html: props.body }} />
+						<span className="modal_info_foot" dangerouslySetInnerHTML={{__html: props.foot }} />
 					</div>
 				</div>
 			</Modal>

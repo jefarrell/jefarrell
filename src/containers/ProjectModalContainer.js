@@ -5,18 +5,7 @@ import ProjectModal from '../components/ProjectModal'
 
 
 const mapStateToProps = state => {
-	return { 
-		modal: state.modal,
-		project: state.project,
-		title: state.title,
-		head: state.head,
-		body: state.body,
-		foot: state.foot,
-		photo_count: state.photo_count, 
-		videos: state.videos, 
-		video_count: state.video_count, 
-		video_src: state.video_src
-	}
+	return { ...state }
 }
 
 const mapDispatchToProps = dispatch => {
