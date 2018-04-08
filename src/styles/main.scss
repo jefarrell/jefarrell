@@ -3,20 +3,17 @@ body {
 }
 
 #root {
-	width: 100vw;
+	width: 90vw;
 	height: 300vh;
+	margin: 0 auto;
 }
 
 #svg-container {
 	width: 100%;
 	height: 100%;
-	padding-left: 2em;
 }
 
 .root-rect {
 	display: block;
 }
 
-.top-rect {
-	max-width: 90%;
-}
