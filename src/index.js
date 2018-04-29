@@ -1,7 +1,6 @@
 import noise from './noise'
 require('./styles/main.scss')
 
-
 const svgDir = document.getElementById('svg-container')
 const svgns = 'http://www.w3.org/2000/svg'
 let height = document.body.clientHeight
@@ -9,13 +8,13 @@ let width = document.body.clientWidth
 
 
 const noiseGen = iter => {
-	const multiplier = 500;
-	const subt = 400;
-	return Math.abs(iter - (noise(0, iter / 300) * multiplier) - subt)
+  const multiplier = 500;
+  const subt = 400;
+  return Math.abs(iter - (noise(0, iter / 300) * multiplier) - subt)
 }
 
 
-const makeRect = ( className, iter, color) => { 
+const makeRect = (className, iter, color) => { 
   const rect = document.createElementNS(svgns, 'rect')
   rect.setAttribute('class', className)
   rect.setAttributeNS(null, 'y', iter * 50)
@@ -40,7 +39,7 @@ const init = () => {
 
 
 const createRects = arr => {
-  return new Promise ( (resolve,reject) => {
+  return new Promise ( (resolve, reject) => {
     for (let i = 0; i < arr.length; i++) {
       const r1 = makeRect('root-rect', i, '#0000FF')
       const r2 = makeRect('top-rect', i, '#FF0000')
