@@ -25,20 +25,5 @@ module.exports = {
 
 		]
 	},
-
-	plugins: PROD ? [
-		new webpack.optimize.UglifyJsPlugin({
-			beautify: false,
-			comments: false,
-			compress: {
-				warnings: false,
-				drop_console: true
-			},
-			mangle: {
-				except: ['$'],
-				screw_ie8: true,
-				keep_fnames: false
-			}
-		})
-	] : []
+	plugins: []
  };
