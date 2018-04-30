@@ -5,7 +5,7 @@ const svgDir = document.getElementById('svg-container')
 const svgns = 'http://www.w3.org/2000/svg'
 let height = document.body.clientHeight
 let width = document.body.clientWidth
-
+let iterX = 0;
 
 const noiseGen = iter => {
   const multiplier = 500;
@@ -14,11 +14,11 @@ const noiseGen = iter => {
 }
 
 
-const makeRect = (className, iter, color) => { 
+const makeRect = (className, iter, noise, color) => { 
   const rect = document.createElementNS(svgns, 'rect')
   rect.setAttribute('class', className)
   rect.setAttributeNS(null, 'y', iter * 50)
-  rect.setAttributeNS(null, 'height', iter * 2 )
+  rect.setAttributeNS(null, 'height', Math.abs(noise / 3))
   rect.setAttributeNS(null, 'fill', color)
   return rect;
 }
@@ -41,8 +41,10 @@ const init = () => {
 const createRects = arr => {
   return new Promise ( (resolve, reject) => {
     for (let i = 0; i < arr.length; i++) {
-      const r1 = makeRect('root-rect', i, '#0000FF')
-      const r2 = makeRect('top-rect', i, '#FF0000')
+      iterX += 0.01;
+      let n = 255 - arr[i] * iterX
+      const r1 = makeRect('root-rect', i, n, `rgba(0,0,255,${iterX*2}`)
+      const r2 = makeRect('top-rect', i, n, `rgba(255,0,0,${iterX*3}`)
       svgDir.appendChild(r1)
       svgDir.appendChild(r2)
     }
