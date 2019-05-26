@@ -1,103 +1,76 @@
-import noise from './noise'
-require('./styles/main.scss')
+import anime from 'animejs'
+require('./styles/main.scss');
 
-const svgDir = document.getElementById('svg-container')
-const svgns = 'http://www.w3.org/2000/svg'
-let height = document.body.clientHeight
-let width = document.body.clientWidth
-let iterX = 0;
+const COLS = [
+'#FFF',
+'#C7CB00',
+'#54DADA',
+'#65D800',
+'#E146F6',
+'#CF3100',
+'#505BF5'
+];
 
-const noiseGen = iter => {
-  const multiplier = 500;
-  const subt = 400;
-  return Math.abs(iter - (noise(0, iter / 300) * multiplier) - subt)
+const CLASSES = {
+  ROW: 'row',
+  ROW_ITEM: 'row-item',
+  ROW_ITEM_DOT: 'row-item__dot',
+  DOT: 'dot'
+};
+
+const createGrid = (rows) => { 
+  return new Promise((resolve) => {
+    const root = document.getElementById('root'); 
+    for (let i = 0; i < rows; i++){ 
+      const row = document.createElement('div'); 
+      row.className = CLASSES.ROW; 
+      for (let x = 0; x < rows; x++){ 
+          const cell = document.createElement('div'); 
+          cell.className = CLASSES.ROW_ITEM; 
+          for (let d = 0; d < 5; d++) {
+            const dot = document.createElement('div');
+            dot.className = `${CLASSES.ROW_ITEM_DOT} ${CLASSES.DOT}-${d}`;
+            dot.style.backgroundColor = COLS[i]
+            cell.appendChild(dot);
+          }
+          row.appendChild(cell); 
+      } 
+      root.appendChild(row); 
+      resolve();
+    } 
+  });
 }
 
-
-const makeRect = (className, iter, noise, color) => { 
-  const rect = document.createElementNS(svgns, 'rect')
-  rect.setAttribute('class', className)
-  rect.setAttributeNS(null, 'y', iter * 50)
-  rect.setAttributeNS(null, 'height', Math.abs(noise / 3))
-  rect.setAttributeNS(null, 'fill', color)
-  return rect;
-}
-
-
-const init = () => {
-  return new Promise( (resolve, reject) => {
-    
-    const noiseVars = []
-  	for (let j = 10; j < height; j += 5) {
-  		noiseVars.push( noiseGen(j) )
-  	}
-    
-    resolve(noiseVars)
-
+const anim = (index) => {
+  const OFFSET = 20;
+  return new Promise((resolve) => {
+    anime({
+      targets: document.getElementsByClassName('row-item__dot'),
+      translateY: index * OFFSET,
+      delay: anime.stagger(index * OFFSET),
+      direction: 'alternate',
+      loop: true,
+    });    
   })
 }
 
-
-const createRects = arr => {
-  return new Promise ( (resolve, reject) => {
-    for (let i = 0; i < arr.length; i++) {
-      iterX += 0.01;
-      let n = 255 - arr[i] * iterX
-      const r1 = makeRect('root-rect', i, n, `rgba(0,0,255,${iterX*2}`)
-      const r2 = makeRect('top-rect', i, n, `rgba(255,0,0,${iterX*3}`)
-      svgDir.appendChild(r1)
-      svgDir.appendChild(r2)
-    }
-    resolve()
-  })
+const animateAll = () => {
+  return new Promise((resolve) => {
+    const rows = Array.from(document.getElementsByClassName('row'))
+    rows.forEach((row, index) => anim(index));
+  });
 }
 
-
-const setRectWidths = () => {
-  return new Promise( (resolve,reject) => {
-    const topRects = document.getElementsByClassName('top-rect')
-    const rootRects = document.getElementsByClassName('root-rect')
-
-    for (let rr of rootRects ) {   
-      rr.setAttributeNS(null, 'width', width)
-    }
-    for (let tr of topRects ) { 
-      tr.setAttributeNS(null, 'width', Math.abs(tr.getBoundingClientRect().top*2))
-    }
-
-    resolve()
-  })
-}
-
-
-const asyncWrap = async () => {
+const main = async() => {
   try {
-    const makeNoise = await init()
-    const rectGroup = await createRects(makeNoise)
-    await setRectWidths(rectGroup)
+    await createGrid(COLS.length);
+    await animateAll()
   }
-  catch (err) {
-    throw err
+  catch(e) {
+    console.log("e - ", e);
   }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('root').setAttribute('style', `border: ${width*0.02}px solid #000000`)
-  
-  asyncWrap()
-  
-  window.addEventListener('scroll', e => {
-    const rects = document.getElementsByClassName('top-rect')
-    for (let r of rects ) {   
-      r.setAttributeNS(null, 'width', Math.abs(r.getBoundingClientRect().top*2))
-    }
-  })
-
-  window.addEventListener('resize', () => { 
-    height = document.body.clientHeight
-    width = document.body.clientWidth
-    setRectWidths()
-  })
-})
-
+  main();
+});
