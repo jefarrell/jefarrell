@@ -1,4 +1,15 @@
+import anime from 'animejs'
 require('./styles/main.scss');
+
+const COLS = [
+'#FFF',
+'#C7CB00',
+'#54DADA',
+'#65D800',
+'#E146F6',
+'#CF3100',
+'#505BF5'
+];
 
 const CLASSES = {
   ROW: 'row',
@@ -16,9 +27,10 @@ const createGrid = (rows) => {
       for (let x = 0; x < rows; x++){ 
           const cell = document.createElement('div'); 
           cell.className = CLASSES.ROW_ITEM; 
-          for (let d = 0; d < 3; d++) {
+          for (let d = 0; d < 5; d++) {
             const dot = document.createElement('div');
             dot.className = `${CLASSES.ROW_ITEM_DOT} ${CLASSES.DOT}-${d}`;
+            dot.style.backgroundColor = COLS[i]
             cell.appendChild(dot);
           }
           row.appendChild(cell); 
@@ -26,35 +38,33 @@ const createGrid = (rows) => {
       root.appendChild(row); 
       resolve();
     } 
-  })
-
+  });
 }
 
-const clickHandler = () => {
+const anim = (index) => {
+  const OFFSET = 20;
   return new Promise((resolve) => {
-    const allContainers = document.getElementsByClassName(CLASSES.ROW_ITEM);
-    const containerArr = Array.from(allContainers);
-    containerArr.forEach((container) => {
-      container.onclick = (e) => {
-        console.log("clicked", container);
-        console.log("children", container.childNodes);
-        const children = Array.from(container.childNodes);
-        children.forEach((child) => {
-          child.style.width = '75%';
-          child.style.height = '75%'
-          child.style.borderRadius = '84% 22% 38% 101% / 56% 70% 59% 47%'
-        });
-      }
-      resolve();
-    })
+    anime({
+      targets: document.getElementsByClassName('row-item__dot'),
+      translateY: index * OFFSET,
+      delay: anime.stagger(index * OFFSET),
+      direction: 'alternate',
+      loop: true,
+    });    
   })
+}
 
+const animateAll = () => {
+  return new Promise((resolve) => {
+    const rows = Array.from(document.getElementsByClassName('row'))
+    rows.forEach((row, index) => anim(index));
+  });
 }
 
 const main = async() => {
   try {
-    await createGrid(5);
-    await clickHandler();
+    await createGrid(COLS.length);
+    await animateAll()
   }
   catch(e) {
     console.log("e - ", e);

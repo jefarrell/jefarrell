@@ -26,5 +26,9 @@
     "style-loader": "^0.20.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "animejs": "^3.0.1",
+    "react": "^16.8.6"
   }
 }
