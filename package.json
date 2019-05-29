@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jefarrell/portfolio.git"
+    "url": "git+https://github.com/jefarrell.git"
   },
   "author": "jf",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jefarrell/portfolio/issues"
+    "url": "https://github.com/jefarrell/issues"
   },
   "homepage": ".",
   "devDependencies": {
@@ -28,7 +28,6 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "animejs": "^3.0.1",
-    "react": "^16.8.6"
+    "animejs": "^3.0.1"
   }
 }
