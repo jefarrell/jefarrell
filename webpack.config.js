@@ -19,10 +19,24 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.js$/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ["@babel/preset-env"]
+					},
+				},
+			},
+			{
 				test: /\.s?css$/,
 				loaders: ['style-loader', 'css-loader', 'sass-loader']
-			}
-
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				use: [
+					'file-loader',
+				],
+			},
 		]
 	},
 	plugins: []
