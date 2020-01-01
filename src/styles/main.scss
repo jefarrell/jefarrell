@@ -1,17 +1,30 @@
+@import 'fonts';
+$backgroundCol: #00F;
+$textCol: #FFF;
+$linkCol: #F00;
+
 body {
-  background-color: #000;
+  background-color: $backgroundCol;
   padding: 10px;
 }
 
 .title {
   font-size: 2em;
-  font-family: monospace;
+  font-family: "Apercu Mono", sans-serif;
   font-weight: 400;
-  color: #FFF;
+  color: $textCol;
+  background-color: $backgroundCol;
+  padding: 8px;
+  width: fit-content;
 
   a {
-    color: #65D800;
+    color: $linkCol;
     text-decoration: none;
+    transition: transform 200ms ease;
+  
+    &:hover {
+      color: #0F0;
+    }
   }
 }
 
@@ -35,5 +48,10 @@ body {
 	}
 }
 
-
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
