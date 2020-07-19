@@ -1,58 +1,97 @@
-@import 'fonts';
-$backgroundCol: #00F;
-$textCol: #FFF;
-$linkCol: #0F0;
-$linkHoverCol: #FFFF00;
+@import "fonts";
+$backgroundCol: #f6eee3;
+$black: #000;
+$red: #f0353c;
+$breakpoint-min: 768px;
+$breakpoint-max: 1440px;
+
+// strip unit value (px, vh, %, etc.)
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// interpolates type size between min and max
+@mixin text-size($min-font-size, $max-font-size) {
+  font-size: $min-font-size;
+
+  @media screen and (min-width: $breakpoint-min) {
+    font-size: calc(
+      #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+        (
+          (100vw - #{$breakpoint-min}) / #{strip-unit(
+              $breakpoint-max - $breakpoint-min
+            )}
+        )
+    );
+  }
+  @media screen and (min-width: $breakpoint-max) {
+    font-size: $max-font-size;
+  }
+}
 
 body {
   background-color: $backgroundCol;
-  padding: 10px;
+  padding: 24px;
 }
 
 .title {
-  font-size: 2em;
-  font-family: "Apercu Mono", sans-serif;
-  font-weight: 400;
-  color: $textCol;
+  @media screen and (max-width: $breakpoint-min) {
+    font-size: 48px;
+  }
+  @include text-size(96px, 216px);
+  font-family: "Jaune v0.6 TRIAL Grande Black", sans-serif;
+  color: $black;
   background-color: $backgroundCol;
-  padding: 8px;
-  width: fit-content;
+  margin: 0;
 
-  a {
-    color: $linkCol;
+  &__accent {
+    @media screen and (max-width: $breakpoint-min) {
+      font-size: 16px;
+    }
+    @include text-size(24px, 48px);
+    display: block;
+    font-family: "Jaune v0.6 TRIAL Grande Light", sans-serif;
+  }
+
+  &__wrap {
+    @media screen and (max-width: $breakpoint-min) {
+      margin-bottom: 24px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 72px;
+
+    &:last-child {
+      margin-bottom: 96px;
+    }
+
+    &.-right {
+      text-align: right;
+    }
+  }
+
+  &__link {
+    color: $black;
     text-decoration: none;
-    transition: transform 200ms ease;
-  
+    transition: color 300ms ease;
+
     &:hover {
-      color: $linkHoverCol;
+      color: $red;
     }
   }
 }
 
-.row {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.row-item {
-  display: flex;
-  justify-content: space-between;
-
-	&__dot {
-    margin: -2px -0.5px;
-    width: 100%;
-    height: 10px;
-    mix-blend-mode: multiply;
-    opacity: 0.75;
-    border: 1px solid #000;
-	}
-}
-
 .canvas {
-  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 }
 
+#svg {
+  @media screen and (max-width: $breakpoint-min) {
+    margin-top: 24px;
+  }
+  width: 100%;
+  margin-top: 72px;
+}
