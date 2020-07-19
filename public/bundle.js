@@ -6415,7 +6415,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var d3__
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"3fc49dbc22dfea09764e63a8d167c8ea.otf\");\n\n//# sourceURL=webpack:///./src/styles/Jaunev0.6-GrandeBlack_TRIAL.otf?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/styles/Jaunev0.6-GrandeBlack_TRIAL.otf\");\n\n//# sourceURL=webpack:///./src/styles/Jaunev0.6-GrandeBlack_TRIAL.otf?");
 
 /***/ }),
 
@@ -6427,7 +6427,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"d946a8cef81cf9073ced3136065a3564.otf\");\n\n//# sourceURL=webpack:///./src/styles/Jaunev0.6-GrandeLight_TRIAL.otf?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"src/styles/Jaunev0.6-GrandeLight_TRIAL.otf\");\n\n//# sourceURL=webpack:///./src/styles/Jaunev0.6-GrandeLight_TRIAL.otf?");
 
 /***/ }),
 
