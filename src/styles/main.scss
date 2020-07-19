@@ -1,39 +1,97 @@
-body {
-  background-color: #000;
-  padding: 10px;
+@import "fonts";
+$backgroundCol: #f6eee3;
+$black: #000;
+$red: #f0353c;
+$breakpoint-min: 768px;
+$breakpoint-max: 1440px;
+
+// strip unit value (px, vh, %, etc.)
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
 }
 
-.title {
-  font-size: 2em;
-  font-family: monospace;
-  font-weight: 400;
-  color: #FFF;
+// interpolates type size between min and max
+@mixin text-size($min-font-size, $max-font-size) {
+  font-size: $min-font-size;
 
-  a {
-    color: #65D800;
-    text-decoration: none;
+  @media screen and (min-width: $breakpoint-min) {
+    font-size: calc(
+      #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+        (
+          (100vw - #{$breakpoint-min}) / #{strip-unit(
+              $breakpoint-max - $breakpoint-min
+            )}
+        )
+    );
+  }
+  @media screen and (min-width: $breakpoint-max) {
+    font-size: $max-font-size;
   }
 }
 
-.row {
-  padding: 0;
+body {
+  background-color: $backgroundCol;
+  padding: 24px;
+}
+
+.title {
+  @media screen and (max-width: $breakpoint-min) {
+    font-size: 48px;
+  }
+  @include text-size(96px, 216px);
+  font-family: "Jaune v0.6 TRIAL Grande Black", sans-serif;
+  color: $black;
+  background-color: $backgroundCol;
   margin: 0;
-  list-style: none;
+
+  &__accent {
+    @media screen and (max-width: $breakpoint-min) {
+      font-size: 16px;
+    }
+    @include text-size(24px, 48px);
+    display: block;
+    font-family: "Jaune v0.6 TRIAL Grande Light", sans-serif;
+  }
+
+  &__wrap {
+    @media screen and (max-width: $breakpoint-min) {
+      margin-bottom: 24px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 72px;
+
+    &:last-child {
+      margin-bottom: 96px;
+    }
+
+    &.-right {
+      text-align: right;
+    }
+  }
+
+  &__link {
+    color: $black;
+    text-decoration: none;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
-.row-item {
-  display: flex;
-  justify-content: space-between;
-
-	&__dot {
-    margin: -2px -0.5px;
-    width: 100%;
-    height: 10px;
-    mix-blend-mode: multiply;
-    opacity: 0.75;
-    border: 1px solid #000;
-	}
+.canvas {
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-
-
+#svg {
+  @media screen and (max-width: $breakpoint-min) {
+    margin-top: 24px;
+  }
+  width: 100%;
+  margin-top: 72px;
+}
