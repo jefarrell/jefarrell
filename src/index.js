@@ -6,7 +6,7 @@ require("./styles/main.scss");
  * Based off of Bostock's Circle Wave
  * https://bl.ocks.org/mbostock/2d466ec3417722e3568cd83fc35338e3
  */
-const param = 24;
+const param = 48;
 const arr = [];
 for (let i = 0; i < 24; i++) arr.push(1);
 
@@ -20,7 +20,8 @@ const path = svg
   .append("g")
   .attr("transform", `translate(0, ${height / 2})`)
   .attr("fill", "none")
-  .attr("stroke-width", 1.5)
+  .attr("stroke-width", 1.75)
+  .attr("opacity", 0.8)
   .selectAll("path")
   .data(arr)
   .enter()
@@ -37,7 +38,7 @@ const path = svg
         const t = d3.now() / 3000;
         return (
           Math.sin(angles * 4 - (i * 2 * Math.PI) / param + t) *
-          Math.pow((2 + Math.tan(angles - t)) / 2, 4) *
+          Math.pow((2 + Math.cos(angles - t)) / 2, 4) *
           16
         );
       });

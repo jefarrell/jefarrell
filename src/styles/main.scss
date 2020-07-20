@@ -72,12 +72,12 @@ body {
   }
 
   &__link {
-    color: $black;
+    color: $red;
     text-decoration: none;
     transition: color 300ms ease;
 
     &:hover {
-      color: $red;
+      color: $black;
     }
   }
 }
