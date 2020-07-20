@@ -32,12 +32,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-          outputPath: "fonts/",
-          publicPath: url => "../fonts/" + url
-        }
+        loader: "file-loader?name=./fonts/[name].[ext]"
       }
     ]
   },

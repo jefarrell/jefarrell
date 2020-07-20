@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"@font-face {\\n  font-family: \\\"Jaune v0.6 TRIAL Grande Black\\\";\\n  font-weight: 800;\\n  font-display: fallback;\\n  src: url(\\\"/fonts/Jaunev0.6-GrandeBlack_TRIAL.otf\\\") format(\\\"otf\\\"); }\\n\\n@font-face {\\n  font-family: \\\"Jaune v0.6 TRIAL Grande Light\\\";\\n  font-weight: 200;\\n  font-display: fallback;\\n  src: url(\\\"/fonts/Jaunev0.6-GrandeLight_TRIAL.otf\\\") format(\\\"otf\\\"); }\\n\\n@font-face {\\n  font-family: \\\"HK Nova Medium\\\";\\n  font-weight: 200;\\n  font-display: fallback;\\n  src: url(\\\"/fonts/HKNova-Medium.otf\\\") format(\\\"otf\\\"); }\\n\\nbody {\\n  background-color: #f6eee3;\\n  padding: 24px; }\\n\\n.title {\\n  font-size: 96px;\\n  font-family: \\\"Jaune v0.6 TRIAL Grande Black\\\", sans-serif;\\n  color: #000;\\n  background-color: #f6eee3;\\n  margin: 0; }\\n  @media screen and (max-width: 768px) {\\n    .title {\\n      font-size: 48px; } }\\n  @media screen and (min-width: 768px) {\\n    .title {\\n      font-size: calc( 96px + 120 * ( (100vw - 768px) / 672 )); } }\\n  @media screen and (min-width: 1440px) {\\n    .title {\\n      font-size: 216px; } }\\n  .title__accent {\\n    font-size: 24px;\\n    display: block;\\n    font-family: \\\"Jaune v0.6 TRIAL Grande Light\\\", sans-serif; }\\n    @media screen and (max-width: 768px) {\\n      .title__accent {\\n        font-size: 16px; } }\\n    @media screen and (min-width: 768px) {\\n      .title__accent {\\n        font-size: calc( 24px + 24 * ( (100vw - 768px) / 672 )); } }\\n    @media screen and (min-width: 1440px) {\\n      .title__accent {\\n        font-size: 48px; } }\\n  .title__wrap {\\n    display: flex;\\n    flex-direction: column;\\n    margin-bottom: 72px; }\\n    @media screen and (max-width: 768px) {\\n      .title__wrap {\\n        margin-bottom: 24px; } }\\n    .title__wrap:last-child {\\n      margin-bottom: 96px; }\\n    .title__wrap.-right {\\n      text-align: right; }\\n  .title__link {\\n    color: #000;\\n    text-decoration: none;\\n    transition: color 300ms ease; }\\n    .title__link:hover {\\n      color: #f0353c; }\\n\\n.canvas {\\n  top: 0;\\n  left: 0;\\n  z-index: -1; }\\n\\n#svg {\\n  width: 100%;\\n  margin-top: 72px; }\\n  @media screen and (max-width: 768px) {\\n    #svg {\\n      margin-top: 24px; } }\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Imports\nvar urlEscape = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/url-escape.js */ \"./node_modules/css-loader/dist/runtime/url-escape.js\");\nvar ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(/*! ./fonts/Jaunev0.6-GrandeBlack_TRIAL.otf */ \"./src/styles/fonts/Jaunev0.6-GrandeBlack_TRIAL.otf\"));\nvar ___CSS_LOADER_URL___1___ = urlEscape(__webpack_require__(/*! ./fonts/Jaunev0.6-GrandeLight_TRIAL.otf */ \"./src/styles/fonts/Jaunev0.6-GrandeLight_TRIAL.otf\"));\nvar ___CSS_LOADER_URL___2___ = urlEscape(__webpack_require__(/*! ./fonts/HKNova-Medium.otf */ \"./src/styles/fonts/HKNova-Medium.otf\"));\n\n// Module\nexports.push([module.i, \"@font-face {\\n  font-family: \\\"Jaune v0.6 TRIAL Grande Black\\\";\\n  font-weight: 800;\\n  font-display: fallback;\\n  src: url(\" + ___CSS_LOADER_URL___0___ + \") format(\\\"otf\\\"); }\\n\\n@font-face {\\n  font-family: \\\"Jaune v0.6 TRIAL Grande Light\\\";\\n  font-weight: 200;\\n  font-display: fallback;\\n  src: url(\" + ___CSS_LOADER_URL___1___ + \") format(\\\"otf\\\"); }\\n\\n@font-face {\\n  font-family: \\\"HK Nova Medium\\\";\\n  font-weight: 200;\\n  font-display: fallback;\\n  src: url(\" + ___CSS_LOADER_URL___2___ + \") format(\\\"otf\\\"); }\\n\\nbody {\\n  background-color: #f6eee3;\\n  padding: 24px; }\\n\\n.title {\\n  font-size: 96px;\\n  font-family: \\\"Jaune v0.6 TRIAL Grande Black\\\", sans-serif;\\n  color: #000;\\n  background-color: #f6eee3;\\n  margin: 0; }\\n  @media screen and (max-width: 768px) {\\n    .title {\\n      font-size: 48px; } }\\n  @media screen and (min-width: 768px) {\\n    .title {\\n      font-size: calc( 96px + 120 * ( (100vw - 768px) / 672 )); } }\\n  @media screen and (min-width: 1440px) {\\n    .title {\\n      font-size: 216px; } }\\n  .title__accent {\\n    font-size: 24px;\\n    display: block;\\n    font-family: \\\"Jaune v0.6 TRIAL Grande Light\\\", sans-serif; }\\n    @media screen and (max-width: 768px) {\\n      .title__accent {\\n        font-size: 16px; } }\\n    @media screen and (min-width: 768px) {\\n      .title__accent {\\n        font-size: calc( 24px + 24 * ( (100vw - 768px) / 672 )); } }\\n    @media screen and (min-width: 1440px) {\\n      .title__accent {\\n        font-size: 48px; } }\\n  .title__wrap {\\n    display: flex;\\n    flex-direction: column;\\n    margin-bottom: 72px; }\\n    @media screen and (max-width: 768px) {\\n      .title__wrap {\\n        margin-bottom: 24px; } }\\n    .title__wrap:last-child {\\n      margin-bottom: 96px; }\\n    .title__wrap.-right {\\n      text-align: right; }\\n  .title__link {\\n    color: #000;\\n    text-decoration: none;\\n    transition: color 300ms ease; }\\n    .title__link:hover {\\n      color: #f0353c; }\\n\\n.canvas {\\n  top: 0;\\n  left: 0;\\n  z-index: -1; }\\n\\n#svg {\\n  width: 100%;\\n  margin-top: 72px; }\\n  @media screen and (max-width: 768px) {\\n    #svg {\\n      margin-top: 24px; } }\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
@@ -106,6 +106,18 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 
 "use strict";
 eval("\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return '@media ' + item[2] + '{' + content + '}';\n      } else {\n        return content;\n      }\n    }).join('');\n  }; // import a list of modules into the list\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      var id = this[i][0];\n\n      if (id != null) {\n        alreadyImportedModules[id] = true;\n      }\n    }\n\n    for (i = 0; i < modules.length; i++) {\n      var item = modules[i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      // when a module is imported multiple times with different media queries.\n      // I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (item[0] == null || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || '';\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n  return '/*# ' + data + ' */';\n}\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/url-escape.js":
+/*!************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/url-escape.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nmodule.exports = function escape(url, needQuotes) {\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || needQuotes) {\n    return '\"' + url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n') + '\"';\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/url-escape.js?");
 
 /***/ }),
 
@@ -6392,6 +6404,42 @@ eval("/**\n * When source maps are enabled, `style-loader` uses a link element w
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ \"./node_modules/d3/index.js\");\n\n\n__webpack_require__(/*! ./styles/main.scss */ \"./src/styles/main.scss\");\n/*\n * Multi-line waveform animation in D3\n * Based off of Bostock's Circle Wave\n * https://bl.ocks.org/mbostock/2d466ec3417722e3568cd83fc35338e3\n */\n\n\nvar param = 24;\nvar arr = [];\n\nfor (var i = 0; i < 24; i++) {\n  arr.push(1);\n}\n\nvar svg = d3__WEBPACK_IMPORTED_MODULE_0__[\"select\"](\"svg\");\nvar width = window.innerWidth;\nvar height = +svg.attr(\"height\");\nvar x = d3__WEBPACK_IMPORTED_MODULE_0__[\"scaleLinear\"]().range([0, width]);\nvar angles = d3__WEBPACK_IMPORTED_MODULE_0__[\"range\"](0, 2 * Math.PI, Math.PI / 10);\nvar path = svg.append(\"g\").attr(\"transform\", \"translate(0, \".concat(height / 2, \")\")).attr(\"fill\", \"none\").attr(\"stroke-width\", 1.5).selectAll(\"path\").data(arr).enter().append(\"path\").attr(\"stroke\", \"#000\").datum(function (d, i) {\n  return d3__WEBPACK_IMPORTED_MODULE_0__[\"line\"]().curve(d3__WEBPACK_IMPORTED_MODULE_0__[\"curveBasisOpen\"]).x(function (angles) {\n    return x(angles / 2);\n  }).y(function (angles) {\n    var t = d3__WEBPACK_IMPORTED_MODULE_0__[\"now\"]() / 3000;\n    return Math.sin(angles * 4 - i * 2 * Math.PI / param + t) * Math.pow((2 + Math.tan(angles - t)) / 2, 4) * 16;\n  });\n});\nd3__WEBPACK_IMPORTED_MODULE_0__[\"timer\"](function () {\n  path.attr(\"d\", function (d) {\n    return d(angles);\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/styles/fonts/HKNova-Medium.otf":
+/*!********************************************!*\
+  !*** ./src/styles/fonts/HKNova-Medium.otf ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"./fonts/HKNova-Medium.otf\");\n\n//# sourceURL=webpack:///./src/styles/fonts/HKNova-Medium.otf?");
+
+/***/ }),
+
+/***/ "./src/styles/fonts/Jaunev0.6-GrandeBlack_TRIAL.otf":
+/*!**********************************************************!*\
+  !*** ./src/styles/fonts/Jaunev0.6-GrandeBlack_TRIAL.otf ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"./fonts/Jaunev0.6-GrandeBlack_TRIAL.otf\");\n\n//# sourceURL=webpack:///./src/styles/fonts/Jaunev0.6-GrandeBlack_TRIAL.otf?");
+
+/***/ }),
+
+/***/ "./src/styles/fonts/Jaunev0.6-GrandeLight_TRIAL.otf":
+/*!**********************************************************!*\
+  !*** ./src/styles/fonts/Jaunev0.6-GrandeLight_TRIAL.otf ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"./fonts/Jaunev0.6-GrandeLight_TRIAL.otf\");\n\n//# sourceURL=webpack:///./src/styles/fonts/Jaunev0.6-GrandeLight_TRIAL.otf?");
 
 /***/ }),
 
