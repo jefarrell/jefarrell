@@ -1,4 +1,17 @@
-@import "fonts";
+@font-face {
+  font-family: "Jaune v0.6 TRIAL Grande Bold";
+  font-weight: 800;
+  font-display: fallback;
+  src: url("./fonts/Jaunev0.6-GrandeBold_TRIAL.otf") format("otf");
+}
+
+@font-face {
+  font-family: "Jaune v0.6 TRIAL Grande Light";
+  font-weight: 200;
+  font-display: fallback;
+  src: url("./fonts/Jaunev0.6-GrandeLight_TRIAL.otf") format("otf");
+}
+
 body {
   background-color: #f6eee3;
   padding: 24px;
