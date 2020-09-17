@@ -1,0 +1,89 @@
+
+  body {
+    background-color: #f6eee3;
+    padding: 24px;
+  }
+  .title {
+    font-size: 96px;
+    font-family: "Jaune v0.6 TRIAL Grande Bold", sans-serif;
+    color: #000;
+    background-color: #f6eee3;
+    margin: 0;
+  }
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 48px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .title {
+      font-size: calc(96px + 120 * ((100vw - 768px) / 672));
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .title {
+      font-size: 216px;
+    }
+  }
+  .title__accent {
+    font-size: 24px;
+    display: block;
+    font-family: "Jaune v0.6 TRIAL Grande Light", sans-serif;
+  }
+  .title__accent.-below {
+    padding-top: 24px;
+  }
+  @media screen and (max-width: 768px) {
+    .title__accent {
+      font-size: 16px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .title__accent {
+      font-size: calc(24px + 24 * ((100vw - 768px) / 672));
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .title__accent {
+      font-size: 48px;
+    }
+  }
+  .title__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 72px;
+  }
+  @media screen and (max-width: 768px) {
+    .title__wrap {
+      margin-bottom: 24px;
+    }
+  }
+  .title__wrap:last-child {
+    margin-bottom: 96px;
+  }
+  .title__wrap.-right {
+    text-align: right;
+  }
+  .title__link {
+    color: #f0353c;
+    text-decoration: none;
+    transition: color 300ms ease;
+  }
+  .title__link:hover {
+    color: #000;
+  }
+  .canvas {
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #svg {
+    width: 100%;
+    margin-top: 72px;
+  }
+  @media screen and (max-width: 768px) {
+    #svg {
+      margin-top: 24px;
+    }
+  }
+  
