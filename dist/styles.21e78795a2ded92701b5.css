@@ -1,0 +1,126 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "Jaunev0.6-GrandeLight";
+  src: url(c44903dd527a8b365b8916055999314b.woff) format("woff"), url(5b31f75cb3d17ad31c4e38e47231640a.woff2) format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "Jaunev0.6-GrandeBold";
+  src: url(7541dea1c07efaf970770ee4ac56fa4a.woff) format("woff"), url(720b849fed40370c8a3332525a660152.woff2) format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #f6eee3;
+  padding: 24px;
+}
+
+.title {
+  font-size: 96px;
+  font-family: "Jaunev0.6-GrandeBold", sans-serif;
+  color: #000;
+  background-color: #f6eee3;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: calc(96px + 120 * ((100vw - 768px) / 672));
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .title {
+    font-size: 216px;
+  }
+}
+
+.title__accent {
+  font-size: 24px;
+  display: block;
+  font-family: "Jaunev0.6-GrandeLight", sans-serif;
+}
+
+.title__accent.-below {
+  padding-top: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .title__accent {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title__accent {
+    font-size: calc(24px + 24 * ((100vw - 768px) / 672));
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .title__accent {
+    font-size: 48px;
+  }
+}
+
+.title__wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 72px;
+}
+
+@media screen and (max-width: 768px) {
+  .title__wrap {
+    margin-bottom: 24px;
+  }
+}
+
+.title__wrap:last-child {
+  margin-bottom: 96px;
+}
+
+.title__wrap.-right {
+  text-align: right;
+}
+
+.title__link {
+  color: #f0353c;
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+.title__link:hover {
+  color: #000;
+}
+
+.canvas {
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#svg {
+  width: 100%;
+  margin-top: 72px;
+}
+
+@media screen and (max-width: 768px) {
+  #svg {
+    margin-top: 24px;
+  }
+}
+
+
+/*# sourceMappingURL=styles.21e78795a2ded92701b5.css.map*/
