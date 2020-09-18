@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     devServer: {
         port: 8080,
-        contentBase: path.join(__dirname, "dist")
+        contentBase: path.join(__dirname, "docs")
     },
     node: {
         fs: 'empty'
